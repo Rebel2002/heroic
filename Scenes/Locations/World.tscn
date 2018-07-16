@@ -29,7 +29,7 @@ func _on_DamageTimer_timeout():
 		if body.filename.find(\"player\") > 0 and body.health > 0:
 			body.health -= randi() % 3 + 1"
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="Dirt" type="TileMap" parent="." index="0"]
 
@@ -78,6 +78,7 @@ _sections_unfolded = [ "Cell", "Collision" ]
 [node name="Objetcs" type="YSort" parent="." index="3"]
 
 sort_enabled = true
+_sections_unfolded = [ "Sort", "Transform", "Visibility", "Z Index" ]
 
 [node name="House4" parent="Objetcs" index="0" instance=ExtResource( 3 )]
 

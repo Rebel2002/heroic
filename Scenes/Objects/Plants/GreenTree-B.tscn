@@ -1,23 +1,18 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/Plants/TreesGreen.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Plants/TreesPale.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Core/Transparency.tscn" type="PackedScene" id=2]
 
-
-
-
-
-
-
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16.0548, 5.68136 )
+radius = 7.20762
+height = 17.538
 
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 22.4982
+radius = 26.6382
 height = 4.96831
 
 [node name="GreenTreeB" type="StaticBody2D"]
@@ -33,22 +28,26 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Region", "
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 1.13473, -20 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 64, 0, 64, 64 )
+region_rect = Rect2( 64, 0, 64, 128 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="Collision" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 3.01988, 26.2578 )
+position = Vector2( 1.53353, 24.8827 )
+rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Transparency" parent="." index="2" instance=ExtResource( 2 )]
 
+position = Vector2( 1.37256, -57.021 )
+
 [node name="Collision" type="CollisionShape2D" parent="Transparency" index="0"]
 
-position = Vector2( 0, -3.77354 )
+position = Vector2( -0.546807, 5.58244 )
 shape = SubResource( 2 )
 
 
