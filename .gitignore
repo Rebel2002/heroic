@@ -1,0 +1,12 @@
+# Directory settings for Plasma
+*.directory
+
+# Cached files
+*.import
+
+# Compiled files
+*.exe
+*.apk
+*.x86_64
+*.x86
+*.pck

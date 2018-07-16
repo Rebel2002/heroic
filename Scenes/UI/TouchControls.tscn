@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/UI/TouchArrow.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/TouchCircle.png" type="Texture" id=2]
+
+
+
+
+
+[node name="TouchControls" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Up" type="TouchScreenButton" parent="." index="0"]
+
+position = Vector2( 99.0768, 189.017 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_up"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="UpLeft" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 46, 204 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_up"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="UpLeft2" type="TouchScreenButton" parent="." index="2"]
+
+position = Vector2( 46, 204 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_left"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="UpRight" type="TouchScreenButton" parent="." index="3"]
+
+position = Vector2( 183, 204 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_up"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="UpRight2" type="TouchScreenButton" parent="." index="4"]
+
+position = Vector2( 183, 204 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_right"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="DownRight" type="TouchScreenButton" parent="." index="5"]
+
+position = Vector2( 183, 332 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_down"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="DownRight2" type="TouchScreenButton" parent="." index="6"]
+
+position = Vector2( 183, 332 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_right"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="DownLeft" type="TouchScreenButton" parent="." index="7"]
+
+position = Vector2( 46, 332 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_down"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="DownLeft2" type="TouchScreenButton" parent="." index="8"]
+
+position = Vector2( 46, 332 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_left"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Down" type="TouchScreenButton" parent="." index="9"]
+
+position = Vector2( 162.89, 379.113 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_down"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Left" type="TouchScreenButton" parent="." index="10"]
+
+position = Vector2( 35.4444, 316.452 )
+rotation = -1.5708
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_left"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Right" type="TouchScreenButton" parent="." index="11"]
+
+position = Vector2( 226.202, 251.827 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_right"
+visibility_mode = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+

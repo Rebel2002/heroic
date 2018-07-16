@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Other/Carts.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Core/Transparency.tscn" type="PackedScene" id=2]
+
+
+
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.3914, 29.8782 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.6746, 7.19597 )
+
+[node name="EmptyCart" type="StaticBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 55 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Collision" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.502855, 2.15908 )
+rotation = 1.5708
+scale = Vector2( 1, 1.0532 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Transparency" parent="." index="2" instance=ExtResource( 2 )]
+
+[node name="Collision" type="CollisionShape2D" parent="Transparency" index="0"]
+
+position = Vector2( 12.4563, -20.4283 )
+shape = SubResource( 2 )
+
+

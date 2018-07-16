@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tilesets/Walls-B.tres" type="TileSet" id=1]
+[ext_resource path="res://Tilesets/Roof-A.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Objects/Buildings/Parts/Window.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Buildings/Parts/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Buildings/Parts/WindowFlowers.tscn" type="PackedScene" id=5]
+
+[node name="House" type="Node2D" index="0"]
+
+[node name="Walls" type="TileMap" parent="." index="0"]
+
+position = Vector2( -337.644, -185.403 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 393222, 0, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 458758, 3, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 524294, 6, 0, 524295, 7, 0, 524296, 7, 0, 524297, 7, 0, 524298, 7, 0, 524299, 7, 0, 524300, 7, 0, 524301, 7, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="FrontWall" type="TileMap" parent="." index="1"]
+
+position = Vector2( -337.644, -185.403 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 458763, 0, 0, 458764, 1, 0, 458765, 1, 0, 458766, 2, 0, 524299, 3, 0, 524300, 4, 0, 524301, 4, 0, 524302, 5, 0, 589835, 6, 0, 589836, 7, 0, 589837, 7, 0, 589838, 8, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Roof" type="TileMap" parent="." index="2"]
+
+position = Vector2( -337.644, -185.403 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 196614, 0, 0, 196615, 14, 0, 196616, 15, 0, 196617, 15, 0, 196618, 15, 0, 196619, 15, 0, 196620, 15, 0, 196621, 16, 0, 196622, 2, 0, 262150, 3, 0, 262151, 18, 0, 262152, 19, 0, 262153, 19, 0, 262154, 19, 0, 262155, 19, 0, 262156, 23, 0, 262157, 24, 0, 262158, 5, 0, 327686, 6, 0, 327687, 7, 0, 327688, 7, 0, 327689, 7, 0, 327690, 7, 0, 327691, 9, 0, 327692, 18, 0, 327693, 20, 0, 327694, 5, 0, 393227, 6, 0, 393228, 7, 0, 393229, 7, 0, 393230, 8, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Window" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 98.938, 78.8092 )
+frame = 4
+
+[node name="Window2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( -92.5171, 48.4412 )
+frame = 4
+
+[node name="Window3" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( -32.66, 48.0012 )
+frame = 4
+
+[node name="Door" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 60.6469, 93.3342 )
+frame = 6
+
+[node name="WindowFlowers" parent="." index="7" instance=ExtResource( 5 )]
+
+position = Vector2( -33.1001, 62.0852 )
+
+[node name="WindowFlowers2" parent="." index="8" instance=ExtResource( 5 )]
+
+position = Vector2( -92.077, 62.0852 )
+
+

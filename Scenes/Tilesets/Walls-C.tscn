@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Buildings/Walls.png" type="Texture" id=1]
+
+
+
+
+[node name="WallsC" type="Node" index="0"]
+
+[node name="WallTopLeft" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallTopCentre" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 224, 0, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallTopRight" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallMiddleLeft" type="Sprite" parent="." index="3"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallMiddleCentre" type="Sprite" parent="." index="4"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 224, 32, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallMiddleRight" type="Sprite" parent="." index="5"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 32, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallButtomLeft" type="Sprite" parent="." index="6"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallButtomCentre" type="Sprite" parent="." index="7"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 224, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="WallButtomRight" type="Sprite" parent="." index="8"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 64, 32, 32 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+
