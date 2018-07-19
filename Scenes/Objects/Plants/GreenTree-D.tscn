@@ -15,7 +15,7 @@ custom_solver_bias = 0.0
 radius = 31.4532
 height = 10.3423
 
-[node name="GreenTreeD" type="StaticBody2D" index="0"]
+[node name="GreenTreeD" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -38,7 +38,6 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 position = Vector2( -0.0323973, 21.4122 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

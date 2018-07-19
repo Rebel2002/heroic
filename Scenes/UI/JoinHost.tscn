@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Styles/Menu.tres" type="Theme" id=1]
 
 [sub_resource type="GDScript" id=1]
 
@@ -9,19 +11,20 @@ func _ready():
 	get_tree().connect(\"connection_failed\", self, \"_on_connection_failed\")
 	
 func _on_Join_pressed():
-	if (not $Controls/IP.text.is_valid_ip_address()):
-		$Status.text=\"Invalid IPv4 address!\"
+	if (not $Panel/Data/Ip.text.is_valid_ip_address()):
+		$Panel/Status.text=\"Invalid Ipv4 address!\"
 		return
-	Global.ip = $Controls/IP.text
+	Global.ip = $Panel/Data/Ip.text
 	
 	# Disable buttons
-	$Controls/Join.disabled = true
-	$Controls/Host.disabled = true
+	$Panel/Join.disabled = true
+	$Panel/Host.disabled = true
 	
 	# Connect
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client(Global.ip, Global.port)
 	get_tree().set_network_peer(host)
+	$ConnectionTimer.start()
 
 func _on_Host_pressed():
 	# Create server
@@ -39,19 +42,19 @@ func _on_connection_failed():
 	get_tree().set_network_peer(null) # Remove peer
 	
 	# Restore interface
-	$Controls/Join.disabled = false
-	$Controls/Host.disabled = false
-	$Status.text = \"Connection failed.\""
+	$Panel/Join.disabled = false
+	$Panel/Host.disabled = false
+	$Panel/Status.text = \"Connection failed.\""
 
-[node name="JoinHost" type="Control"]
+[node name="JoinHost" type="Control" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -508.0
+margin_left = -512.0
 margin_top = -301.0
-margin_right = 516.0
+margin_right = 518.0
 margin_bottom = 299.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -59,38 +62,56 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 1 )
 script = SubResource( 1 )
+_sections_unfolded = [ "Theme" ]
 
-[node name="Controls" type="HBoxContainer" parent="." index="0"]
+[node name="Panel" type="Panel" parent="." index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -84.5
+margin_right = 105.0
+margin_bottom = 84.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Data" type="GridContainer" parent="Panel" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -108.0
-margin_top = -12.0
-margin_right = 108.0
-margin_bottom = 12.0
+margin_left = -86.0
+margin_top = -48.5
+margin_right = 76.0
+margin_bottom = 7.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_constants/separation = 16
-alignment = 0
+columns = 2
 _sections_unfolded = [ "Grow Direction", "Hint", "Rect", "custom_constants" ]
 
-[node name="Label" type="Label" parent="Controls" index="0"]
+[node name="IpLabel" type="Label" parent="Panel/Data" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 5.0
-margin_right = 17.0
-margin_bottom = 19.0
+margin_top = 3.0
+margin_right = 37.0
+margin_bottom = 23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -102,15 +123,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="IP" type="LineEdit" parent="Controls" index="1"]
+[node name="Ip" type="LineEdit" parent="Panel/Data" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 33.0
-margin_right = 107.0
-margin_bottom = 24.0
+margin_left = 41.0
+margin_right = 162.5
+margin_bottom = 26.25
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -127,15 +148,61 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
-[node name="Join" type="Button" parent="Controls" index="2"]
+[node name="PortLabel" type="Label" parent="Panel/Data" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 123.0
-margin_right = 158.0
-margin_bottom = 24.0
+margin_top = 33.0
+margin_right = 37.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Port:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Port" type="LineEdit" parent="Panel/Data" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 41.0
+margin_top = 30.0
+margin_right = 162.5
+margin_bottom = 56.25
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "10567"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="Join" type="Button" parent="Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 120.0
+margin_right = 69.0
+margin_bottom = 155.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -151,21 +218,22 @@ text = "Join"
 flat = false
 align = 1
 
-[node name="Host" type="Button" parent="Controls" index="3"]
+[node name="Host" type="Button" parent="Panel" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 174.0
-margin_right = 216.0
-margin_bottom = 24.0
+margin_left = 139.0
+margin_top = 120.0
+margin_right = 192.0
+margin_bottom = 155.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
+size_flags_horizontal = 9
 size_flags_vertical = 1
 toggle_mode = false
 enabled_focus_mode = 2
@@ -174,6 +242,28 @@ group = null
 text = "Host"
 flat = false
 align = 1
+_sections_unfolded = [ "Margin", "Size Flags" ]
+
+[node name="Status" type="Label" parent="Panel" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 19.0
+margin_top = 96.0
+margin_right = 189.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
 
 [node name="Label" type="Label" parent="." index="1"]
 
@@ -183,7 +273,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 90.0
 margin_right = 1024.0
-margin_bottom = 104.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -197,29 +287,17 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Status" type="Label" parent="." index="2"]
+[node name="ConnectionTimer" type="Timer" parent="." index="2"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 404.0
-margin_top = 317.0
-margin_right = 620.0
-margin_bottom = 331.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
 
-[connection signal="pressed" from="Controls/Join" to="." method="_on_Join_pressed"]
+[connection signal="pressed" from="Panel/Join" to="." method="_on_Join_pressed"]
 
-[connection signal="pressed" from="Controls/Host" to="." method="_on_Host_pressed"]
+[connection signal="pressed" from="Panel/Host" to="." method="_on_Host_pressed"]
+
+[connection signal="timeout" from="ConnectionTimer" to="." method="_on_connection_failed"]
 
 

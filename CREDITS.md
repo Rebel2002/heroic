@@ -57,6 +57,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY 3.0 / GPL 3.0 / GPL 2.0
 
+### [UI pack: RPG extension](https://opengameart.org/content/ui-pack-rpg-extension)
+
+**Authors:** Kenney.
+
+**Licenses:** CC0
+
 ## Used Fonts
 
 ### [basis33](https://github.com/Manchson/basis33)
@@ -64,3 +70,9 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 **Authors:** Tristan Grimmer and Manchson.
 
 **License:** MIT
+
+### [Hardpixel](https://www.1001fonts.com/hardpixel-font.html)
+
+**Authors:** Anton Kudin & Jovanny Lemonad.
+
+**License:** FFC

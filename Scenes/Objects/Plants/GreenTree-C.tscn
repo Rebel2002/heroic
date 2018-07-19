@@ -15,7 +15,7 @@ custom_solver_bias = 0.0
 radius = 35.2576
 height = 4.96831
 
-[node name="GreenTreeC" type="StaticBody2D" index="0"]
+[node name="GreenTreeC" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1

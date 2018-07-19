@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Creatures/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Styles/Menu.tres" type="Theme" id=1]
+[ext_resource path="res://Styles/LabelFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/Creatures/Character.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 
@@ -11,27 +13,27 @@ func _ready():
 	$Character/Eyes/Animation.play(\"down\")
 
 func _set_sex(ID):
-	$Character.sex = $Controls/Sex/Type.get_item_text(ID)
+	$Character.sex = $Panel/Controls/Sex/Type.get_item_text(ID)
 	$Character.load_sprite()
 
 func _set_race(ID):
-	$Character.race = $Controls/Race/Type.get_item_text(ID)
+	$Character.race = $Panel/Controls/Race/Type.get_item_text(ID)
 	$Character.load_sprite()
 
 func _set_eyes(ID):
-	$Character.eyes = $Controls/Eyes/Type.get_item_text(ID)
+	$Character.eyes = $Panel/Controls/Eyes/Type.get_item_text(ID)
 	$Character.load_sprite()
 
 func _set_skintone(ID):
-	$Character.skintone = $Controls/Skintone/Type.get_item_text(ID)
+	$Character.skintone = $Panel/Controls/Skintone/Type.get_item_text(ID)
 	$Character.load_sprite()
 
 func _on_Done_pressed():
-	Global.player[\"nickname\"] = $Controls/Nickname/Text.text
-	Global.player[\"sex\"] = $Character.sex
-	Global.player[\"race\"] = $Character.race
-	Global.player[\"skintone\"] = $Character.skintone
-	Global.player[\"eyes\"] = $Character.eyes
+	Global.player[\"nickname\"] = $Panel/Controls/Nickname/Text.text
+	Global.player[\"sex\"] = $Panel/Controls/Sex/Type.text
+	Global.player[\"race\"] = $Panel/Controls/Race/Type.text
+	Global.player[\"skintone\"] = $Panel/Controls/Skintone/Type.text
+	Global.player[\"eyes\"] = $Panel/Controls/Eyes/Type.text
 	get_tree().change_scene(\"res://Scenes/UI/JoinHost.tscn\")
 "
 
@@ -51,40 +53,40 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 1 )
 script = SubResource( 1 )
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Theme" ]
 
-[node name="Title" type="Label" parent="." index="0"]
+[node name="Panel" type="Panel" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 50.0
-margin_right = 1024.0
-margin_bottom = 64.0
+margin_left = 61.0
+margin_top = 93.0
+margin_right = 371.0
+margin_bottom = 423.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Create new character"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+_sections_unfolded = [ "Theme" ]
 
-[node name="Controls" type="VBoxContainer" parent="." index="1"]
+[node name="Controls" type="VBoxContainer" parent="Panel" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 130.0
-margin_top = 110.0
-margin_right = 462.0
-margin_bottom = 325.0
+margin_left = 51.0
+margin_top = 49.0
+margin_right = 262.0
+margin_bottom = 264.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -95,15 +97,14 @@ custom_constants/separation = 11
 alignment = 0
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="Nickname" type="HBoxContainer" parent="Controls" index="0"]
+[node name="Nickname" type="HBoxContainer" parent="Panel/Controls" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 332.0
-margin_bottom = 24.0
+margin_right = 211.0
+margin_bottom = 26.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -112,15 +113,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Title" type="Label" parent="Controls/Nickname" index="0"]
+[node name="Title" type="Label" parent="Panel/Controls/Nickname" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 5.0
-margin_right = 68.0
-margin_bottom = 19.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -132,15 +133,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Text" type="LineEdit" parent="Controls/Nickname" index="1"]
+[node name="Text" type="LineEdit" parent="Panel/Controls/Nickname" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 72.0
-margin_right = 171.0
-margin_bottom = 24.0
+margin_left = 88.0
+margin_right = 209.5
+margin_bottom = 26.25
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -158,16 +159,15 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Caret", "Grow Direction", "Rect" ]
 
-[node name="Sex" type="HBoxContainer" parent="Controls" index="1"]
+[node name="Sex" type="HBoxContainer" parent="Panel/Controls" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 35.0
-margin_right = 332.0
-margin_bottom = 55.0
+margin_top = 37.0
+margin_right = 211.0
+margin_bottom = 72.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -176,15 +176,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Title" type="Label" parent="Controls/Sex" index="0"]
+[node name="Title" type="Label" parent="Panel/Controls/Sex" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 3.0
-margin_right = 26.0
-margin_bottom = 17.0
+margin_top = 7.0
+margin_right = 35.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -196,15 +196,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Controls/Sex" index="1"]
+[node name="Type" type="OptionButton" parent="Panel/Controls/Sex" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_right = 100.0
-margin_bottom = 20.0
+margin_left = 39.0
+margin_right = 97.75
+margin_bottom = 35.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -223,16 +223,15 @@ align = 0
 items = [ "Male", null, false, -1, null, "Female", null, false, -1, null ]
 selected = 0
 
-[node name="Race" type="HBoxContainer" parent="Controls" index="2"]
+[node name="Race" type="HBoxContainer" parent="Panel/Controls" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 66.0
-margin_right = 332.0
-margin_bottom = 86.0
+margin_top = 83.0
+margin_right = 211.0
+margin_bottom = 118.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -241,15 +240,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Title" type="Label" parent="Controls/Race" index="0"]
+[node name="Title" type="Label" parent="Panel/Controls/Race" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 3.0
-margin_right = 34.0
-margin_bottom = 17.0
+margin_top = 7.0
+margin_right = 45.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -261,15 +260,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Controls/Race" index="1"]
+[node name="Type" type="OptionButton" parent="Panel/Controls/Race" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 38.0
-margin_right = 123.0
-margin_bottom = 20.0
+margin_left = 49.0
+margin_right = 120.75
+margin_bottom = 35.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -288,15 +287,16 @@ align = 0
 items = [ "Human", null, false, -1, null, "Elf", null, false, -1, null, "Orc", null, false, -1, null ]
 selected = 0
 
-[node name="Skintone" type="HBoxContainer" parent="Controls" index="3"]
+[node name="Skintone" type="HBoxContainer" parent="Panel/Controls" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 97.0
-margin_right = 332.0
-margin_bottom = 117.0
+margin_top = 129.0
+margin_right = 211.0
+margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -305,15 +305,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Title" type="Label" parent="Controls/Skintone" index="0"]
+[node name="Title" type="Label" parent="Panel/Controls/Skintone" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 3.0
-margin_right = 59.0
-margin_bottom = 17.0
+margin_top = 7.0
+margin_right = 76.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -325,15 +325,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Controls/Skintone" index="1"]
+[node name="Type" type="OptionButton" parent="Panel/Controls/Skintone" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 63.0
-margin_right = 110.0
-margin_bottom = 20.0
+margin_left = 80.0
+margin_right = 111.75
+margin_bottom = 35.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -352,16 +352,16 @@ align = 0
 items = [ "1", null, false, -1, null, "2", null, false, -1, null, "3", null, false, -1, null ]
 selected = 0
 
-[node name="Eyes" type="HBoxContainer" parent="Controls" index="4"]
+[node name="Eyes" type="HBoxContainer" parent="Panel/Controls" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 128.0
-margin_right = 332.0
-margin_bottom = 148.0
+margin_top = 175.0
+margin_right = 211.0
+margin_bottom = 210.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -370,15 +370,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Title" type="Label" parent="Controls/Eyes" index="0"]
+[node name="Title" type="Label" parent="Panel/Controls/Eyes" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 3.0
-margin_right = 33.0
-margin_bottom = 17.0
+margin_top = 7.0
+margin_right = 42.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -390,15 +390,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Controls/Eyes" index="1"]
+[node name="Type" type="OptionButton" parent="Panel/Controls/Eyes" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 37.0
-margin_right = 105.0
-margin_bottom = 20.0
+margin_left = 46.0
+margin_right = 101.75
+margin_bottom = 35.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -416,6 +416,29 @@ flat = false
 align = 0
 items = [ "Blue", null, false, -1, null, "Brown", null, false, -1, null, "Gray", null, false, -1, null, "Green", null, false, -1, null, "Orange", null, false, -1, null, "Purple", null, false, -1, null, "Red", null, false, -1, null, "Yellow", null, false, -1, null ]
 selected = 0
+
+[node name="Title" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 50.0
+margin_right = 1024.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Create new character"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Done" type="Button" parent="." index="2"]
 
@@ -442,17 +465,17 @@ text = "Done"
 flat = false
 align = 1
 
-[node name="Character" parent="." index="3" instance=ExtResource( 1 )]
+[node name="Character" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 511.372, 228.108 )
 
-[connection signal="item_selected" from="Controls/Sex/Type" to="." method="_set_sex"]
+[connection signal="item_selected" from="Panel/Controls/Sex/Type" to="." method="_set_sex"]
 
-[connection signal="item_selected" from="Controls/Race/Type" to="." method="_set_race"]
+[connection signal="item_selected" from="Panel/Controls/Race/Type" to="." method="_set_race"]
 
-[connection signal="item_selected" from="Controls/Skintone/Type" to="." method="_set_skintone"]
+[connection signal="item_selected" from="Panel/Controls/Skintone/Type" to="." method="_set_skintone"]
 
-[connection signal="item_selected" from="Controls/Eyes/Type" to="." method="_set_eyes"]
+[connection signal="item_selected" from="Panel/Controls/Eyes/Type" to="." method="_set_eyes"]
 
 [connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]
 
