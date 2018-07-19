@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tilesets/Dirt.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Grass.tres" type="TileSet" id=2]
@@ -9,28 +9,7 @@
 [ext_resource path="res://Scenes/Objects/Other/Signpost.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Effects/Fire.tscn" type="PackedScene" id=8]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Area2D
-
-var character
-
-func _ready():
-	$Sprite/Animation.play(\"fire\")
-
-func _on_Fire_body_entered(body):
-	$DamageTimer.start()
-	
-func _on_Fire_body_exited(body):
-	if get_overlapping_bodies().empty():
-		$DamageTimer.stop()
-
-func _on_DamageTimer_timeout():
-	for body in get_overlapping_bodies():
-		if body.filename.find(\"player\") > 0 and body.health > 0:
-			body.health -= randi() % 3 + 1"
-
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="Dirt" type="TileMap" parent="." index="0"]
 
@@ -118,7 +97,6 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Z Index" ]
 
 [node name="Fire" parent="Objetcs" index="8" instance=ExtResource( 8 )]
 
-position = Vector2( 361.669, 229.852 )
-script = SubResource( 1 )
+position = Vector2( 523.747, 246.229 )
 
 

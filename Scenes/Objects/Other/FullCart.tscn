@@ -13,7 +13,7 @@ custom_solver_bias = 0.0
 radius = 8.89444
 height = 27.5118
 
-[node name="FullCart" type="StaticBody2D" index="0"]
+[node name="FullCart" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1

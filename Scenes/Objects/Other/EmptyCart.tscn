@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.3914, 29.8782 )
 
-[node name="EmptyCart" type="StaticBody2D" index="0"]
+[node name="EmptyCart" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
