@@ -67,11 +67,15 @@ func _on_Done_pressed():
 	Global.player[\"race\"] = $Panel/Controls/Race/Type.text
 	Global.player[\"skintone\"] = $Panel/Controls/Skintone/Type.text
 	Global.player[\"hair\"] = $Panel/Controls/Hair/Type.text
+	Global.player[\"hair_color\"] = $Panel/Controls/Hair/ColorPicker.color
 	Global.player[\"eyes\"] = $Panel/Controls/Eyes/Type.text
 	get_tree().change_scene(\"res://Scenes/UI/JoinHost.tscn\")
+
+func _on_Color_color_changed(color):
+	$Character/Hair.modulate = color
 "
 
-[node name="PlayerCreation" type="Control" index="0"]
+[node name="PlayerCreation" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -385,6 +389,33 @@ align = 0
 items = [ "Bangs", null, false, -1, null, "BangsLong", null, false, -1, null, "BangsShort", null, false, -1, null, "BedHead", null, false, -1, null, "XLongKnot", null, false, -1, null, "Jewfro", null, false, -1, null, "ShortKnot", null, false, -1, null, "LongHawk", null, false, -1, null, "LongKnot", null, false, -1, null, "Plain", null, false, -1, null, "Messy1", null, false, -1, null, "Messy2", null, false, -1, null, "Mohawk", null, false, -1, null, "Shorthawk", null, false, -1, null, "Ponytail", null, false, -1, null, "Parted", null, false, -1, null, "Pixie", null, false, -1, null, "Loose", null, true, -1, null, "Page", null, true, -1, null, "Page2", null, true, -1, null, "Ponytail2", null, true, -1, null, "Princess", null, true, -1, null, "Long", null, true, -1, null, "ShoulderL", null, true, -1, null, "ShoulderR", null, true, -1, null, "Swoop", null, true, -1, null, "Unkempt", null, true, -1, null, "XLong", null, true, -1, null, "Bunches", null, true, -1, null, "BangsLong2", null, true, -1, null ]
 selected = 0
 
+[node name="ColorPicker" type="ColorPickerButton" parent="Panel/Controls/Hair" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_right = 211.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+color = Color( 1, 1, 1, 1 )
+edit_alpha = false
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
+
 [node name="Skintone" type="HBoxContainer" parent="Panel/Controls" index="4"]
 
 anchor_left = 0.0
@@ -565,12 +596,15 @@ align = 1
 [node name="Character" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 511.372, 228.108 )
+hair_color = Color( 1, 1, 1, 1 )
 
 [connection signal="item_selected" from="Panel/Controls/Sex/Type" to="." method="_set_sex"]
 
 [connection signal="item_selected" from="Panel/Controls/Race/Type" to="." method="_set_race"]
 
 [connection signal="item_selected" from="Panel/Controls/Hair/Type" to="." method="_set_hair"]
+
+[connection signal="color_changed" from="Panel/Controls/Hair/ColorPicker" to="." method="_on_Color_color_changed"]
 
 [connection signal="item_selected" from="Panel/Controls/Skintone/Type" to="." method="_set_skintone"]
 

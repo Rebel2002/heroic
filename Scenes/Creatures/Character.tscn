@@ -11,8 +11,9 @@ script/source = "extends KinematicBody2D
 
 export var game_name = \"\" setget _set_game_name
 export(String, \"Male\", \"Female\") var sex = \"Male\"
-export(String, \"Bangs\", \"Bangslong\") var hair = \"Bangs\"
 export(String, \"Human\", \"Elf\", \"Orc\", \"Skeleton\") var race = \"Human\"
+export(String, \"Bangs\", \"Bangslong\") var hair = \"Bangs\"
+export(Color) var hair_color = Color(1, 1, 1)
 export(String, \"Blue\", \"Brown\", \"Gray\", \"Green\", \"Orange\", \"Purple\", \"Red\", \"Yellow\") var eyes = \"Blue\"
 export (int, 1, 2, 3) var skintone = 1
 export (int) var speed  = 200 # How fast the player will move (pixels/sec).
@@ -39,12 +40,12 @@ func load_sprite():
 						\"/Eyes/\" +
 						eyes +
 						\".png\")
-	if race != \"Orc\":
 		$Hair.texture = load(\"res://Sprites/Creatures/Character/\" +
 						sex +
 						\"/Hairs/\" +
 						hair +
 						\".png\")
+		$Hair.modulate = hair_color
 
 func _set_game_name(string):
 	game_name = string
@@ -355,8 +356,9 @@ collision/safe_margin = 0.08
 script = SubResource( 1 )
 game_name = ""
 sex = "Male"
-hair = "Bangs"
 race = "Human"
+hair = "Bangs"
+hair_color = Color( 1, 1, 1, 1 )
 eyes = "Blue"
 skintone = 1
 speed = 200
