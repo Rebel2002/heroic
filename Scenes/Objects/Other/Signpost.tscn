@@ -20,12 +20,13 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 0, 9 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="Collision" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.170437, 18.6646 )
+position = Vector2( -0.170435, 27.6646 )
 rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
