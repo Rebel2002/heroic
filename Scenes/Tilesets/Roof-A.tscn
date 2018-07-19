@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.9743, 15.9493 )
 
-[node name="RoofA" type="Node" index="0"]
+[node name="RoofA" type="Node"]
 
 [node name="Roof1" type="Sprite" parent="." index="0"]
 
@@ -17,23 +17,9 @@ region_rect = Rect2( 0, 0, 32, 32 )
 region_filter_clip = true
 _sections_unfolded = [ "Region" ]
 
-[node name="StaticBody" type="StaticBody2D" parent="Roof1" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Collision" type="CollisionPolygon2D" parent="Roof1/StaticBody" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -16.0272, -5.4656, 15.8679, -16.02, 15.9839, 16.2231, -15.9112, 16.2231 )
-
 [node name="Roof2" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 32, 32 )
@@ -62,24 +48,9 @@ region_rect = Rect2( 64, 0, 32, 32 )
 region_filter_clip = true
 _sections_unfolded = [ "Region" ]
 
-[node name="StaticBody" type="StaticBody2D" parent="Roof3" index="0"]
-
-position = Vector2( 1.36076, -2.51217 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Collision" type="CollisionPolygon2D" parent="Roof3/StaticBody" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -17.6199, -13.9717, 14.7391, -3.7653, 14.8551, 18.8512, -17.5039, 18.7353 )
-
 [node name="Roof4" type="Sprite" parent="." index="3"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 32, 32 )
@@ -102,6 +73,7 @@ shape = SubResource( 1 )
 
 [node name="Roof5" type="Sprite" parent="." index="4"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 32, 32, 32 )
@@ -124,6 +96,7 @@ shape = SubResource( 1 )
 
 [node name="Roof6" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 32, 32 )
@@ -146,6 +119,7 @@ shape = SubResource( 1 )
 
 [node name="Roof7" type="Sprite" parent="." index="6"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 32, 32 )
@@ -168,6 +142,7 @@ shape = SubResource( 1 )
 
 [node name="Roof8" type="Sprite" parent="." index="7"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 64, 32, 32 )
@@ -190,6 +165,7 @@ shape = SubResource( 1 )
 
 [node name="Roof9" type="Sprite" parent="." index="8"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 64, 32, 32 )
@@ -212,6 +188,7 @@ shape = SubResource( 1 )
 
 [node name="Roof10" type="Sprite" parent="." index="9"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 96, 32, 32 )
@@ -234,6 +211,7 @@ shape = SubResource( 1 )
 
 [node name="Roof11" type="Sprite" parent="." index="10"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 96, 32, 32 )
@@ -256,6 +234,7 @@ shape = SubResource( 1 )
 
 [node name="Roof12" type="Sprite" parent="." index="11"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 96, 0, 32, 32 )
@@ -278,6 +257,7 @@ shape = SubResource( 1 )
 
 [node name="Roof13" type="Sprite" parent="." index="12"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 0, 32, 32 )
@@ -300,6 +280,7 @@ shape = SubResource( 1 )
 
 [node name="Roof14" type="Sprite" parent="." index="13"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 160, 0, 32, 32 )
@@ -328,20 +309,6 @@ region_rect = Rect2( 96, 32, 32, 32 )
 region_filter_clip = true
 _sections_unfolded = [ "Region" ]
 
-[node name="StaticBody" type="StaticBody2D" parent="Roof15" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Collision" type="CollisionShape2D" parent="Roof15/StaticBody" index="0"]
-
-shape = SubResource( 1 )
-
 [node name="Roof16" type="Sprite" parent="." index="15"]
 
 texture = ExtResource( 1 )
@@ -349,20 +316,6 @@ region_enabled = true
 region_rect = Rect2( 128, 32, 32, 32 )
 region_filter_clip = true
 _sections_unfolded = [ "Region" ]
-
-[node name="StaticBody" type="StaticBody2D" parent="Roof16" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Collision" type="CollisionShape2D" parent="Roof16/StaticBody" index="0"]
-
-shape = SubResource( 1 )
 
 [node name="Roof17" type="Sprite" parent="." index="16"]
 
@@ -372,22 +325,9 @@ region_rect = Rect2( 160, 32, 32, 32 )
 region_filter_clip = true
 _sections_unfolded = [ "Region" ]
 
-[node name="StaticBody" type="StaticBody2D" parent="Roof17" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Collision" type="CollisionShape2D" parent="Roof17/StaticBody" index="0"]
-
-shape = SubResource( 1 )
-
 [node name="Roof18" type="Sprite" parent="." index="17"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 32, 32, 32 )
@@ -410,6 +350,7 @@ shape = SubResource( 1 )
 
 [node name="Roof19" type="Sprite" parent="." index="18"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 96, 64, 32, 32 )
@@ -432,6 +373,7 @@ shape = SubResource( 1 )
 
 [node name="Roof20" type="Sprite" parent="." index="19"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 64, 32, 32 )
@@ -454,6 +396,7 @@ shape = SubResource( 1 )
 
 [node name="Roof21" type="Sprite" parent="." index="20"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 160, 64, 32, 32 )
@@ -476,6 +419,7 @@ shape = SubResource( 1 )
 
 [node name="Roof22" type="Sprite" parent="." index="21"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 64, 32, 32 )
@@ -498,6 +442,7 @@ shape = SubResource( 1 )
 
 [node name="Roof23" type="Sprite" parent="." index="22"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 96, 96, 32, 32 )
@@ -520,6 +465,7 @@ shape = SubResource( 1 )
 
 [node name="Roof24" type="Sprite" parent="." index="23"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 96, 32, 32 )
@@ -542,6 +488,7 @@ shape = SubResource( 1 )
 
 [node name="Roof25" type="Sprite" parent="." index="24"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 160, 96, 32, 32 )
@@ -564,6 +511,7 @@ shape = SubResource( 1 )
 
 [node name="Roof26" type="Sprite" parent="." index="25"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 96, 32, 32 )

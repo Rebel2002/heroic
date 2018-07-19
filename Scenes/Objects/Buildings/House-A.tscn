@@ -1,12 +1,63 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tilesets/Walls-B.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Roof-A.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Objects/Buildings/Parts/Window.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Buildings/Parts/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/Buildings/Parts/WindowFlowers.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Buildings/Parts/HouseStairs.tscn" type="PackedScene" id=6]
 
-[node name="House" type="Node2D" index="0"]
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+export(int, 16) var door = 1 setget _set_door
+export(int, 2) var stairs = 1 setget _set_stairs
+export(int, 4) var chimney = 0
+export(int, 6) var window_flowers = 0 setget _set_window_flowers
+
+func _ready():
+	pass
+
+func _set_door(value):
+	door = value
+	
+	if (has_node(\"Door\")):
+		if value == 0:
+			$Door.visible = false
+		else:
+			$Door.frame = value - 1
+
+func _set_stairs(value):
+	stairs = value
+	
+	if (has_node(\"HouseStairs\")):
+		if value == 0:
+			$HouseStairs.visible = false
+		else:
+			$HouseStairs/Sprite.frame = value - 1
+
+func _set_chimney(value):
+	chimney = value
+
+func _set_window_flowers(value):
+	window_flowers = value
+	
+	if (has_node(\"WindowFlowers\")):
+		if value == 0:
+			$WindowFlowers.visible = false
+			$WindowFlowers2.visible = false
+		else:
+			$WindowFlowers.frame = value - 1
+			$WindowFlowers2.frame = value - 1"
+
+[node name="House" type="Node2D"]
+
+script = SubResource( 1 )
+door = 1
+stairs = 1
+chimney = 0
+window_flowers = 2
 
 [node name="Walls" type="TileMap" parent="." index="0"]
 
@@ -49,7 +100,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 458763, 0, 0, 458764, 1, 0, 458765, 1, 0, 458766, 2, 0, 524299, 3, 0, 524300, 4, 0, 524301, 4, 0, 524302, 5, 0, 589835, 6, 0, 589836, 7, 0, 589837, 7, 0, 589838, 8, 0 )
+tile_data = PoolIntArray( 458763, 0, 0, 458764, 1, 0, 458765, 1, 0, 458766, 2, 0, 524299, 3, 0, 524300, 4, 0, 524301, 4, 0, 524302, 5, 0, 589835, 6, 0, 589837, 7, 0, 589838, 8, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="Roof" type="TileMap" parent="." index="2"]
@@ -91,15 +142,19 @@ frame = 4
 
 [node name="Door" parent="." index="6" instance=ExtResource( 4 )]
 
-position = Vector2( 60.6469, 93.3342 )
+position = Vector2( 62.4341, 94.5596 )
 frame = 6
 
 [node name="WindowFlowers" parent="." index="7" instance=ExtResource( 5 )]
 
-position = Vector2( -33.1001, 62.0852 )
+position = Vector2( -33, 60 )
 
 [node name="WindowFlowers2" parent="." index="8" instance=ExtResource( 5 )]
 
-position = Vector2( -92.077, 62.0852 )
+position = Vector2( -92, 60 )
+
+[node name="HouseStairs" parent="." index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 62.3607, 129.613 )
 
 

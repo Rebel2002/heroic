@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/Buildings/HouseStairs.png" type="Texture" id=1]
 
@@ -6,6 +6,11 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 0.385719, 11.9962 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 0.385719, 15.248 )
 
 [node name="HouseStairs" type="StaticBody2D"]
 
@@ -16,22 +21,30 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Collision", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 0, 1 )
 texture = ExtResource( 1 )
 hframes = 2
 _sections_unfolded = [ "Animation" ]
 
 [node name="LeftCollision" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -15.622, -0.00679493 )
+position = Vector2( -15.622, 0.993206 )
 shape = SubResource( 1 )
 
 [node name="RightCollision" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 15.6244, -0.00111389 )
+position = Vector2( 15.6244, 0.998886 )
 shape = SubResource( 1 )
+
+[node name="TopCollision" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0.00781918, -10.6181 )
+rotation = 1.5708
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
