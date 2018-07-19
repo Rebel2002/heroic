@@ -26,15 +26,18 @@ content_margin_bottom = -1.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 7.625
-margin_right = 6.75
+margin_right = 7.5
 margin_top = 7.125
 margin_bottom = 11.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
 expand_margin_bottom = 0.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
+_sections_unfolded = [ "Axis Stretch" ]
 
 [sub_resource type="StyleBoxTexture" id=3]
 
@@ -305,5 +308,5 @@ PopupMenu/styles/hover = null
 PopupMenu/styles/panel = SubResource( 14 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
-_sections_unfolded = [ "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "OptionButton/styles", "Panel/styles", "PopupMenu", "PopupMenu/fonts" ]
+_sections_unfolded = [ "Button", "Button/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "OptionButton/styles", "Panel/styles", "PopupMenu/fonts", "PopupMenu/icons", "PopupMenu/styles" ]
 
