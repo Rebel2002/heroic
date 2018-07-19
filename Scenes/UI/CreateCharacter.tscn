@@ -75,7 +75,7 @@ func _on_Color_color_changed(color):
 	$Character/Hair.modulate = color
 "
 
-[node name="PlayerCreation" type="Control"]
+[node name="PlayerCreation" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -596,7 +596,6 @@ align = 1
 [node name="Character" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 511.372, 228.108 )
-hair_color = Color( 1, 1, 1, 1 )
 
 [connection signal="item_selected" from="Panel/Controls/Sex/Type" to="." method="_set_sex"]
 
