@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=28 format=2]
+[gd_resource type="Theme" load_steps=26 format=2]
 
 [ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/UI/ButtonLongBlueHovered.png" type="Texture" id=2]
@@ -83,7 +83,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=16]
+[sub_resource type="StyleBoxTexture" id=5]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -102,7 +102,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=15]
+[sub_resource type="StyleBoxTexture" id=6]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -123,7 +123,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 
 size = 16
 use_mipmaps = false
@@ -131,7 +131,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 
 size = 14
 use_mipmaps = false
@@ -139,7 +139,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=9]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -161,7 +161,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=10]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -183,7 +183,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Modulate" ]
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=11]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -202,7 +202,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=12]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -221,7 +221,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=13]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -240,7 +240,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=14]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -262,40 +262,6 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
 
-[sub_resource type="StyleBoxTexture" id=17]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-margin_left = 0.0
-margin_right = 0.0
-margin_top = 0.0
-margin_bottom = 0.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=18]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-margin_left = 0.0
-margin_right = 0.0
-margin_top = 0.0
-margin_bottom = 0.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
 [resource]
 
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
@@ -314,26 +280,26 @@ HSlider/icons/grabber_disabled = null
 HSlider/icons/grabber_highlight = ExtResource( 6 )
 HSlider/icons/tick = null
 HSlider/styles/focus = null
-HSlider/styles/grabber_area = SubResource( 16 )
+HSlider/styles/grabber_area = SubResource( 5 )
 HSlider/styles/grabber_disabled = null
 HSlider/styles/grabber_highlight = null
-HSlider/styles/slider = SubResource( 15 )
+HSlider/styles/slider = SubResource( 6 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 5 )
+Label/fonts/font = SubResource( 7 )
 Label/styles/normal = null
 LineEdit/colors/cursor_color = Color( 0.941176, 0.941176, 0.941176, 1 )
 LineEdit/colors/font_color = Color( 0.277344, 0.277344, 0.277344, 1 )
 LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
 LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 LineEdit/constants/minimum_spaces = 16
-LineEdit/fonts/font = SubResource( 6 )
-LineEdit/styles/focus = SubResource( 7 )
-LineEdit/styles/normal = SubResource( 8 )
+LineEdit/fonts/font = SubResource( 8 )
+LineEdit/styles/focus = SubResource( 9 )
+LineEdit/styles/normal = SubResource( 10 )
 LineEdit/styles/read_only = null
 OptionButton/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
@@ -345,27 +311,11 @@ OptionButton/fonts/font = null
 OptionButton/icons/arrow = null
 OptionButton/styles/disabled = null
 OptionButton/styles/focus = null
-OptionButton/styles/hover = SubResource( 9 )
-OptionButton/styles/normal = SubResource( 10 )
-OptionButton/styles/pressed = SubResource( 11 )
-Panel/styles/panel = SubResource( 12 )
+OptionButton/styles/hover = SubResource( 11 )
+OptionButton/styles/normal = SubResource( 12 )
+OptionButton/styles/pressed = SubResource( 13 )
+Panel/styles/panel = SubResource( 14 )
 Panel/styles/panelf = null
 Panel/styles/panelnc = null
-PopupMenu/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
-PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
-PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
-PopupMenu/colors/font_color_hover = Color( 0.878431, 0.878431, 0.878431, 1 )
-PopupMenu/constants/hseparation = 4
-PopupMenu/constants/vseparation = 4
-PopupMenu/fonts/font = null
-PopupMenu/icons/checked = null
-PopupMenu/icons/radio_checked = null
-PopupMenu/icons/radio_unchecked = null
-PopupMenu/icons/submenu = null
-PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = SubResource( 17 )
-PopupMenu/styles/panel = SubResource( 18 )
-PopupMenu/styles/panel_disabled = null
-PopupMenu/styles/separator = null
-_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "OptionButton/styles", "Panel", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu", "PopupMenu/fonts", "PopupMenu/styles", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
+_sections_unfolded = [ "Button", "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "Panel", "PanelContainer", "PanelContainer/styles", "PopupMenu", "PopupMenu/fonts", "PopupMenu/styles", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
 
