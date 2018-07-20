@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Creatures/Character/Male/Hairs/BedHead.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Creatures/Character/Male/Eyes/Blue.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Sprites/UI/BackBar.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=6]
 
 [sub_resource type="GDScript" id=1]
@@ -450,10 +450,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -57.0
-margin_top = -86.0
-margin_right = -7.0
-margin_bottom = -73.0
+margin_left = -77.0
+margin_top = -78.0
+margin_right = 12.0
+margin_bottom = -64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -474,9 +474,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -78.0
-margin_top = -73.0
-margin_right = 12.0
+margin_left = -56.0
+margin_top = -64.0
+margin_right = -9.0
 margin_bottom = -53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -497,9 +497,11 @@ texture_progress = ExtResource( 6 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
-stretch_margin_left = 7
-stretch_margin_right = 7
-_sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+_sections_unfolded = [ "Textures" ]
 
 [node name="Collision" type="CollisionShape2D" parent="." index="5"]
 
