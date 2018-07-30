@@ -10,3 +10,6 @@
 *.x86_64
 *.x86
 *.pck
+
+# Export config file
+export_presets.cfg
