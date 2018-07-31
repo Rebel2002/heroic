@@ -14,7 +14,13 @@ func _on_InputField_text_entered(new_text):
 	rpc(\"send_message\", Global.id, new_text)
 	
 sync func send_message(id, new_text):
-	$ChatWindow.text += Global.players[id][\"nickname\"] + \": \" + new_text + \"\\n\""
+	$ChatWindow.text += \"\\n\" + Global.players[id][\"nickname\"] + \": \" + new_text
+	
+remote func announce_connected(player_name):
+	$ChatWindow.text += \"\\n\" + player_name + \" has joined the game.\" 
+		
+func announce_disconnected(player_name):
+	$ChatWindow.text += \"\\n\" + player_name + \" has left the game.\" "
 
 [sub_resource type="DynamicFont" id=2]
 

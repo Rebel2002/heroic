@@ -92,7 +92,7 @@ func _process(delta):
 remote func _set_position(newPosition):
 	get_parent().position = newPosition"
 
-[node name="Player" index="0" groups=[
+[node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
 
