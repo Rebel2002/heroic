@@ -42,7 +42,7 @@ func remove_player(id):
 func _process(delta):
 	pass"
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = SubResource( 1 )
 

@@ -77,7 +77,7 @@ func _on_Color_color_changed(color):
 	$Character/Hair.modulate = color
 "
 
-[node name="PlayerCreation" type="Control" index="0"]
+[node name="PlayerCreation" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
