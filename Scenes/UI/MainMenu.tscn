@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Styles/Menu.tres" type="Theme" id=1]
+[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Styles/LabelFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=3]
 
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
 }
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
