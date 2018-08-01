@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Styles/Menu.tres" type="Theme" id=1]
+[ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=2]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends CanvasLayer
 
@@ -14,30 +15,30 @@ func _on_InputField_text_entered(new_text):
 	rpc(\"send_message\", Global.id, new_text)
 	
 sync func send_message(id, new_text):
-	$ChatWindow.text += \"\\n\" + Global.players[id][\"nickname\"] + \": \" + new_text
+	$ChatWindow.bbcode_text += \"\\n[color=green]\" + Global.players[id][\"nickname\"] + \"[/color]: \" + new_text
 	
 remote func announce_connected(player_name):
-	$ChatWindow.text += \"\\n\" + player_name + \" has joined the game.\" 
+	$ChatWindow.bbcode_text += \"\\n[color=gray]\" + player_name + \" has joined the game.[/color]\" 
 		
 func announce_disconnected(player_name):
-	$ChatWindow.text += \"\\n\" + player_name + \" has left the game.\" "
+	$ChatWindow.bbcode_text += \"\\n[color=gray]\" + player_name + \" has left the game.[/color]\" "
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 14
+size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Chat" type="CanvasLayer"]
+[node name="Chat" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="." index="0"]
 
@@ -73,7 +74,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-bbcode_enabled = false
+theme = ExtResource( 1 )
+bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
@@ -84,7 +86,7 @@ scroll_active = true
 scroll_following = true
 selection_enabled = true
 override_selected_font_color = false
-_sections_unfolded = [ "Caret", "Focus", "Grow Direction", "Hint", "Mouse", "Pause", "Rect", "Size Flags", "Visibility", "custom_constants" ]
+_sections_unfolded = [ "BBCode", "Caret", "Focus", "Grow Direction", "Hint", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
 
 [node name="InputField" type="LineEdit" parent="." index="2"]
 
@@ -110,7 +112,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-_sections_unfolded = [ "Anchor", "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Theme", "custom_fonts" ]
 
 [connection signal="text_entered" from="InputField" to="." method="_on_InputField_text_entered"]
 
