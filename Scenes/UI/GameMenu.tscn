@@ -1,0 +1,168 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+func _ready():
+	pass
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"ui_cancel\"):
+		if is_visible_in_tree():
+			visible = false
+		else:
+			visible = true
+
+func _on_Settings_pressed():
+	pass # Settings? We don't need settings.
+
+func _on_MainMenu_pressed():
+	get_tree().change_scene(\"res://Scenes/UI/MainMenu.tscn\")
+
+func _on_Quit_pressed():
+	get_tree().quit()
+"
+
+[node name="GameMenu" type="Control" index="0"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 508.0
+margin_bottom = 299.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = SubResource( 1 )
+_sections_unfolded = [ "Material" ]
+
+[node name="Panel" type="Panel" parent="." index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -133.5
+margin_right = 160.0
+margin_bottom = 132.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="Buttons" type="VBoxContainer" parent="Panel" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -79.0
+margin_right = 89.0
+margin_bottom = 79.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 16
+alignment = 0
+_sections_unfolded = [ "Margin", "custom_constants" ]
+
+[node name="Settings" type="Button" parent="Panel/Buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 178.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Settings"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_fonts", "custom_styles" ]
+
+[node name="MainMenu" type="Button" parent="Panel/Buttons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 58.0
+margin_right = 178.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Main nenu"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags", "Textures", "Theme", "custom_constants", "custom_styles" ]
+
+[node name="Quit" type="Button" parent="Panel/Buttons" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 116.0
+margin_right = 178.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Quit"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "Size Flags", "Theme", "custom_styles" ]
+
+[connection signal="pressed" from="Panel/Buttons/Settings" to="." method="_on_Settings_pressed"]
+
+[connection signal="pressed" from="Panel/Buttons/MainMenu" to="." method="_on_MainMenu_pressed"]
+
+[connection signal="pressed" from="Panel/Buttons/Quit" to="." method="_on_Quit_pressed"]
+
+

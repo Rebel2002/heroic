@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/UI/Chat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/TouchControls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Locations/World.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/GameMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -52,5 +53,7 @@ script = SubResource( 1 )
 [node name="TouchControls" parent="." index="1" instance=ExtResource( 2 )]
 
 [node name="World" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="GameMenu" parent="." index="3" instance=ExtResource( 4 )]
 
 
