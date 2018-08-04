@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Creatures/Character.tscn" type="PackedScene" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Camera2D
 
@@ -11,7 +11,7 @@ func _ready():
 		make_current()
 "
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Node
 
@@ -136,10 +136,10 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="Movement" type="Node" parent="." index="7"]
 
-script = SubResource( 1 )
+script = SubResource( 2 )
 
 

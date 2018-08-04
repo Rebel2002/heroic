@@ -3,17 +3,21 @@
 [ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends CanvasLayer
 
 func _ready():
 	pass
+	
+func _process(delta):
+	if Input.is_action_pressed(\"ui_accept\"):
+		$InputField.grab_focus()
 
 func _on_InputField_text_entered(new_text):
-	$InputField.text = \"\"
-	rpc(\"send_message\", Global.id, new_text)
+	if $InputField.text != \"\":
+		$InputField.text = \"\"
+		rpc(\"send_message\", Global.id, new_text)
 	
 sync func send_message(id, new_text):
 	$ChatWindow.bbcode_text += \"\\n[color=green]\" + Global.players[id][\"nickname\"] + \"[/color]: \" + new_text
