@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprites/Creatures/Character/Male/Races/Human/1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Creatures/Character/Male/Hairs/BedHead.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/Emote.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/EmoteType.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 
@@ -66,7 +68,32 @@ func _set_health(value):
 		can_move = false
 		$Body/Animation.play(\"death\")
 		$Hair/Animation.play(\"death\")
-		$Eyes/Animation.play(\"death\")"
+		$Eyes/Animation.play(\"death\")
+
+func say(text):
+	$Speech/RichTextLabel.text = text
+	
+	# Vertical size
+	var lines = ceil(float(text.length()) / 16)
+	$Speech/RichTextLabel.rect_size.y = 14 + 14 * lines
+	$Speech/RichTextLabel.rect_position.y = -14 * (lines - 1)
+	
+	# Horizontal size
+	if (text.length() <= 4):
+		$Speech/RichTextLabel.rect_size.x = 42
+	elif (text.length() <= 16):
+		$Speech/RichTextLabel.rect_size.x = 14 + text.length() * 6.25
+	else:
+		$Speech/RichTextLabel.rect_size.x = 100
+	
+	$Speech.visible = true
+	
+	# Wait and hide dialog
+	$Speech/DisplayTimer.start()
+
+func _on_SpeechDisplayTimer_timeout():
+	$Speech.visible = false
+"
 
 [sub_resource type="Animation" id=2]
 
@@ -354,6 +381,34 @@ custom_solver_bias = 0.0
 radius = 4.05609
 height = 17.8203
 
+[sub_resource type="StyleBoxTexture" id=19]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 96, 32 )
+margin_left = 7.0
+margin_right = 6.5
+margin_top = 6.5
+margin_bottom = 6.625
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+_sections_unfolded = [ "Axis Stretch", "Content Margin", "Expand Margin", "Margin" ]
+
+[sub_resource type="DynamicFont" id=20]
+
+size = 12
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
+
 [node name="Character" type="KinematicBody2D" index="0"]
 
 position = Vector2( 503.016, 274.934 )
@@ -509,5 +564,83 @@ position = Vector2( -1.1722, 26.9568 )
 rotation = 1.5708
 shape = SubResource( 18 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Speech" type="Control" parent="." index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -15.0
+margin_top = -64.0
+margin_right = 85.0
+margin_bottom = -21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Speech" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 100.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = SubResource( 19 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Rect" ]
+
+[node name="AdditionalTexture" type="TextureRect" parent="Speech" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 25.0
+margin_right = 29.0
+margin_bottom = 43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 8 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="DisplayTimer" type="Timer" parent="Speech" index="2"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Speech/DisplayTimer" to="." method="_on_SpeechDisplayTimer_timeout"]
 
 
