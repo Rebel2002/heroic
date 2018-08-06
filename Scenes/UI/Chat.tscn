@@ -92,7 +92,7 @@ scroll_active = true
 scroll_following = true
 selection_enabled = true
 override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Caret", "Focus", "Grow Direction", "Hint", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_constants" ]
+_sections_unfolded = [ "BBCode", "Caret", "Pause", "Visibility" ]
 
 [node name="InputField" type="LineEdit" parent="." index="2"]
 

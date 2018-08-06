@@ -247,11 +247,11 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 100, 100 )
-margin_left = 7.375
-margin_right = 7.5
-margin_top = 7.75
-margin_bottom = 6.75
+region_rect = Rect2( 0, 0, 48, 48 )
+margin_left = 3.0
+margin_right = 3.125
+margin_top = 3.125
+margin_bottom = 3.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
@@ -260,7 +260,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
-_sections_unfolded = [ "Axis Stretch" ]
+_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="DynamicFont" id=15]
 
@@ -338,5 +338,5 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = SubResource( 15 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu", "PopupMenu/fonts", "PopupMenu/styles", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
+_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "Panel", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu", "PopupMenu/fonts", "PopupMenu/styles", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
 
