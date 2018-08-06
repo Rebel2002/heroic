@@ -4,7 +4,6 @@
 [ext_resource path="res://Styles/LabelFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/Creatures/Character.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Control
@@ -78,7 +77,7 @@ func _on_Color_color_changed(color):
 	$Character/Hair.modulate = color
 "
 
-[node name="PlayerCreation" type="Control"]
+[node name="PlayerCreation" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -417,7 +416,7 @@ flat = false
 align = 1
 color = Color( 1, 1, 1, 1 )
 edit_alpha = false
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
+_sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
 [node name="Skintone" type="HBoxContainer" parent="Panel/Controls" index="4"]
 

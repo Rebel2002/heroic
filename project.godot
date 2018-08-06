@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 
 Global="*res://Scenes/Core/Global.gd"
 
+[display]
+
+mouse_cursor/custom_image="res://Sprites/UI/Cursor.png"
+
 [rendering]
 
 quality/2d/use_pixel_snap=true

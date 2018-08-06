@@ -556,7 +556,7 @@ stretch_margin_left = 3
 stretch_margin_top = 3
 stretch_margin_right = 3
 stretch_margin_bottom = 3
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Radial Fill", "Textures" ]
 
 [node name="Collision" type="CollisionShape2D" parent="." index="5"]
 
@@ -567,6 +567,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Speech" type="Control" parent="." index="6"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0

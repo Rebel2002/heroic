@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/UI/GreySliderUp.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/YellowSliderUp.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/BackBar.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/UI/PanelInsetBeigeLight.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/UI/PanelInsetBeige.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/UI/PanelBrown.png" type="Texture" id=11]
@@ -90,35 +90,35 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 36, 18 )
-margin_left = 9.25
-margin_right = 8.125
-margin_top = 3.0
-margin_bottom = 3.75
+region_rect = Rect2( 0, 0, 6, 10 )
+margin_left = 2.0
+margin_right = 2.0
+margin_top = 2.0
+margin_bottom = 2.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
 expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
+_sections_unfolded = [ "Axis Stretch", "Content Margin", "Expand Margin", "Margin", "Modulate" ]
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=16]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 36, 18 )
-margin_left = 6.875
-margin_right = 7.125
-margin_top = 5.125
-margin_bottom = 5.125
+region_rect = Rect2( 0, 0, 6, 10 )
+margin_left = 2.0
+margin_right = 2.125
+margin_top = 3.0
+margin_bottom = 2.875
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
 expand_margin_bottom = 0.0
-axis_stretch_vertical = 1
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
@@ -291,7 +291,7 @@ HSlider/styles/focus = null
 HSlider/styles/grabber_area = SubResource( 5 )
 HSlider/styles/grabber_disabled = null
 HSlider/styles/grabber_highlight = null
-HSlider/styles/slider = SubResource( 6 )
+HSlider/styles/slider = SubResource( 16 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/constants/line_spacing = 3
@@ -338,5 +338,5 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = SubResource( 15 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-_sections_unfolded = [ "Button", "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "Panel", "PanelContainer", "PanelContainer/styles", "PopupMenu", "PopupMenu/fonts", "PopupMenu/styles", "ReferenceRect", "ReferenceRect/styles", "RichTextLabel", "RichTextLabel/fonts", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
+_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/fonts", "LineEdit/styles", "MenuButton", "MenuButton/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu", "PopupMenu/fonts", "PopupMenu/styles", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
 

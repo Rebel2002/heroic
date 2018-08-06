@@ -63,6 +63,24 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC0
 
+### [UI pack: RPG extension](https://opengameart.org/content/ui-pack-rpg-extension)
+
+**Authors:** Kenney.
+
+**Licenses:** CC0
+
+### [Pixel UI pack](https://www.kenney.nl/assets/pixel-ui-pack)
+
+**Authors:** Kenney.
+
+**Licenses:** CC0
+
+### [Knight's Glove Mouse Cursor +](https://opengameart.org/content/knights-glove-mouse-cursor-0)
+
+**Authors:** XOR.
+
+**Licenses:** CC-BY-SA 3.0
+
 ## Used Fonts
 
 ### [basis33](https://github.com/Manchson/basis33)
