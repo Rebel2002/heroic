@@ -82,7 +82,7 @@ func say(text):
 	if (text.length() <= 4):
 		$Speech/RichTextLabel.rect_size.x = 42
 	elif (text.length() <= 16):
-		$Speech/RichTextLabel.rect_size.x = 14 + text.length() * 6.25
+		$Speech/RichTextLabel.rect_size.x = 14 + text.length() * 6.5
 	else:
 		$Speech/RichTextLabel.rect_size.x = 100
 	

@@ -55,10 +55,10 @@ _sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=4]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
@@ -142,6 +142,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 2 )
 focus_mode = 2
@@ -150,7 +151,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "custom_styles" ]
 
 [connection signal="text_entered" from="InputField" to="." method="_on_InputField_text_entered"]
 
