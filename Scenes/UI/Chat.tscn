@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
-[ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/UI/PanelBeige.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/PanelBrown.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -29,12 +31,56 @@ remote func announce_connected(player_name):
 func announce_disconnected(player_name):
 	$ChatWindow.bbcode_text += \"\\n[color=gray]\" + player_name + \" has left the game.[/color]\" "
 
+[sub_resource type="StyleBoxTexture" id=5]
+
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 48, 48 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+_sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 48, 48 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+_sections_unfolded = [ "Content Margin", "Margin" ]
+
 [sub_resource type="DynamicFont" id=2]
 
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Chat" type="CanvasLayer"]
@@ -46,24 +92,7 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = SubResource( 1 )
 
-[node name="Panel" type="Panel" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -120.0
-margin_right = 200.0
-margin_bottom = -30.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="ChatWindow" type="RichTextLabel" parent="." index="1"]
+[node name="ChatWindow" type="RichTextLabel" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -81,6 +110,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
@@ -92,9 +123,9 @@ scroll_active = true
 scroll_following = true
 selection_enabled = true
 override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Caret", "Pause", "Visibility" ]
+_sections_unfolded = [ "BBCode", "Caret", "Pause", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="InputField" type="LineEdit" parent="." index="2"]
+[node name="InputField" type="LineEdit" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -111,6 +142,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 2 )
 focus_mode = 2
 context_menu_enabled = true
@@ -118,7 +150,7 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-_sections_unfolded = [ "Anchor", "Margin", "Theme", "custom_fonts" ]
+_sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
 [connection signal="text_entered" from="InputField" to="." method="_on_InputField_text_entered"]
 

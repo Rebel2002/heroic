@@ -71,7 +71,7 @@ func _set_health(value):
 		$Eyes/Animation.play(\"death\")
 
 func say(text):
-	$Speech/RichTextLabel.text = text
+	$Speech/RichTextLabel.bbcode_text = \"[center]\" + text + \"[/center]\"
 	
 	# Vertical size
 	var lines = ceil(float(text.length()) / 16)
@@ -409,7 +409,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" index="0"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
@@ -567,7 +567,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Speech" type="Control" parent="." index="6"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -602,7 +601,7 @@ size_flags_vertical = 1
 custom_styles/normal = SubResource( 19 )
 custom_fonts/normal_font = SubResource( 20 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
+bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
