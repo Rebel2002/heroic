@@ -1,16 +1,19 @@
-[gd_resource type="Theme" load_steps=29 format=2]
+[gd_resource type="Theme" load_steps=32 format=2]
 
 [ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://Sprites/UI/ButtonLongBlueHovered.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/UI/ButtonLongBlue.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/UI/ButtonLongBluePressed.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/BlueButtonHower.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/BlueButtonUp.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/BlueButtonDown.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/UI/GreySliderUp.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/YellowSliderUp.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/UI/PanelInsetBeige.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/UI/PanelBrown.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/UI/PanelBlue.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/UI/ButtonLongBlueHovered.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/UI/ButtonLongBlue.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/UI/ButtonLongBluePressed.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/UI/PanelBrown.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/UI/PanelBlue.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -27,11 +30,11 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 190, 49 )
-margin_left = 7.625
-margin_right = 7.5
-margin_top = 7.125
-margin_bottom = 11.0
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 5.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
@@ -40,7 +43,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
-_sections_unfolded = [ "Axis Stretch" ]
+_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=3]
 
@@ -49,11 +52,11 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 190, 49 )
-margin_left = 6.75
-margin_right = 6.75
-margin_top = 6.75
-margin_bottom = 11.125
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 5.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
@@ -62,7 +65,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Modulate" ]
+_sections_unfolded = [ "Axis Stretch", "Margin", "Modulate" ]
 
 [sub_resource type="StyleBoxTexture" id=4]
 
@@ -71,17 +74,20 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 190, 49 )
-margin_left = 7.0
-margin_right = 6.75
-margin_top = 11.25
-margin_bottom = 6.75
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 5.0
+margin_bottom = 5.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
 expand_margin_bottom = 0.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
+_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=5]
 
@@ -167,7 +173,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 8.0
 margin_right = 6.75
@@ -186,7 +192,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 7.25
 margin_right = 7.5
@@ -205,7 +211,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 7.25
 margin_right = 6.75
@@ -224,7 +230,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
 margin_right = 3.125
@@ -254,7 +260,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
 margin_right = 3.0
@@ -276,7 +282,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
 margin_right = 3.0
@@ -385,5 +391,5 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = SubResource( 15 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit", "LineEdit/colors", "MenuButton", "MenuButton/styles", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu/fonts", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
+_sections_unfolded = [ "Button", "Button/styles", "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/styles", "ItemList", "ItemList/styles", "Label/colors", "LineEdit/colors", "MenuButton", "MenuButton/styles", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu/fonts", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles", "WindowDialog/styles" ]
 

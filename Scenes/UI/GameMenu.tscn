@@ -26,7 +26,7 @@ func _on_Quit_pressed():
 	get_tree().quit()
 "
 
-[node name="GameMenu" type="Control" index="0"]
+[node name="GameMenu" type="Control"]
 
 visible = false
 anchor_left = 0.5
