@@ -21,6 +21,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0 / GPL 3.0
 
+### [LPC Farming tilesets, magic animations and UI elements](https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements)
+
+**Authors:** Daniel Eddeland.
+
+**Licenses:** CC-BY-SA 3.0 / GPL 3.0
+
 ### [LPC trees mega-pack](https://opengameart.org/content/lpc-tree)
 
 **Authors:** bluecarrot16, Jetrel, Zabin, Surt, Buch, Johann Charlot, Gaurav Munjal, Ivan Voirol (Silver IV), Guido Bos, Yar, Paulina Riva (PauR), William.Thompsonj, Casper Nilsson, Hyptosis, ansimuz, qubodup, Bart K., Blarumyrran, Lanea Zimmerman (Sharm), Leonard Pabin, Chris Phillips, Barbara Rivera, and Talosaurus, Stephen Challener and the [Open Surge team](http://opensnc.sourceforge.net).
