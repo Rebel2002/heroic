@@ -6,8 +6,8 @@
 [ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/UI/Emote.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/EmoteType.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/Speech.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 
@@ -409,7 +409,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" index="0"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
