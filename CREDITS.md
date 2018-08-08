@@ -63,6 +63,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY 3.0 / GPL 3.0 / GPL 2.0
 
+### [Animated emote bubbles](https://opengameart.org/content/animated-emote-bubbles)
+
+**Authors:**  Romain Oltra.
+
+**Licenses:** CC0
+
 ### [UI pack: RPG extension](https://opengameart.org/content/ui-pack-rpg-extension)
 
 **Authors:** Kenney.

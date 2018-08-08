@@ -31,7 +31,7 @@ remote func announce_connected(player_name):
 func announce_disconnected(player_name):
 	$ChatWindow.bbcode_text += \"\\n[color=gray]\" + player_name + \" has left the game.[/color]\" "
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -53,7 +53,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=3]
 
 content_margin_left = 6.0
 content_margin_right = 6.0
@@ -75,7 +75,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Content Margin", "Margin" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 
 size = 10
 use_mipmaps = false
@@ -110,7 +110,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = ""
@@ -143,8 +143,8 @@ mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6

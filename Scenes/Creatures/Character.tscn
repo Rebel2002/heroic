@@ -74,15 +74,15 @@ func say(text):
 	$Speech/RichTextLabel.bbcode_text = \"[center]\" + text + \"[/center]\"
 	
 	# Vertical size
-	var lines = ceil(float(text.length()) / 16)
-	$Speech/RichTextLabel.rect_size.y = 14 + 14 * lines
-	$Speech/RichTextLabel.rect_position.y = -14 * (lines - 1)
+	var lines = ceil(float(text.length()) / 17)
+	$Speech/RichTextLabel.rect_size.y = 6 + 14 * lines
+	$Speech/RichTextLabel.rect_position.y = 8 - 14 * (lines - 1)
 	
 	# Horizontal size
 	if (text.length() <= 4):
 		$Speech/RichTextLabel.rect_size.x = 42
-	elif (text.length() <= 16):
-		$Speech/RichTextLabel.rect_size.x = 14 + text.length() * 6.5
+	elif (text.length() <= 17):
+		$Speech/RichTextLabel.rect_size.x = 6 + text.length() * 6.5
 	else:
 		$Speech/RichTextLabel.rect_size.x = 100
 	
@@ -383,23 +383,23 @@ height = 17.8203
 
 [sub_resource type="StyleBoxTexture" id=19]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
+content_margin_left = 3.0
+content_margin_right = 3.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
 texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 96, 32 )
-margin_left = 7.0
-margin_right = 6.5
-margin_top = 6.5
-margin_bottom = 6.625
+region_rect = Rect2( 0, 0, 14, 13 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 3.0
+margin_bottom = 3.0
 expand_margin_left = 0.0
 expand_margin_right = 0.0
 expand_margin_top = 0.0
 expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Content Margin", "Expand Margin", "Margin" ]
+_sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
 
 [sub_resource type="DynamicFont" id=20]
 
@@ -409,7 +409,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" index="0"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
@@ -516,6 +516,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 17 )
+text = "фывфывфы"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -567,22 +568,22 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Speech" type="Control" parent="." index="6"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -15.0
-margin_top = -64.0
+margin_top = -60.0
 margin_right = 85.0
-margin_bottom = -21.0
+margin_bottom = -17.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Speech" index="0"]
 
@@ -607,12 +608,12 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = ""
+text = "asjkdhaskjdhkdff"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Rect" ]
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts", "custom_styles" ]
 
 [node name="AdditionalTexture" type="TextureRect" parent="Speech" index="1"]
 
@@ -621,9 +622,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 11.0
-margin_top = 25.0
+margin_top = 27.0
 margin_right = 29.0
-margin_bottom = 43.0
+margin_bottom = 45.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
