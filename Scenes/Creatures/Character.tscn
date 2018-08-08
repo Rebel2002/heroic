@@ -409,7 +409,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Character" type="KinematicBody2D" index="0"]
+[node name="Character" type="KinematicBody2D"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
@@ -568,22 +568,23 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Speech" type="Control" parent="." index="6"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -15.0
-margin_top = -60.0
+margin_top = -72.0
 margin_right = 85.0
-margin_bottom = -17.0
+margin_bottom = -29.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Speech" index="0"]
 
