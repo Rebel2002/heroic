@@ -24,14 +24,14 @@ ambient_light_sky_contribution = 1.0
 fog_enabled = false
 fog_color = Color( 0.5, 0.6, 0.7, 1 )
 fog_sun_color = Color( 1, 0.9, 0.7, 1 )
-fog_sun_amount = 1.0
+fog_sun_amount = 0.0
 fog_depth_enabled = true
-fog_depth_begin = 100.0
-fog_depth_curve = 14.9285
-fog_transmit_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
 fog_transmit_curve = 1.0
-fog_height_enabled = true
-fog_height_min = -0.2
+fog_height_enabled = false
+fog_height_min = 0.0
 fog_height_max = 100.0
 fog_height_curve = 1.0
 tonemap_mode = 0
@@ -39,7 +39,7 @@ tonemap_exposure = 1.0
 tonemap_white = 1.0
 auto_exposure_enabled = false
 auto_exposure_scale = 0.4
-auto_exposure_min_luma = 0.17
+auto_exposure_min_luma = 0.05
 auto_exposure_max_luma = 8.0
 auto_exposure_speed = 0.5
 ss_reflections_enabled = false
@@ -88,9 +88,9 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Auto Exposure", "Background", "Tonemap" ]
+_sections_unfolded = [ "Background", "Tonemap" ]
 
-[node name="World" type="WorldEnvironment" index="0"]
+[node name="World" type="WorldEnvironment"]
 
 environment = SubResource( 1 )
 
