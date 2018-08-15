@@ -1,60 +1,16 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/UI/CurrentTime.gd" type="Script" id=1]
+[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=2]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends CanvasLayer
-
-func _ready():
-	if get_tree().is_network_server():
-		rpc(\"set_time\", OS.get_time())
-		$MinuteTimer.wait_time = 60 - OS.get_time().second
-		$MinuteTimer.start()
-		$MinuteTimer.wait_time = 60 # For next minutes
-
-sync func set_time(time):
-	var timeString
-	
-	# Set hours
-	if time.hour < 10:
-		timeString = \"0\" + str(time.hour)
-	else:
-		timeString = str(time.hour)
-	
-	timeString += \":\"
-	
-	# Set minutes
-	if time.minute < 10:
-		timeString += \"0\" + str(time.minute)
-	else:
-		timeString += str(time.minute)
-	
-	$Time.text = timeString
-	
-	# Set visibility
-	var minutes = time.hour * 60 + time.minute
-	if time.hour >= 4 && time.hour < 6:
-		get_parent().get_node(\"World\").environment.tonemap_exposure = 0.007 * minutes - 1.52
-	elif time.hour >= 6 && time.hour < 19:
-		get_parent().get_node(\"World\").environment.tonemap_exposure = 1
-	elif time.hour >= 19 && time.hour < 21:
-		get_parent().get_node(\"World\").environment.tonemap_exposure = 8.98 - 0.007 * minutes
-	elif time.hour >= 21 || time.hour < 4:
-		get_parent().get_node(\"World\").environment.tonemap_exposure = 0.16
-
-func _on_MinuteTimer_timeout():
-		rpc(\"set_time\", OS.get_time())
-"
-
-[node name="CurrentTime" type="CanvasLayer" index="0"]
+[node name="CurrentTime" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = SubResource( 1 )
+script = ExtResource( 1 )
 
 [node name="Time" type="Label" parent="." index="0"]
 
@@ -71,7 +27,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 1 )
+theme = ExtResource( 2 )
 align = 2
 valign = 1
 autowrap = true

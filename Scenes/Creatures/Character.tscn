@@ -1,101 +1,16 @@
 [gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://Sprites/Creatures/Character/Male/Races/Human/1.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Creatures/Character/Male/Hairs/BedHead.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Creatures/Character/Male/Eyes/Blue.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/UI/Speech.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Creatures/Character.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Creatures/Character/Male/Races/Human/1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Creatures/Character/Male/Hairs/BedHead.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Creatures/Character/Male/Eyes/Blue.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/Speech.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=9]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends KinematicBody2D
-
-export var game_name = \"\" setget _set_game_name
-export(String, \"Male\", \"Female\") var sex = \"Male\"
-export(String, \"Human\", \"Elf\", \"Orc\", \"Skeleton\") var race = \"Human\"
-export(String) var hair = \"Pixie\"
-export(Color) var hair_color = Color(1, 1, 1)
-export(String, \"Blue\", \"Brown\", \"Gray\", \"Green\", \"Orange\", \"Purple\", \"Red\", \"Yellow\") var eyes = \"Blue\"
-export (int, 1, 2, 3) var skintone = 1
-export (int) var speed  = 200 # How fast the player will move (pixels/sec).
-export (int) var health = 8 setget _set_health
-var can_move = true
-
-func _ready():
-	load_sprite()
-	$HealthBar.max_value = health
-	$HealthBar.value = health
-
-func _process(delta):
-	pass
-
-func load_sprite():
-	$Body.texture = load(\"res://Sprites/Creatures/Character/\" +
-						sex +
-						\"/Races/\" +
-						race +
-						\"/\" +
-						str(skintone) +
-						\".png\")
-	if race != \"Orc\":
-		$Eyes.texture = load(\"res://Sprites/Creatures/Character/\" +
-						sex +
-						\"/Eyes/\" +
-						eyes +
-						\".png\")
-		$Hair.texture = load(\"res://Sprites/Creatures/Character/\" +
-						sex +
-						\"/Hairs/\" +
-						hair +
-						\".png\")
-		$Hair.modulate = hair_color
-
-func _set_game_name(string):
-	game_name = string
-	if has_node(\"Name\"):
-		$Name.text = string
-
-func _set_health(value):
-	health = value
-	
-	if (has_node(\"HealthBar\")):
-		$HealthBar.value = value
-	
-	if health <= 0:
-		can_move = false
-		$Body/Animation.play(\"death\")
-		$Hair/Animation.play(\"death\")
-		$Eyes/Animation.play(\"death\")
-
-func say(text):
-	$Speech/RichTextLabel.bbcode_text = \"[center]\" + text + \"[/center]\"
-	
-	# Vertical size
-	var lines = ceil(float(text.length()) / 17)
-	$Speech/RichTextLabel.rect_size.y = 6 + 14 * lines
-	$Speech/RichTextLabel.rect_position.y = 8 - 14 * (lines - 1)
-	
-	# Horizontal size
-	if (text.length() <= 4):
-		$Speech/RichTextLabel.rect_size.x = 42
-	elif (text.length() <= 17):
-		$Speech/RichTextLabel.rect_size.x = 6 + text.length() * 6.5
-	else:
-		$Speech/RichTextLabel.rect_size.x = 100
-	
-	$Speech.visible = true
-	
-	# Wait and hide dialog
-	$Speech/DisplayTimer.start()
-
-func _on_SpeechDisplayTimer_timeout():
-	$Speech.visible = false
-"
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "death"
 length = 0.4
@@ -112,6 +27,24 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 261, 262, 263, 264, 265 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+length = 0.7
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 131, 132, 133, 134, 135, 136, 137, 138 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -129,7 +62,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 131, 132, 133, 134, 135, 136, 137, 138 ]
+"values": [ 118, 119, 120, 121, 122, 123, 124, 125 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -147,7 +80,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 118, 119, 120, 121, 122, 123, 124, 125 ]
+"values": [ 144, 145, 146, 147, 148, 149, 150, 151 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -165,28 +98,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 144, 145, 146, 147, 148, 149, 150, 151 ]
-}
-
-[sub_resource type="Animation" id=6]
-
-length = 0.7
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
 "values": [ 105, 106, 107, 108, 109, 110, 111, 112 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 resource_name = "death"
 length = 0.4
@@ -205,7 +120,7 @@ tracks/0/keys = {
 "values": [ 261, 262, 263, 264, 265 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 length = 0.7
 loop = true
@@ -221,6 +136,24 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 131, 132, 133, 134, 135, 136, 137, 138 ]
+}
+
+[sub_resource type="Animation" id=8]
+
+length = 0.7
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 118, 119, 120, 121, 122, 123, 124, 125 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -238,7 +171,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 118, 119, 120, 121, 122, 123, 124, 125 ]
+"values": [ 144, 145, 146, 147, 148, 149, 150, 151 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -256,28 +189,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 144, 145, 146, 147, 148, 149, 150, 151 ]
-}
-
-[sub_resource type="Animation" id=11]
-
-length = 0.7
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
 "values": [ 105, 106, 107, 108, 109, 110, 111, 112 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 
 length = 0.4
 loop = false
@@ -295,7 +210,7 @@ tracks/0/keys = {
 "values": [ 261, 262, 263, 264, 265 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 
 length = 0.7
 loop = true
@@ -313,7 +228,7 @@ tracks/0/keys = {
 "values": [ 131, 132, 133, 134, 135, 136, 137, 138 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 
 length = 0.7
 loop = true
@@ -331,7 +246,7 @@ tracks/0/keys = {
 "values": [ 118, 119, 120, 121, 122, 123, 124, 125 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 
 length = 0.7
 loop = true
@@ -349,7 +264,7 @@ tracks/0/keys = {
 "values": [ 144, 145, 146, 147, 148, 149, 150, 151 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 
 length = 0.7
 loop = true
@@ -367,27 +282,27 @@ tracks/0/keys = {
 "values": [ 105, 106, 107, 108, 109, 110, 111, 112 ]
 }
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=16]
 
 size = 12
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="CapsuleShape2D" id=18]
+[sub_resource type="CapsuleShape2D" id=17]
 
 custom_solver_bias = 0.0
 radius = 4.05609
 height = 17.8203
 
-[sub_resource type="StyleBoxTexture" id=19]
+[sub_resource type="StyleBoxTexture" id=18]
 
 content_margin_left = 3.0
 content_margin_right = 3.0
 content_margin_top = 3.0
 content_margin_bottom = 3.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 14, 13 )
 margin_left = 3.0
 margin_right = 3.0
@@ -401,22 +316,22 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=19]
 
 size = 12
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Character" type="KinematicBody2D" index="0"]
+[node name="Character" type="KinematicBody2D"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = SubResource( 1 )
+script = ExtResource( 1 )
 game_name = ""
 sex = "Male"
 race = "Human"
@@ -430,7 +345,7 @@ health = 8
 [node name="Body" type="Sprite" parent="." index="0"]
 
 position = Vector2( -1, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 21
 hframes = 13
 frame = 260
@@ -443,18 +358,18 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/death = SubResource( 2 )
-anims/down = SubResource( 3 )
-anims/left = SubResource( 4 )
-anims/right = SubResource( 5 )
-anims/up = SubResource( 6 )
+anims/death = SubResource( 1 )
+anims/down = SubResource( 2 )
+anims/left = SubResource( 3 )
+anims/right = SubResource( 4 )
+anims/up = SubResource( 5 )
 blend_times = [ "down", "down", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hair" type="Sprite" parent="." index="1"]
 
 position = Vector2( -1, 0 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 21
 hframes = 13
 frame = 260
@@ -467,18 +382,18 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/death = SubResource( 7 )
-anims/down = SubResource( 8 )
-anims/left = SubResource( 9 )
-anims/right = SubResource( 10 )
-anims/up = SubResource( 11 )
+anims/death = SubResource( 6 )
+anims/down = SubResource( 7 )
+anims/left = SubResource( 8 )
+anims/right = SubResource( 9 )
+anims/up = SubResource( 10 )
 blend_times = [ "down", "down", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Eyes" type="Sprite" parent="." index="2"]
 
 position = Vector2( -1, 0 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 vframes = 21
 hframes = 13
 frame = 131
@@ -491,11 +406,11 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/death = SubResource( 12 )
-anims/down = SubResource( 13 )
-anims/left = SubResource( 14 )
-anims/right = SubResource( 15 )
-anims/up = SubResource( 16 )
+anims/death = SubResource( 11 )
+anims/down = SubResource( 12 )
+anims/left = SubResource( 13 )
+anims/right = SubResource( 14 )
+anims/up = SubResource( 15 )
 blend_times = [ "down", "down", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -515,7 +430,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -546,9 +461,9 @@ page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 5 )
+texture_under = ExtResource( 6 )
 texture_over = null
-texture_progress = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
@@ -562,11 +477,12 @@ _sections_unfolded = [ "Radial Fill", "Textures" ]
 
 position = Vector2( -1.1722, 26.9568 )
 rotation = 1.5708
-shape = SubResource( 18 )
+shape = SubResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Speech" type="Control" parent="." index="6"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -600,8 +516,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = SubResource( 19 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 19 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = ""
@@ -632,7 +548,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 

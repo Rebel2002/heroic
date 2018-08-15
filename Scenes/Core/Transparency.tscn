@@ -1,27 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://Scripts/Core/Transparency.gd" type="Script" id=1]
+
 [sub_resource type="CanvasItemMaterial" id=1]
 
 render_priority = 0
 blend_mode = 0
 light_mode = 0
 _sections_unfolded = [ "Resource" ]
-
-[sub_resource type="GDScript" id=2]
-
-script/source = "extends Area2D
-
-func _ready():
-	pass
-
-func _on_Transparency_body_entered(body):
-	if body.is_in_group(\"Players\") and body.is_network_master():
-		get_owner().modulate = Color(1, 1, 1, 0.5)
-
-
-func _on_Transparency_body_exited(body):
-	if body.is_in_group(\"Players\") and body.is_network_master():
-		 get_owner().modulate = Color(1, 1, 1, 1)"
 
 [node name="Transparency" type="Area2D" index="0"]
 
@@ -33,7 +19,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = SubResource( 2 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Material" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Transparency_body_entered"]

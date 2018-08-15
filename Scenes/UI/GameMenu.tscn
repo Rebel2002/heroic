@@ -1,34 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Control
-
-func _ready():
-	pass
-
-func _process(delta):
-	if Input.is_action_just_pressed(\"ui_cancel\"):
-		if is_visible_in_tree():
-			visible = false
-		else:
-			visible = true
-
-func _on_Settings_pressed():
-	pass # Settings? We don't need settings.
-
-func _on_MainMenu_pressed():
-	get_tree().change_scene(\"res://Scenes/UI/MainMenu.tscn\")
-
-func _on_Quit_pressed():
-	get_tree().quit()
-"
+[ext_resource path="res://Scripts/UI/GameMenu.gd" type="Script" id=1]
+[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=2]
 
 [node name="GameMenu" type="Control"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -43,7 +19,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = SubResource( 1 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Material" ]
 
 [node name="Panel" type="Panel" parent="." index="0"]
@@ -62,7 +38,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 1 )
+theme = ExtResource( 2 )
 _sections_unfolded = [ "Theme", "custom_styles" ]
 
 [node name="Buttons" type="VBoxContainer" parent="Panel" index="0"]

@@ -1,100 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Creatures/Player.gd" type="Script" id=2]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Camera2D
-
-func _ready():
-	if get_parent().is_network_master():
-		make_current()
-"
-
-[sub_resource type="GDScript" id=2]
-
-script/source = "extends Node
-
-sync var velocity = Vector2()
-
-func _ready():
-	pass
-
-func _process(delta):
-	if get_parent().can_move:
-		if (is_network_master()):
-			velocity = Vector2()
-			
-			# Change the player's vector depending on the keys
-			if Input.is_action_pressed(\"ui_up\"):
-				velocity.y -= 1
-			if Input.is_action_pressed(\"ui_left\"):
-			 	velocity.x -= 1
-			if Input.is_action_pressed(\"ui_down\"):
-			 	velocity.y += 1
-			if Input.is_action_pressed(\"ui_right\"):
-				velocity.x += 1
-		
-			# Normalize vector
-			if velocity.length() > 0:
-	        	velocity = velocity.normalized() * get_parent().speed
-			
-			rset(\"velocity\", velocity)
-		
-		get_parent().move_and_collide(velocity * delta)
-		if (is_network_master()):
-			rpc(\"_set_position\", get_parent().position)
-		
-		# Animate movement
-		if velocity.x == 0 and velocity.y < 0:
-			if $\"../Body/Animation\".current_animation != \"up\":
-				$\"../Body/Animation\".play(\"up\")
-				$\"../Hair/Animation\".play(\"up\")
-				$\"../Eyes/Animation\".play(\"up\")
-		elif velocity.x < 0:
-			if $\"../Body/Animation\".current_animation != \"left\":
-				$\"../Body/Animation\".play(\"left\")
-				$\"../Hair/Animation\".play(\"left\")
-				$\"../Eyes/Animation\".play(\"left\")
-		elif velocity.x == 0 and velocity.y > 0:
-			if $\"../Body/Animation\".current_animation != \"down\":
-				$\"../Body/Animation\".play(\"down\")
-				$\"../Hair/Animation\".play(\"down\")
-				$\"../Eyes/Animation\".play(\"down\")
-		elif velocity.x > 0:
-			if $\"../Body/Animation\".current_animation != \"right\":
-				$\"../Body/Animation\".play(\"right\")
-				$\"../Hair/Animation\".play(\"right\")
-				$\"../Eyes/Animation\".play(\"right\")
-		else:
-			match $\"../Body/Animation\".current_animation:
-				\"up\":
-					$\"../Body\".set_frame(104)
-					$\"../Hair\".set_frame(104)
-					$\"../Eyes\".set_frame(104)
-				\"left\":
-					$\"../Body\".set_frame(117)
-					$\"../Hair\".set_frame(117)
-					$\"../Eyes\".set_frame(117)
-				\"down\":
-					$\"../Body\".set_frame(130)
-					$\"../Hair\".set_frame(130)
-					$\"../Eyes\".set_frame(130)
-				\"right\":
-					$\"../Body\".set_frame(143)
-					$\"../Hair\".set_frame(143)
-					$\"../Eyes\".set_frame(143)
-				_:
-					$\"../Body/Animation\".stop()
-					$\"../Hair/Animation\".stop()
-					$\"../Eyes/Animation\".stop()
-
-remote func _set_position(newPosition):
-	get_parent().position = newPosition"
-
-[node name="Player" groups=[
+[node name="Player" index="0" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
 
 [node name="Body" parent="." index="0"]
 
@@ -112,7 +25,11 @@ editor/display_folded = true
 
 position = Vector2( -0.172241, 26.9568 )
 
-[node name="Camera" type="Camera2D" parent="." index="6"]
+[node name="Speech" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="Camera" type="Camera2D" parent="." index="7"]
 
 anchor_mode = 1
 rotating = false
@@ -136,10 +53,5 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = SubResource( 1 )
-
-[node name="Movement" type="Node" parent="." index="7"]
-
-script = SubResource( 2 )
 
 

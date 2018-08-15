@@ -1,53 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/UI/JoinHost.gd" type="Script" id=2]
 
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Control
-
-func _ready():
-	get_tree().connect(\"connected_to_server\", self, \"_on_connected_to_server\")
-	get_tree().connect(\"connection_failed\", self, \"_on_connection_failed\")
-	
-func _on_Join_pressed():
-	if (not $Panel/Data/Ip.text.is_valid_ip_address()):
-		$Panel/Status.text=\"Invalid Ipv4 address!\"
-		return
-	Global.ip = $Panel/Data/Ip.text
-	
-	# Disable buttons
-	$Panel/Join.disabled = true
-	$Panel/Host.disabled = true
-	
-	# Connect
-	var host = NetworkedMultiplayerENet.new()
-	host.create_client(Global.ip, Global.port)
-	get_tree().set_network_peer(host)
-	$ConnectionTimer.start()
-
-func _on_Host_pressed():
-	# Create server
-	var host = NetworkedMultiplayerENet.new()
-	host.create_server(Global.port)
-	get_tree().set_network_peer(host)
-	get_tree().change_scene(\"res://Scenes/Core/Main.tscn\")
-
-# Callback from SceneTree, only for clients (not server)
-func _on_connected_to_server():
-	get_tree().change_scene(\"res://Scenes/Core/Main.tscn\")
-
-# Callback from SceneTree, only for clients (not server)
-func _on_connection_failed():
-	get_tree().set_network_peer(null) # Remove peer
-	
-	# Restore interface
-	$Panel/Join.disabled = false
-	$Panel/Host.disabled = false
-	$Panel/Status.text = \"Connection failed.\""
-
-[node name="JoinHost" type="Control" index="0"]
+[node name="JoinHost" type="Control"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -64,7 +20,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = ExtResource( 1 )
-script = SubResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Theme" ]
 
 [node name="Panel" type="Panel" parent="." index="0"]
