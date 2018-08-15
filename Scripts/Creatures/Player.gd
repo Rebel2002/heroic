@@ -1,4 +1,4 @@
-extends "res://Scripts/Creatures/Character.gd"
+extends "res://Scripts/Creatures/Humanoid.gd"
 
 sync var velocity = Vector2()
 
