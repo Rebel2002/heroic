@@ -10,9 +10,6 @@ func _process(delta):
 		else:
 			visible = true
 
-func _on_Settings_pressed():
-	pass # Settings? We don't need settings.
-
 func _on_MainMenu_pressed():
 	get_tree().change_scene("res://Scenes/UI/MainMenu.tscn")
 

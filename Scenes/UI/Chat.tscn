@@ -6,8 +6,6 @@
 [ext_resource path="res://Sprites/UI/PanelBrown.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=5]
 
-
-
 [sub_resource type="StyleBoxTexture" id=1]
 
 content_margin_left = 6.0
@@ -60,13 +58,18 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Chat" type="CanvasLayer"]
+[node name="Chat" type="Control" index="0"]
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 script = ExtResource( 1 )
 
 [node name="ChatWindow" type="RichTextLabel" parent="." index="0"]
@@ -75,10 +78,10 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -120.0
-margin_right = 200.0
-margin_bottom = -30.0
+margin_left = 6.0
+margin_top = 477.0
+margin_right = 201.0
+margin_bottom = 567.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -125,7 +128,7 @@ custom_fonts/font = SubResource( 3 )
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6
-caret_blink = false
+caret_blink = true
 caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "custom_styles" ]

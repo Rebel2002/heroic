@@ -3,7 +3,7 @@ extends Node
 func _ready():
 	Global.id = get_tree().get_network_unique_id()
 	rpc("add_player", Global.id, Global.player)
-	$Chat.rpc("announce_connected", Global.player["nickname"])
+	$Ui/Chat.rpc("announce_connected", Global.player["nickname"])
 	get_tree().connect("network_peer_disconnected", self, "remove_player")
 
 sync func add_player(id, data):
@@ -28,7 +28,7 @@ sync func add_player(id, data):
 	$World/Objects.add_child(player)
 	
 func remove_player(id):
-	$Chat.announce_disconnected(Global.players[id]["nickname"])
+	$Ui/Chat.announce_disconnected(Global.players[id]["nickname"])
 	Global.players.erase(id)
 	get_node("World/Objects/Player" + str(id)).queue_free()
 

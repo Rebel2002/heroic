@@ -3,13 +3,18 @@
 [ext_resource path="res://Sprites/UI/TouchArrow.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/UI/TouchCircle.png" type="Texture" id=2]
 
-[node name="TouchControls" type="CanvasLayer"]
+[node name="TouchControls" type="Control"]
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="Up" type="TouchScreenButton" parent="." index="0"]
 

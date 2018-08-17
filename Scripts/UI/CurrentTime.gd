@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 func _ready():
 	if get_tree().is_network_server():
@@ -29,13 +29,13 @@ sync func set_time(time):
 	# Set visibility
 	var minutes = time.hour * 60 + time.minute
 	if time.hour >= 4 && time.hour < 6:
-		get_parent().get_node("World").environment.tonemap_exposure = 0.007 * minutes - 1.52
+		$"../../World".environment.tonemap_exposure = 0.007 * minutes - 1.52
 	elif time.hour >= 6 && time.hour < 19:
-		get_parent().get_node("World").environment.tonemap_exposure = 1
+		$"../../World".environment.tonemap_exposure = 1
 	elif time.hour >= 19 && time.hour < 21:
-		get_parent().get_node("World").environment.tonemap_exposure = 8.98 - 0.007 * minutes
+		$"../../World".environment.tonemap_exposure = 8.98 - 0.007 * minutes
 	elif time.hour >= 21 || time.hour < 4:
-		get_parent().get_node("World").environment.tonemap_exposure = 0.16
+		$"../../World".environment.tonemap_exposure = 0.16
 
 func _on_MinuteTimer_timeout():
 		rpc("set_time", OS.get_time())
