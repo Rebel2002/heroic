@@ -25,12 +25,12 @@ sync func add_player(id, data):
 	player.hair_color = data["hair_color"]
 	player.eyes = data["eyes"]
 	player.load_sprite()
-	$World/Objetcs.add_child(player)
+	$World/Objects.add_child(player)
 	
 func remove_player(id):
 	$Chat.announce_disconnected(Global.players[id]["nickname"])
 	Global.players.erase(id)
-	get_node("World/Objetcs/Player" + str(id)).queue_free()
+	get_node("World/Objects/Player" + str(id)).queue_free()
 
 func _process(delta):
 	pass

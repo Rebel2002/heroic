@@ -384,7 +384,7 @@ tracks/0/keys = {
 "values": [ 5, 8 ]
 }
 
-[node name="Wolf" index="0" instance=ExtResource( 1 )]
+[node name="Wolf" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 

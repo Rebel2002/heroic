@@ -22,5 +22,10 @@ script = ExtResource( 1 )
 [node name="GameMenu" parent="." index="4" instance=ExtResource( 6 )]
 
 visible = false
+margin_left = -510.0
+margin_top = -299.5
+margin_right = 510.0
+margin_bottom = 299.5
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Rect" ]
 
 

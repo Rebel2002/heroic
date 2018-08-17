@@ -13,7 +13,7 @@ func _on_InputField_text_entered(new_text):
 		rpc("send_message", Global.id, new_text)
 
 sync func send_message(id, new_text):
-	get_parent().get_node("World/Objetcs/Player" + str(id)).say(new_text)
+	get_parent().get_node("World/Objects/Player" + str(id)).say(new_text)
 	$ChatWindow.bbcode_text += "\n[color=green]" + Global.players[id]["nickname"] + "[/color]: " + new_text
 
 remote func announce_connected(player_name):
