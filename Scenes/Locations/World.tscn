@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Tilesets/Dirt.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Grass.tres" type="TileSet" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Scenes/Objects/Plants/GreenTree-A.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Objects/Other/Signpost.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Effects/Fire.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Objects/Other/WoodBenchHorizontalB.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Objects/Other/WoodBenchHorizontalA.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Objects/Other/BenchHorizontalC.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/Other/BenchHorizontalA.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Objects/Other/BenchHorizontalB.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 
@@ -90,7 +91,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background", "Tonemap" ]
 
-[node name="World" type="WorldEnvironment"]
+[node name="World" type="WorldEnvironment" index="0"]
 
 environment = SubResource( 1 )
 
@@ -186,7 +187,15 @@ position = Vector2( 523.747, 246.229 )
 
 position = Vector2( 370.669, 625.44 )
 
-[node name="WoodBenchHorizontalA" parent="Objects" index="10" instance=ExtResource( 10 )]
+[node name="BenchHorizontalA" parent="Objects" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 276.826, 561.853 )
+
+[node name="BenchHorizontalB" parent="Objects" index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 391.657, 342.444 )
+
+[node name="WoodBenchHorizontalA" parent="Objects" index="12" instance=ExtResource( 9 )]
 
 position = Vector2( 566.438, 581.654 )
 
