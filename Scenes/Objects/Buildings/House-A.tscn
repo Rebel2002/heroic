@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Objects/Buildings/Parts/WindowFlowers.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Objects/Buildings/Parts/HouseStairs.tscn" type="PackedScene" id=8]
 
-[node name="House" type="Node2D" index="0"]
+[node name="House" type="Node2D"]
 
 script = ExtResource( 1 )
 door = 7

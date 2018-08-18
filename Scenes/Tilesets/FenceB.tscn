@@ -12,92 +12,92 @@ extents = Vector2( 9.9333, 3.89797 )
 custom_solver_bias = 0.0
 extents = Vector2( 15.9973, 3.89797 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.26641, 3.89797 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.87226, 12.5342 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.87226, 15.9937 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.87226, 14.6493 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.1882, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.7492, 3.66328 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=14]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.0037, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=15]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.61503, 3.63845 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=16]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.34097, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=17]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.3713, 3.64734 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=18]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.0963, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=19]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.63055, 16.0034 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.0015, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.72929, 16.0034 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.2221, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.79011, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.72716, 13.0127 )
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Fence1" type="Sprite" parent="." index="0"]
 
@@ -170,7 +170,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence3/StaticBody" index="0"]
 
 position = Vector2( -6.74, 4.8 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence4" type="Sprite" parent="." index="3"]
@@ -195,7 +195,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence4/StaticBody" index="0"]
 
 position = Vector2( -0.56, -3.47 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence5" type="Sprite" parent="." index="4"]
@@ -220,7 +220,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence5/StaticBody" index="0"]
 
 position = Vector2( -0.56, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence6" type="Sprite" parent="." index="5"]
@@ -245,7 +245,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence6/StaticBody" index="0"]
 
 position = Vector2( -0.56, 1.35 )
-shape = SubResource( 6 )
+shape = SubResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence7" type="Sprite" parent="." index="6"]
@@ -270,13 +270,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence7/StaticBody" index="0"]
 
 position = Vector2( 5.8, 4.2 )
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence7/StaticBody" index="1"]
 
 position = Vector2( 0.429217, 12.3927 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence8" type="Sprite" parent="." index="7"]
@@ -301,13 +301,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence8/StaticBody" index="0"]
 
 position = Vector2( 0, 4.2 )
-shape = SubResource( 9 )
+shape = SubResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence8/StaticBody" index="1"]
 
 position = Vector2( 0.370093, 12.3468 )
-shape = SubResource( 10 )
+shape = SubResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence9" type="Sprite" parent="." index="8"]
@@ -332,13 +332,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence9/StaticBody" index="0"]
 
 position = Vector2( -6.66, 4.2 )
-shape = SubResource( 11 )
+shape = SubResource( 16 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence9/StaticBody" index="1"]
 
 position = Vector2( 0.309209, 12.3468 )
-shape = SubResource( 12 )
+shape = SubResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence10" type="Sprite" parent="." index="9"]
@@ -363,13 +363,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence10/StaticBody" index="0"]
 
 position = Vector2( 5.9, 4.2 )
-shape = SubResource( 13 )
+shape = SubResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence10/StaticBody" index="1"]
 
 position = Vector2( 0.371496, 0 )
-shape = SubResource( 14 )
+shape = SubResource( 19 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence11" type="Sprite" parent="." index="10"]
@@ -394,13 +394,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence11/StaticBody" index="0"]
 
 position = Vector2( 0, 4.2 )
-shape = SubResource( 15 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence11/StaticBody" index="1"]
 
 position = Vector2( 0.383893, 0 )
-shape = SubResource( 16 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence12" type="Sprite" parent="." index="11"]
@@ -425,13 +425,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence12/StaticBody" index="0"]
 
 position = Vector2( -6.78, 4.2 )
-shape = SubResource( 17 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence12/StaticBody" index="1"]
 
 position = Vector2( 0.508626, 0 )
-shape = SubResource( 16 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence13" type="Sprite" parent="." index="12"]
@@ -456,13 +456,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence13/StaticBody" index="0"]
 
 position = Vector2( 6.22, 4.2 )
-shape = SubResource( 18 )
+shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence13/StaticBody" index="1"]
 
 position = Vector2( 0.42547, -2.95842 )
-shape = SubResource( 19 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence14" type="Sprite" parent="." index="13"]
@@ -487,13 +487,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence14/StaticBody" index="0"]
 
 position = Vector2( 0, 4.2 )
-shape = SubResource( 15 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence14/StaticBody" index="1"]
 
 position = Vector2( 0.425472, -2.95842 )
-shape = SubResource( 19 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence15" type="Sprite" parent="." index="14"]
@@ -518,13 +518,13 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence15/StaticBody" index="0"]
 
 position = Vector2( -6.78, 4.2 )
-shape = SubResource( 17 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Collision2" type="CollisionShape2D" parent="Fence15/StaticBody" index="1"]
 
 position = Vector2( 0.467048, -2.95842 )
-shape = SubResource( 19 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence16" type="Sprite" parent="." index="15"]
@@ -549,7 +549,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence16/StaticBody" index="0"]
 
 position = Vector2( 0, 4.2 )
-shape = SubResource( 15 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence17" type="Sprite" parent="." index="16"]
@@ -574,7 +574,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence17/StaticBody" index="0"]
 
 position = Vector2( 0, 4.2 )
-shape = SubResource( 15 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Fence18" type="Sprite" parent="." index="17"]
@@ -599,7 +599,7 @@ bounce = 0.0
 [node name="Collision" type="CollisionShape2D" parent="Fence18/StaticBody" index="0"]
 
 position = Vector2( 0, 4.2 )
-shape = SubResource( 15 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 

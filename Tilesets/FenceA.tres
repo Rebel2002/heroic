@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=22 format=2]
+[gd_resource type="TileSet" load_steps=21 format=2]
 
 [ext_resource path="res://Sprites/Other/FenceA.png" type="Texture" id=1]
 
@@ -15,89 +15,84 @@ extents = Vector2( 15.9973, 3.89797 )
 [sub_resource type="RectangleShape2D" id=16]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16.0015, 4.50556 )
+extents = Vector2( 2.03551, 3.65027 )
 
 [sub_resource type="RectangleShape2D" id=17]
 
 custom_solver_bias = 0.0
-extents = Vector2( 2.03551, 16.0034 )
-
-[sub_resource type="StreamTexture" id=4]
-
-flags = 4
-load_path = "res://.import/Fence.png-69a196fcb14012e7f6c87199d4a15646.stex"
+extents = Vector2( 9.34097, 4.50556 )
 
 [sub_resource type="RectangleShape2D" id=18]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.2221, 4.50556 )
+extents = Vector2( 2.03551, 3.64852 )
 
 [sub_resource type="RectangleShape2D" id=19]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.79011, 4.50556 )
+extents = Vector2( 10.0963, 4.50556 )
 
 [sub_resource type="RectangleShape2D" id=20]
 
 custom_solver_bias = 0.0
-extents = Vector2( 2.03551, 13.0127 )
+extents = Vector2( 2.03551, 16.0034 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=21]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.26641, 3.89797 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=22]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.87226, 12.5342 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=23]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.87226, 15.9937 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=24]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.87226, 14.6493 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=25]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.1882, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=26]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.03551, 3.66328 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=27]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.0037, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=28]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.03551, 3.65027 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=29]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.34097, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=30]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.03551, 3.64852 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=31]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.0963, 4.50556 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=32]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.03551, 16.0034 )
@@ -143,11 +138,11 @@ extents = Vector2( 2.03551, 16.0034 )
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 3 ),
+"shape": SubResource( 21 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 9.26, 20.8 )
 } ]
 3/name = "Fence4"
-3/texture = SubResource( 4 )
+3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 32, 32, 32 )
@@ -157,11 +152,11 @@ extents = Vector2( 2.03551, 16.0034 )
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 5 ),
+"shape": SubResource( 22 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.44, 12.53 )
 } ]
 4/name = "Fence5"
-4/texture = SubResource( 4 )
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 32, 32, 32, 32 )
@@ -171,11 +166,11 @@ extents = Vector2( 2.03551, 16.0034 )
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 6 ),
+"shape": SubResource( 23 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.44, 16 )
 } ]
 5/name = "Fence6"
-5/texture = SubResource( 4 )
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 64, 32, 32, 32 )
@@ -185,11 +180,11 @@ extents = Vector2( 2.03551, 16.0034 )
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 7 ),
+"shape": SubResource( 24 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.44, 17.35 )
 } ]
 6/name = "Fence7"
-6/texture = SubResource( 4 )
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 64, 32, 32 )
@@ -199,16 +194,16 @@ extents = Vector2( 2.03551, 16.0034 )
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 8 ),
+"shape": SubResource( 25 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 21.8, 20.2 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 9 ),
+"shape": SubResource( 26 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 28.3651 )
 } ]
 7/name = "Fence8"
-7/texture = SubResource( 4 )
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 32, 64, 32, 32 )
@@ -218,16 +213,16 @@ extents = Vector2( 2.03551, 16.0034 )
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 10 ),
+"shape": SubResource( 27 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 20.2 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 11 ),
+"shape": SubResource( 28 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 28.3468 )
 } ]
 8/name = "Fence9"
-8/texture = SubResource( 4 )
+8/texture = ExtResource( 1 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 64, 64, 32, 32 )
@@ -237,16 +232,16 @@ extents = Vector2( 2.03551, 16.0034 )
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 12 ),
+"shape": SubResource( 29 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 9.34, 20.2 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 13 ),
+"shape": SubResource( 30 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 28.3651 )
 } ]
 9/name = "Fence10"
-9/texture = SubResource( 4 )
+9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 96, 32, 32 )
@@ -256,16 +251,16 @@ extents = Vector2( 2.03551, 16.0034 )
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 14 ),
+"shape": SubResource( 31 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 21.9, 20.2 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 15 ),
+"shape": SubResource( 32 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 16 )
 } ]
 10/name = "Fence11"
-10/texture = SubResource( 4 )
+10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 32, 96, 32, 32 )
@@ -284,7 +279,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 16 )
 } ]
 11/name = "Fence12"
-11/texture = SubResource( 4 )
+11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 64, 96, 32, 32 )
@@ -303,7 +298,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 16 )
 } ]
 12/name = "Fence13"
-12/texture = SubResource( 4 )
+12/texture = ExtResource( 1 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 128, 32, 32 )
@@ -322,7 +317,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 13 )
 } ]
 13/name = "Fence14"
-13/texture = SubResource( 4 )
+13/texture = ExtResource( 1 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 32, 128, 32, 32 )
@@ -341,7 +336,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 13 )
 } ]
 14/name = "Fence15"
-14/texture = SubResource( 4 )
+14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 64, 128, 32, 32 )
@@ -360,7 +355,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 15.7602, 13 )
 } ]
 15/name = "Fence16"
-15/texture = SubResource( 4 )
+15/texture = ExtResource( 1 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 0, 160, 32, 32 )
@@ -374,7 +369,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 20.2 )
 } ]
 16/name = "Fence17"
-16/texture = SubResource( 4 )
+16/texture = ExtResource( 1 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 32, 160, 32, 32 )
@@ -388,7 +383,7 @@ extents = Vector2( 2.03551, 16.0034 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 20.2 )
 } ]
 17/name = "Fence18"
-17/texture = SubResource( 4 )
+17/texture = ExtResource( 1 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 64, 160, 32, 32 )
