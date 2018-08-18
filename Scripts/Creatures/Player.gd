@@ -3,7 +3,7 @@ extends "res://Scripts/Creatures/Humanoid.gd"
 sync var velocity = Vector2()
 
 func _ready():
-	if get_parent().is_network_master():
+	if is_network_master():
 		$Camera.make_current()
 
 func _process(delta):
