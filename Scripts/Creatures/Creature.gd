@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var game_name = "" setget _set_game_name
 export (int) var speed  = 200 # How fast the player will move (pixels/sec).
 export (int) var health = 8 setget _set_health
+sync var velocity = Vector2()
 var can_move = true
 
 func _ready():
