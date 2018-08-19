@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	if get_tree().is_network_server():
-		rpc("set_time", OS.get_time())
+		set_time(OS.get_time())
 		$MinuteTimer.wait_time = 60 - OS.get_time().second
 		$MinuteTimer.start()
 		$MinuteTimer.wait_time = 60 # For next minutes

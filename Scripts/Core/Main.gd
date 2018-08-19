@@ -7,8 +7,11 @@ func _ready():
 	get_tree().connect("network_peer_disconnected", self, "remove_player")
 
 sync func add_player(id, data):
-	# If I'm the server, send the info of existing players to new
-	if get_tree().is_network_server():
+	if get_tree().is_network_server() && id != 1:
+		# Send server time time
+		$Ui/CurrentTime.rpc_id(id, "set_time", OS.get_time())
+		
+		# Send the info of existing players to new
 		for peer_id in Global.players:
 			rpc_id(id, "add_player", peer_id, Global.players[peer_id])
 	
