@@ -32,46 +32,46 @@ func _process(delta):
 		# Animate movement
 		if velocity.x == 0 and velocity.y < 0:
 			if $Body/Animation.current_animation != "up":
+				direction = UP
 				$Body/Animation.play("up")
 				$Hair/Animation.play("up")
 				$Eyes/Animation.play("up")
 		elif velocity.x < 0:
 			if $Body/Animation.current_animation != "left":
+				direction = LEFT
 				$Body/Animation.play("left")
 				$Hair/Animation.play("left")
 				$Eyes/Animation.play("left")
 		elif velocity.x == 0 and velocity.y > 0:
 			if $Body/Animation.current_animation != "down":
+				direction = DOWN
 				$Body/Animation.play("down")
 				$Hair/Animation.play("down")
 				$Eyes/Animation.play("down")
 		elif velocity.x > 0:
 			if $Body/Animation.current_animation != "right":
+				direction = RIGHT
 				$Body/Animation.play("right")
 				$Hair/Animation.play("right")
 				$Eyes/Animation.play("right")
 		else:
-			match $Body/Animation.current_animation:
-				"up":
+			match direction:
+				UP:
 					$Body.set_frame(104)
 					$Hair.set_frame(104)
 					$Eyes.set_frame(104)
-				"left":
+				LEFT:
 					$Body.set_frame(117)
 					$Hair.set_frame(117)
 					$Eyes.set_frame(117)
-				"down":
+				DOWN:
 					$Body.set_frame(130)
 					$Hair.set_frame(130)
 					$Eyes.set_frame(130)
-				"right":
+				RIGHT:
 					$Body.set_frame(143)
 					$Hair.set_frame(143)
 					$Eyes.set_frame(143)
-				_:
-					$Body/Animation.stop()
-					$Hair/Animation.stop()
-					$Eyes/Animation.stop()
 
 remote func _set_position(newPosition):
 	position = newPosition

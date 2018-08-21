@@ -4,7 +4,10 @@ export var game_name = "" setget _set_game_name
 export (int) var speed  = 200 # How fast the player will move (pixels/sec).
 export (int) var health = 8 setget _set_health
 sync var velocity = Vector2()
+sync var direction
 var can_move = true
+
+enum {UP, DOWN, LEFT, RIGHT}
 
 func _ready():
 	$HealthBar.max_value = health
