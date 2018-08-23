@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Creature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Wolf.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Creatures/Wolf/1.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/Howl.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -388,7 +389,7 @@ editor/display_folded = false
 texture = ExtResource( 3 )
 vframes = 20
 hframes = 5
-frame = 0
+frame = 40
 
 [node name="Animation" parent="Body" index="0"]
 
@@ -424,6 +425,17 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]
 

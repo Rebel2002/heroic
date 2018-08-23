@@ -23,6 +23,8 @@ func _on_ActionTimer_timeout():
 		action = randi() % 3
 	else:
 		action = randi() % 2
+		
+		action = randi() % 3
 	
 	match action:
 		NONE:
@@ -33,7 +35,7 @@ func _on_ActionTimer_timeout():
 			$ActionTimer.wait_time = randi() % 5 + 2
 		HOWLING:
 			_howl_animation()
-			$ActionTimer.wait_time = 1
+			$ActionTimer.wait_time = 1.8
 	currentAction = action
 	$ActionTimer.start()
 
@@ -75,6 +77,7 @@ func _walk_animation():
 			$Body/Animation.play("WalkRight")
 
 func _howl_animation():
+	$Sound.play()
 	match direction:
 		UP:
 			$Body/Animation.play("HowlUp")
