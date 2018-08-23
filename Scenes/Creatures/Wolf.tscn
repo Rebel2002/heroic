@@ -419,6 +419,10 @@ anims/WalkUp = SubResource( 20 )
 
 visible = false
 
+[node name="Name" parent="." index="2"]
+
+text = "Wolf"
+
 [node name="Collision" parent="." index="4"]
 
 position = Vector2( 0, 0 )
