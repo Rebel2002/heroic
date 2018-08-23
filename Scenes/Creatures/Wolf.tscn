@@ -159,7 +159,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=9]
 
 length = 0.5
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -188,7 +188,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 55, 58 ]
 }
 
@@ -212,7 +212,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=12]
 
-length = 0.5
+length = 0.4
 loop = false
 step = 0.5
 tracks/0/type = "value"
@@ -224,7 +224,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ 45 ]
 }
 
@@ -384,10 +384,11 @@ script = ExtResource( 2 )
 
 [node name="Body" parent="." index="0"]
 
+editor/display_folded = false
 texture = ExtResource( 3 )
 vframes = 20
 hframes = 5
-frame = 5
+frame = 0
 
 [node name="Animation" parent="Body" index="0"]
 
@@ -412,18 +413,18 @@ anims/WalkLeft = SubResource( 18 )
 anims/WalkRight = SubResource( 19 )
 anims/WalkUp = SubResource( 20 )
 
-[node name="Collision" parent="." index="3"]
+[node name="Collision" parent="." index="4"]
 
 position = Vector2( -1.36591, 22.114 )
 shape = SubResource( 21 )
 
-[node name="RandomTimer" type="Timer" parent="." index="5"]
+[node name="ActionTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[connection signal="timeout" from="RandomTimer" to="." method="_randomize_velocity"]
+[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]
 
 

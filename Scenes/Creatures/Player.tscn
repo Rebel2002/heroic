@@ -3,29 +3,15 @@
 [ext_resource path="res://Scenes/Creatures/Humanoid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Player.gd" type="Script" id=2]
 
-[node name="Player" index="0" groups=[
+[node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
-[node name="Body" parent="." index="0"]
-
-frame = 260
-
 [node name="Collision" parent="." index="4"]
 
 position = Vector2( -0.172241, 26.9568 )
-rotation = 1.5708
-_sections_unfolded = [ "Transform" ]
-
-[node name="Eyes" parent="." index="6"]
-
-editor/display_folded = true
-
-[node name="Hair" parent="." index="7"]
-
-editor/display_folded = true
 
 [node name="Camera" type="Camera2D" parent="." index="8"]
 
