@@ -23,8 +23,6 @@ func _on_ActionTimer_timeout():
 		action = randi() % 3
 	else:
 		action = randi() % 2
-		
-		action = randi() % 3
 	
 	match action:
 		NONE:
@@ -61,19 +59,19 @@ func _stop_animation():
 func _walk_animation():
 	if velocity.x == 0 and velocity.y < 0:
 		if $Body/Animation.current_animation != "WalkUp":
-			direction = UP
+			_set_direction(UP)
 			$Body/Animation.play("WalkUp")
 	elif velocity.x < 0:
 		if $Body/Animation.current_animation != "WalkLeft":
-			direction = LEFT
+			_set_direction(LEFT)
 			$Body/Animation.play("WalkLeft")
 	elif velocity.x == 0 and velocity.y > 0:
 		if $Body/Animation.current_animation != "WalkDown":
-			direction = DOWN
+			_set_direction(DOWN)
 			$Body/Animation.play("WalkDown")
 	elif velocity.x > 0:
 		if $Body/Animation.current_animation != "WalkRight":
-			direction = RIGHT
+			_set_direction(RIGHT)
 			$Body/Animation.play("WalkRight")
 
 func _howl_animation():
@@ -87,3 +85,15 @@ func _howl_animation():
 			$Body/Animation.play("HowlDown")
 		RIGHT:
 			$Body/Animation.play("HowlRight")
+			
+func _set_direction(value):
+	direction = value
+	
+	# Rotate collision
+	match direction:
+		UP, DOWN:
+			$Collision.position.y = 0
+			$Collision.rotation = 0
+		LEFT, RIGHT:
+			$Collision.position.y = 25
+			$Collision.rotation = 90

@@ -376,12 +376,13 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape2D" id=21]
 
 custom_solver_bias = 0.0
-radius = 10.0
-height = 36.6999
+radius = 6.87228
+height = 50.5013
 
 [node name="Wolf" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "collision" ]
 
 [node name="Body" parent="." index="0"]
 
@@ -389,7 +390,7 @@ editor/display_folded = false
 texture = ExtResource( 3 )
 vframes = 20
 hframes = 5
-frame = 40
+frame = 0
 
 [node name="Animation" parent="Body" index="0"]
 
@@ -414,10 +415,16 @@ anims/WalkLeft = SubResource( 18 )
 anims/WalkRight = SubResource( 19 )
 anims/WalkUp = SubResource( 20 )
 
+[node name="VisibleArea" parent="." index="1"]
+
+visible = false
+
 [node name="Collision" parent="." index="4"]
 
-position = Vector2( -1.36591, 22.114 )
+position = Vector2( 0, 0 )
+rotation = 0.0
 shape = SubResource( 21 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="ActionTimer" type="Timer" parent="." index="6"]
 
@@ -428,6 +435,7 @@ autostart = false
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="." index="7"]
 
+visible = false
 stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
