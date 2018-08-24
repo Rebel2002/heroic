@@ -1,12 +1,14 @@
 extends "res://Scripts/Creatures/Creature.gd"
 
+var currentTarget
 var currentAction
-enum {NONE, WALKING, HOWLING}
+enum {NONE, WALKING, HOWLING, RUNNING}
 
 func _ready():
-	_on_ActionTimer_timeout()
+	_random_action()
 	
 func _process(delta):
+	_calculate_direction()
 	if currentAction == WALKING:
 		if (move_and_collide(velocity * delta) != null):
 			# If creature collides
@@ -14,9 +16,13 @@ func _process(delta):
 		else:
 			# If moving successful
 			_walk_animation()
+	elif currentAction == RUNNING:
+		_calculate_velocity()
+		move_and_collide(velocity * delta)
+		_run_animation()
 
 # Wait some time before movement
-func _on_ActionTimer_timeout():
+func _random_action():
 	var action
 	var time = OS.get_time().hour
 	if time > 21 || time < 4:
@@ -27,22 +33,50 @@ func _on_ActionTimer_timeout():
 	match action:
 		NONE:
 			_stop_animation()
-			$ActionTimer.wait_time = 1
+			$RandomActionTimer.wait_time = 1
 		WALKING:
 			_randomize_velocity()
-			$ActionTimer.wait_time = randi() % 5 + 2
+			$RandomActionTimer.wait_time = randi() % 5 + 2
 		HOWLING:
 			_howl_animation()
-			$ActionTimer.wait_time = 1.8
+			$RandomActionTimer.wait_time = 1.8
+	
 	currentAction = action
-	$ActionTimer.start()
+	$RandomActionTimer.start()
 
+# Set random movement
 func _randomize_velocity():
 	velocity = Vector2(randi() % 3 - 1, randi() % 3 - 1)
 	velocity = velocity.normalized() * speed / 2
 	if velocity.length() == 0:
 		# If generated velocity is equal to zero
 		_randomize_velocity()
+
+func _calculate_velocity():
+	velocity = to_local(currentTarget.position).normalized() * speed
+
+func _calculate_direction():
+	if velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y < 0:
+		direction = UP
+	elif velocity.x < -0.3 * speed:
+		direction = LEFT
+	elif velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y > 0:
+		direction = DOWN
+	elif velocity.x > 0.3 * speed:
+		direction = RIGHT
+
+	# Rotate collision
+	match direction:
+		UP, DOWN:
+			$Collision.position.y = 0
+			$Collision.rotation = 0
+			$Name.rect_position.y = -50
+			$HealthBar.rect_position.y = -36
+		LEFT, RIGHT:
+			$Collision.position.y = 25
+			$Collision.rotation = 90
+			$Name.rect_position.y = -26
+			$HealthBar.rect_position.y = -12
 
 func _stop_animation():
 	$Body/Animation.stop()
@@ -57,22 +91,34 @@ func _stop_animation():
 			$Body.set_frame(10)
 
 func _walk_animation():
-	if velocity.x == 0 and velocity.y < 0:
-		if $Body/Animation.current_animation != "WalkUp":
-			_set_direction(UP)
-			$Body/Animation.play("WalkUp")
-	elif velocity.x < 0:
-		if $Body/Animation.current_animation != "WalkLeft":
-			_set_direction(LEFT)
-			$Body/Animation.play("WalkLeft")
-	elif velocity.x == 0 and velocity.y > 0:
-		if $Body/Animation.current_animation != "WalkDown":
-			_set_direction(DOWN)
-			$Body/Animation.play("WalkDown")
-	elif velocity.x > 0:
-		if $Body/Animation.current_animation != "WalkRight":
-			_set_direction(RIGHT)
-			$Body/Animation.play("WalkRight")
+	match direction:
+		UP:
+			if $Body/Animation.current_animation != "WalkUp":
+				$Body/Animation.play("WalkUp")
+		LEFT:
+			if $Body/Animation.current_animation != "WalkLeft":
+				$Body/Animation.play("WalkLeft")
+		DOWN:
+			if $Body/Animation.current_animation != "WalkDown":
+				$Body/Animation.play("WalkDown")
+		RIGHT:
+			if $Body/Animation.current_animation != "WalkRight":
+				$Body/Animation.play("WalkRight")
+
+func _run_animation():
+	match direction:
+		UP:
+			if $Body/Animation.current_animation != "RunUp":
+				$Body/Animation.play("RunUp")
+		LEFT:
+			if $Body/Animation.current_animation != "RunLeft":
+				$Body/Animation.play("RunLeft")
+		DOWN:
+			if $Body/Animation.current_animation != "RunDown":
+				$Body/Animation.play("RunDown")
+		RIGHT:
+			if $Body/Animation.current_animation != "RunRight":
+				$Body/Animation.play("RunRight")
 
 func _howl_animation():
 	$Sound.play()
@@ -85,19 +131,14 @@ func _howl_animation():
 			$Body/Animation.play("HowlDown")
 		RIGHT:
 			$Body/Animation.play("HowlRight")
-			
-func _set_direction(value):
-	direction = value
-	
-	# Rotate collision
-	match direction:
-		UP, DOWN:
-			$Collision.position.y = 0
-			$Collision.rotation = 0
-			$Name.rect_position.y = -50
-			$HealthBar.rect_position.y = -36
-		LEFT, RIGHT:
-			$Collision.position.y = 25
-			$Collision.rotation = 90
-			$Name.rect_position.y = -26
-			$HealthBar.rect_position.y = -12
+
+func _on_VisibleArea_body_entered(body):
+	if body.is_in_group("Players"):
+		$RandomActionTimer.stop()
+		currentTarget = body
+		currentAction = RUNNING
+
+
+func _on_VisibleArea_body_exited(body):
+	if body.is_in_group("Players"):
+		_random_action()

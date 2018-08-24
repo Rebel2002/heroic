@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Creature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Wolf.gd" type="Script" id=2]
@@ -373,7 +373,12 @@ tracks/0/keys = {
 "values": [ 5, 8 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=21]
+[sub_resource type="CircleShape2D" id=21]
+
+custom_solver_bias = 0.0
+radius = 200.0
+
+[sub_resource type="CapsuleShape2D" id=22]
 
 custom_solver_bias = 0.0
 radius = 6.87228
@@ -417,7 +422,12 @@ anims/WalkUp = SubResource( 20 )
 
 [node name="VisibleArea" parent="." index="1"]
 
+editor/display_folded = false
 visible = false
+
+[node name="Collision" parent="VisibleArea" index="0"]
+
+shape = SubResource( 21 )
 
 [node name="Name" parent="." index="2"]
 
@@ -435,10 +445,10 @@ _sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
 
 position = Vector2( 0, 0 )
 rotation = 0.0
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="ActionTimer" type="Timer" parent="." index="6"]
+[node name="RandomActionTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 1.0
@@ -457,6 +467,10 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]
+[connection signal="body_entered" from="VisibleArea" to="." method="_on_VisibleArea_body_entered"]
+
+[connection signal="body_exited" from="VisibleArea" to="." method="_on_VisibleArea_body_exited"]
+
+[connection signal="timeout" from="RandomActionTimer" to="." method="_random_action"]
 
 

@@ -147,6 +147,8 @@ _sections_unfolded = [ "Sort", "Transform", "Visibility", "Z Index" ]
 
 [node name="Wolf" parent="Objects" index="0" instance=ExtResource( 3 )]
 
+position = Vector2( 1012.02, 273.934 )
+
 [node name="Barrel" parent="Objects" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 444.202, 441.661 )
