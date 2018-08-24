@@ -381,8 +381,8 @@ radius = 200.0
 [sub_resource type="CapsuleShape2D" id=22]
 
 custom_solver_bias = 0.0
-radius = 6.87228
-height = 50.5013
+radius = 8.87003
+height = 25.5473
 
 [node name="Wolf" index="0" instance=ExtResource( 1 )]
 
@@ -395,7 +395,7 @@ editor/display_folded = false
 texture = ExtResource( 3 )
 vframes = 20
 hframes = 5
-frame = 0
+frame = 10
 
 [node name="Animation" parent="Body" index="0"]
 
@@ -443,8 +443,7 @@ _sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
 
 [node name="Collision" parent="." index="4"]
 
-position = Vector2( 0, 0 )
-rotation = 0.0
+position = Vector2( 0, 23 )
 shape = SubResource( 22 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 

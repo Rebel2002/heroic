@@ -68,13 +68,9 @@ func _calculate_direction():
 	# Rotate collision
 	match direction:
 		UP, DOWN:
-			$Collision.position.y = 0
-			$Collision.rotation = 0
 			$Name.rect_position.y = -50
 			$HealthBar.rect_position.y = -36
 		LEFT, RIGHT:
-			$Collision.position.y = 25
-			$Collision.rotation = 90
 			$Name.rect_position.y = -26
 			$HealthBar.rect_position.y = -12
 
