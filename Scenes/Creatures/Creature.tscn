@@ -112,6 +112,8 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 
 [node name="HealthBar" type="TextureProgress" parent="." index="3"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -144,6 +146,13 @@ stretch_margin_top = 3
 stretch_margin_right = 3
 stretch_margin_bottom = 3
 _sections_unfolded = [ "Radial Fill", "Textures" ]
+
+[node name="DisplayTimer" type="Timer" parent="HealthBar" index="0"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
 
 [node name="Collision" type="CollisionShape2D" parent="." index="4"]
 
@@ -229,6 +238,8 @@ process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
+
+[connection signal="timeout" from="HealthBar/DisplayTimer" to="." method="_on_DisplayTimer_timeout"]
 
 [connection signal="timeout" from="Speech/DisplayTimer" to="." method="_on_SpeechDisplayTimer_timeout"]
 

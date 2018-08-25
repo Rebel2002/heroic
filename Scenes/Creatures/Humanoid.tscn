@@ -287,7 +287,7 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[node name="Humanoid" index="0" instance=ExtResource( 1 )]
+[node name="Humanoid" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 sex = "Male"
@@ -310,6 +310,10 @@ anims/left = SubResource( 3 )
 anims/right = SubResource( 4 )
 anims/up = SubResource( 5 )
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="HealthBar" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="Collision" parent="." index="4"]
 

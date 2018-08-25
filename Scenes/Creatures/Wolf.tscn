@@ -391,7 +391,6 @@ _sections_unfolded = [ "collision" ]
 
 [node name="Body" parent="." index="0"]
 
-editor/display_folded = false
 texture = ExtResource( 3 )
 vframes = 20
 hframes = 5
@@ -422,7 +421,6 @@ anims/WalkUp = SubResource( 20 )
 
 [node name="VisibleArea" parent="." index="1"]
 
-editor/display_folded = false
 visible = false
 
 [node name="Collision" parent="VisibleArea" index="0"]

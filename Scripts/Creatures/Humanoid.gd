@@ -37,7 +37,11 @@ func _set_health(value):
 	health = value
 	
 	if (has_node("HealthBar")):
+		$HealthBar.visible = true
 		$HealthBar.value = value
+	
+	if (has_node("HealthBar/DisplayTimer")):
+		$HealthBar/DisplayTimer.start()
 	
 	if health <= 0:
 		can_move = false
