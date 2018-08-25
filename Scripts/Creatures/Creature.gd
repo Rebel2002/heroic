@@ -30,7 +30,17 @@ func _set_health(value):
 	
 	if health <= 0:
 		can_move = false
-		$Body/Animation.play("death")
+		$Body/Animation.play("Death")
+
+func calculate_direction():
+	if velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y < 0:
+		direction = UP
+	elif velocity.x < -0.3 * speed:
+		direction = LEFT
+	elif velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y > 0:
+		direction = DOWN
+	elif velocity.x > 0.3 * speed:
+		direction = RIGHT
 
 func say(text):
 	$Speech/RichTextLabel.bbcode_text = "[center]" + text + "[/center]"

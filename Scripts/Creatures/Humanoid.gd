@@ -45,6 +45,29 @@ func _set_health(value):
 	
 	if health <= 0:
 		can_move = false
-		$Body/Animation.play("death")
-		$Hair/Animation.play("death")
-		$Eyes/Animation.play("death")
+		play_animation("Death")
+
+func play_animation(animation):
+	if $Body/Animation.current_animation != animation:
+		$Body/Animation.play(animation)
+		$Hair/Animation.play(animation)
+		$Eyes/Animation.play(animation)
+
+func stop_animation():
+	match direction:
+		UP:
+			$Body.set_frame(104)
+			$Hair.set_frame(104)
+			$Eyes.set_frame(104)
+		LEFT:
+			$Body.set_frame(117)
+			$Hair.set_frame(117)
+			$Eyes.set_frame(117)
+		DOWN:
+			$Body.set_frame(130)
+			$Hair.set_frame(130)
+			$Eyes.set_frame(130)
+		RIGHT:
+			$Body.set_frame(143)
+			$Hair.set_frame(143)
+			$Eyes.set_frame(143)

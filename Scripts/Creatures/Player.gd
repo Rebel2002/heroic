@@ -27,51 +27,22 @@ func _process(delta):
 		
 		move_and_collide(velocity * delta)
 		if (is_network_master()):
-			rpc("_set_position", position)
+			rpc("set_position", position)
 		
 		# Animate movement
-		if velocity.x == 0 and velocity.y < 0:
-			if $Body/Animation.current_animation != "up":
-				direction = UP
-				$Body/Animation.play("up")
-				$Hair/Animation.play("up")
-				$Eyes/Animation.play("up")
-		elif velocity.x < 0:
-			if $Body/Animation.current_animation != "left":
-				direction = LEFT
-				$Body/Animation.play("left")
-				$Hair/Animation.play("left")
-				$Eyes/Animation.play("left")
-		elif velocity.x == 0 and velocity.y > 0:
-			if $Body/Animation.current_animation != "down":
-				direction = DOWN
-				$Body/Animation.play("down")
-				$Hair/Animation.play("down")
-				$Eyes/Animation.play("down")
-		elif velocity.x > 0:
-			if $Body/Animation.current_animation != "right":
-				direction = RIGHT
-				$Body/Animation.play("right")
-				$Hair/Animation.play("right")
-				$Eyes/Animation.play("right")
-		else:
+		if velocity.length() != 0:
+			calculate_direction()
 			match direction:
 				UP:
-					$Body.set_frame(104)
-					$Hair.set_frame(104)
-					$Eyes.set_frame(104)
+					play_animation("WalkUp")
 				LEFT:
-					$Body.set_frame(117)
-					$Hair.set_frame(117)
-					$Eyes.set_frame(117)
-				DOWN:
-					$Body.set_frame(130)
-					$Hair.set_frame(130)
-					$Eyes.set_frame(130)
+					play_animation("WalkLeft")
 				RIGHT:
-					$Body.set_frame(143)
-					$Hair.set_frame(143)
-					$Eyes.set_frame(143)
+					play_animation("WalkRight")
+				DOWN:
+					play_animation("WalkDown")
+		else:
+			stop_animation()
 
-remote func _set_position(newPosition):
+remote func set_position(newPosition):
 	position = newPosition

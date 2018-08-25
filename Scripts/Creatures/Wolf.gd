@@ -8,7 +8,7 @@ func _ready():
 	_random_action()
 	
 func _process(delta):
-	_calculate_direction()
+	calculate_direction()
 	if currentAction == WALKING:
 		if (move_and_collide(velocity * delta) != null):
 			# If creature collides
@@ -54,16 +54,6 @@ func _randomize_velocity():
 
 func _calculate_velocity():
 	velocity = to_local(currentTarget.position).normalized() * speed
-
-func _calculate_direction():
-	if velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y < 0:
-		direction = UP
-	elif velocity.x < -0.3 * speed:
-		direction = LEFT
-	elif velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y > 0:
-		direction = DOWN
-	elif velocity.x > 0.3 * speed:
-		direction = RIGHT
 
 	# Rotate collision
 	match direction:

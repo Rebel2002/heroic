@@ -3,26 +3,26 @@ extends Control
 func _process(delta):
 	# Change the player's vector depending on the keys
 	if Input.is_action_pressed("ui_up") and $Character/Body/Animation.current_animation != "up":
-		$Character/Body/Animation.play("up")
-		$Character/Hair/Animation.play("up")
-		$Character/Eyes/Animation.play("up")
+		$Character/Body/Animation.play("WalkUp")
+		$Character/Hair/Animation.play("WalkUp")
+		$Character/Eyes/Animation.play("WalkUp")
 	if Input.is_action_pressed("ui_left") and $Character/Body/Animation.current_animation != "left":
-		$Character/Body/Animation.play("left")
-		$Character/Hair/Animation.play("left")
-		$Character/Eyes/Animation.play("left")
+		$Character/Body/Animation.play("WalkLeft")
+		$Character/Hair/Animation.play("WalkLeft")
+		$Character/Eyes/Animation.play("WalkLeft")
 	if Input.is_action_pressed("ui_down") and $Character/Body/Animation.current_animation != "down":
-		$Character/Body/Animation.play("down")
-		$Character/Hair/Animation.play("down")
-		$Character/Eyes/Animation.play("down")
+		$Character/Body/Animation.play("WalkDown")
+		$Character/Hair/Animation.play("WalkDown")
+		$Character/Eyes/Animation.play("WalkDown")
 	if Input.is_action_pressed("ui_right") and $Character/Body/Animation.current_animation != "right":
-		$Character/Body/Animation.play("right")
-		$Character/Hair/Animation.play("right")
-		$Character/Eyes/Animation.play("right")
+		$Character/Body/Animation.play("WalkRight")
+		$Character/Hair/Animation.play("WalkRight")
+		$Character/Eyes/Animation.play("WalkRight")
 
 func _ready():
-	$Character/Body/Animation.play("down")
-	$Character/Hair/Animation.play("down")
-	$Character/Eyes/Animation.play("down")
+	$Character/Body/Animation.play("WalkDown")
+	$Character/Hair/Animation.play("WalkDown")
+	$Character/Eyes/Animation.play("WalkDown")
 	$Character/HealthBar.visible = false
 	$Panel/Controls/Hair/ColorPicker.color = Color(randf(), randf(), randf())
 

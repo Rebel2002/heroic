@@ -8,7 +8,7 @@
 
 [sub_resource type="Animation" id=1]
 
-resource_name = "death"
+resource_name = "Death"
 length = 0.4
 loop = false
 step = 0.1
@@ -27,7 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "down"
+resource_name = "WalkDown"
 length = 0.7
 loop = true
 step = 0.1
@@ -46,7 +46,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 
-resource_name = "left"
+resource_name = "WalkLeft"
 length = 0.7
 loop = true
 step = 0.1
@@ -65,7 +65,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 
-resource_name = "right"
+resource_name = "WalkRight"
 length = 0.7
 loop = true
 step = 0.1
@@ -84,7 +84,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 
-resource_name = "up"
+resource_name = "WalkUp"
 length = 0.7
 loop = true
 step = 0.1
@@ -109,6 +109,7 @@ height = 17.8203
 
 [sub_resource type="Animation" id=7]
 
+resource_name = "Death"
 length = 0.4
 loop = false
 step = 0.1
@@ -127,6 +128,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=8]
 
+resource_name = "WalkDown"
 length = 0.7
 loop = true
 step = 0.1
@@ -145,6 +147,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=9]
 
+resource_name = "WalkLeft"
 length = 0.7
 loop = true
 step = 0.1
@@ -163,6 +166,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=10]
 
+resource_name = "WalkRight"
 length = 0.7
 loop = true
 step = 0.1
@@ -181,6 +185,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=11]
 
+resource_name = "WalkUp"
 length = 0.7
 loop = true
 step = 0.1
@@ -199,6 +204,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=12]
 
+resource_name = "Death"
 length = 0.4
 loop = false
 step = 0.1
@@ -217,6 +223,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=13]
 
+resource_name = "WalkDown"
 length = 0.7
 loop = true
 step = 0.1
@@ -235,6 +242,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=14]
 
+resource_name = "WalkLeft"
 length = 0.7
 loop = true
 step = 0.1
@@ -253,6 +261,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=15]
 
+resource_name = "WalkRight"
 length = 0.7
 loop = true
 step = 0.1
@@ -271,6 +280,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=16]
 
+resource_name = "WalkUp"
 length = 0.7
 loop = true
 step = 0.1
@@ -299,21 +309,18 @@ skintone = 1
 
 [node name="Body" parent="." index="0"]
 
+editor/display_folded = false
 texture = ExtResource( 3 )
 frame = 260
 
 [node name="Animation" parent="Body" index="0"]
 
-anims/death = SubResource( 1 )
-anims/down = SubResource( 2 )
-anims/left = SubResource( 3 )
-anims/right = SubResource( 4 )
-anims/up = SubResource( 5 )
+anims/Death = SubResource( 1 )
+anims/WalkDown = SubResource( 2 )
+anims/WalkLeft = SubResource( 3 )
+anims/WalkRight = SubResource( 4 )
+anims/WalkUp = SubResource( 5 )
 _sections_unfolded = [ "Playback Options" ]
-
-[node name="HealthBar" parent="." index="3"]
-
-editor/display_folded = true
 
 [node name="Collision" parent="." index="4"]
 
@@ -321,7 +328,6 @@ shape = SubResource( 6 )
 
 [node name="Eyes" type="Sprite" parent="." index="6"]
 
-editor/display_folded = true
 texture = ExtResource( 4 )
 vframes = 21
 hframes = 13
@@ -335,17 +341,16 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/death = SubResource( 7 )
-anims/down = SubResource( 8 )
-anims/left = SubResource( 9 )
-anims/right = SubResource( 10 )
-anims/up = SubResource( 11 )
-blend_times = [ "down", "down", 1.0 ]
+anims/Death = SubResource( 7 )
+anims/WalkDown = SubResource( 8 )
+anims/WalkLeft = SubResource( 9 )
+anims/WalkRight = SubResource( 10 )
+anims/WalkUp = SubResource( 11 )
+blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hair" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 texture = ExtResource( 5 )
 vframes = 21
 hframes = 13
@@ -359,12 +364,12 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/death = SubResource( 12 )
-anims/down = SubResource( 13 )
-anims/left = SubResource( 14 )
-anims/right = SubResource( 15 )
-anims/up = SubResource( 16 )
-blend_times = [ "down", "down", 1.0 ]
+anims/Death = SubResource( 12 )
+anims/WalkDown = SubResource( 13 )
+anims/WalkLeft = SubResource( 14 )
+anims/WalkRight = SubResource( 15 )
+anims/WalkUp = SubResource( 16 )
+blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
 
