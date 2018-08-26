@@ -64,6 +64,22 @@ func calculate_direction():
 	elif velocity.x > 0.3 * speed:
 		direction = RIGHT
 
+func direction_string():
+	match direction:
+		UP:
+			return "Up"
+		LEFT:
+			return "Left"
+		DOWN:
+			return "Down"
+		RIGHT:
+			return "Right"
+
+func play_animation(animation):
+	animation += direction_string() # Add animation direction
+	if $Body/Animation.current_animation != animation:
+		$Body/Animation.play(animation)
+
 func _on_SpeechDisplayTimer_timeout():
 	$Speech.visible = false
 
