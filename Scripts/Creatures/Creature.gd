@@ -4,6 +4,7 @@ export var game_name = "" setget _set_game_name
 export (int) var speed  = 200 # How fast the player will move (pixels/sec).
 export (int) var health = 8 setget _set_health
 sync var velocity = Vector2()
+var currentAction
 var can_move = true
 
 sync var direction = DOWN
@@ -32,16 +33,6 @@ func _set_health(value):
 		can_move = false
 		$Body/Animation.play("Death")
 
-func calculate_direction():
-	if velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y < 0:
-		direction = UP
-	elif velocity.x < -0.3 * speed:
-		direction = LEFT
-	elif velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y > 0:
-		direction = DOWN
-	elif velocity.x > 0.3 * speed:
-		direction = RIGHT
-
 func say(text):
 	$Speech/RichTextLabel.bbcode_text = "[center]" + text + "[/center]"
 	
@@ -62,6 +53,16 @@ func say(text):
 	
 	# Wait and hide dialog
 	$Speech/DisplayTimer.start()
+
+func calculate_direction():
+	if velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y < 0:
+		direction = UP
+	elif velocity.x < -0.3 * speed:
+		direction = LEFT
+	elif velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y > 0:
+		direction = DOWN
+	elif velocity.x > 0.3 * speed:
+		direction = RIGHT
 
 func _on_SpeechDisplayTimer_timeout():
 	$Speech.visible = false

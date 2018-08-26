@@ -1,7 +1,6 @@
 extends "res://Scripts/Creatures/Creature.gd"
 
 var currentTarget
-var currentAction
 enum {NONE, WALKING, HOWLING, RUNNING}
 
 func _ready():

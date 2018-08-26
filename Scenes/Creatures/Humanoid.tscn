@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Creature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Humanoid.gd" type="Script" id=2]
@@ -27,7 +27,82 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "WalkDown"
+resource_name = "MeleeAttackDown"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 182, 187 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "MeleeAttackLeft"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 169, 174 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "MeleeAttackRight"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 195, 200 ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "MeleeAttackUp"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 156, 161 ]
+}
+
+[sub_resource type="Animation" id=6]
+
 length = 0.7
 loop = true
 step = 0.1
@@ -44,9 +119,8 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 
-resource_name = "WalkLeft"
 length = 0.7
 loop = true
 step = 0.1
@@ -63,9 +137,8 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 
-resource_name = "WalkRight"
 length = 0.7
 loop = true
 step = 0.1
@@ -82,9 +155,8 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 
-resource_name = "WalkUp"
 length = 0.7
 loop = true
 step = 0.1
@@ -101,15 +173,14 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=10]
 
 custom_solver_bias = 0.0
 radius = 4.05609
 height = 17.8203
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=11]
 
-resource_name = "Death"
 length = 0.4
 loop = false
 step = 0.1
@@ -126,9 +197,8 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=12]
 
-resource_name = "WalkDown"
 length = 0.7
 loop = true
 step = 0.1
@@ -145,9 +215,8 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=13]
 
-resource_name = "WalkLeft"
 length = 0.7
 loop = true
 step = 0.1
@@ -164,9 +233,8 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=14]
 
-resource_name = "WalkRight"
 length = 0.7
 loop = true
 step = 0.1
@@ -183,9 +251,8 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=15]
 
-resource_name = "WalkUp"
 length = 0.7
 loop = true
 step = 0.1
@@ -202,9 +269,8 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=16]
 
-resource_name = "Death"
 length = 0.4
 loop = false
 step = 0.1
@@ -221,9 +287,8 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=17]
 
-resource_name = "WalkDown"
 length = 0.7
 loop = true
 step = 0.1
@@ -240,9 +305,8 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=18]
 
-resource_name = "WalkLeft"
 length = 0.7
 loop = true
 step = 0.1
@@ -259,9 +323,8 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=19]
 
-resource_name = "WalkRight"
 length = 0.7
 loop = true
 step = 0.1
@@ -278,9 +341,8 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=20]
 
-resource_name = "WalkUp"
 length = 0.7
 loop = true
 step = 0.1
@@ -316,15 +378,19 @@ frame = 260
 [node name="Animation" parent="Body" index="0"]
 
 anims/Death = SubResource( 1 )
-anims/WalkDown = SubResource( 2 )
-anims/WalkLeft = SubResource( 3 )
-anims/WalkRight = SubResource( 4 )
-anims/WalkUp = SubResource( 5 )
+anims/MeleeAttackDown = SubResource( 2 )
+anims/MeleeAttackLeft = SubResource( 3 )
+anims/MeleeAttackRight = SubResource( 4 )
+anims/MeleeAttackUp = SubResource( 5 )
+anims/WalkDown = SubResource( 6 )
+anims/WalkLeft = SubResource( 7 )
+anims/WalkRight = SubResource( 8 )
+anims/WalkUp = SubResource( 9 )
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="Collision" parent="." index="4"]
 
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 
 [node name="Eyes" type="Sprite" parent="." index="6"]
 
@@ -341,11 +407,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 7 )
-anims/WalkDown = SubResource( 8 )
-anims/WalkLeft = SubResource( 9 )
-anims/WalkRight = SubResource( 10 )
-anims/WalkUp = SubResource( 11 )
+anims/Death = SubResource( 11 )
+anims/MeleeAttackDown = SubResource( 2 )
+anims/MeleeAttackLeft = SubResource( 3 )
+anims/MeleeAttackRight = SubResource( 4 )
+anims/MeleeAttackUp = SubResource( 5 )
+anims/WalkDown = SubResource( 12 )
+anims/WalkLeft = SubResource( 13 )
+anims/WalkRight = SubResource( 14 )
+anims/WalkUp = SubResource( 15 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -364,11 +434,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 12 )
-anims/WalkDown = SubResource( 13 )
-anims/WalkLeft = SubResource( 14 )
-anims/WalkRight = SubResource( 15 )
-anims/WalkUp = SubResource( 16 )
+anims/Death = SubResource( 16 )
+anims/MeleeAttackDown = SubResource( 2 )
+anims/MeleeAttackLeft = SubResource( 3 )
+anims/MeleeAttackRight = SubResource( 4 )
+anims/MeleeAttackUp = SubResource( 5 )
+anims/WalkDown = SubResource( 17 )
+anims/WalkLeft = SubResource( 18 )
+anims/WalkRight = SubResource( 19 )
+anims/WalkUp = SubResource( 20 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 

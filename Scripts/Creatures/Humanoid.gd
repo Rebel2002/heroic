@@ -48,6 +48,7 @@ func _set_health(value):
 		play_animation("Death")
 
 func play_animation(animation):
+	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
 		$Hair/Animation.play(animation)
@@ -71,3 +72,14 @@ func stop_animation():
 			$Body.set_frame(143)
 			$Hair.set_frame(143)
 			$Eyes.set_frame(143)
+
+func direction_string():
+	match direction:
+		UP:
+			return "Up"
+		LEFT:
+			return "Left"
+		DOWN:
+			return "Down"
+		RIGHT:
+			return "Right"
