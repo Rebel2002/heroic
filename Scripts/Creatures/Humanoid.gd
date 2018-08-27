@@ -45,7 +45,9 @@ func _set_health(value):
 	
 	if health <= 0:
 		can_move = false
-		play_animation("Death")
+		$Body/Animation.play("Death")
+		$Hair/Animation.play("Death")
+		$Eyes/Animation.play("Death")
 
 # Override the parent function to add body parts animations
 func play_animation(animation):

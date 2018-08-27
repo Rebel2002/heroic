@@ -28,7 +28,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 7.47108, 10.4922 )
 
-[node name="Fire" type="Area2D" index="0"]
+[node name="Fire" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

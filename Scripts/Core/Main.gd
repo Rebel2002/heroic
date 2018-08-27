@@ -8,7 +8,7 @@ func _ready():
 
 sync func add_player(id, data):
 	if get_tree().is_network_server() && id != 1:
-		# Send server time time
+		# Send server time
 		$Ui/CurrentTime.rpc_id(id, "set_time", OS.get_time())
 		
 		# Send the info of existing players to new

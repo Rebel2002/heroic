@@ -2,17 +2,18 @@ extends KinematicBody2D
 
 export var game_name = "" setget _set_game_name
 export (int) var speed  = 200 # How fast the player will move (pixels/sec).
-export (int) var health = 8 setget _set_health
-sync var velocity = Vector2()
-var currentAction
-var can_move = true
-
+export (int) sync var health = 8 setget _set_health
+remote var velocity = Vector2()
+sync var currentAction
 sync var direction = DOWN
+var can_move = true
 enum {UP, DOWN, LEFT, RIGHT}
 
 func _ready():
 	$HealthBar.max_value = health
 	$HealthBar.value = health
+	if get_tree().has_network_peer() and !get_tree().is_network_server() and !is_network_master():
+		rpc_id(1, "_send_data", Global.id)
 
 func _set_game_name(string):
 	game_name = string
@@ -85,3 +86,10 @@ func _on_SpeechDisplayTimer_timeout():
 
 func _on_DisplayTimer_timeout():
 	$HealthBar.visible = false
+
+sync func _send_data(id):
+	rpc_id(id, "set_position", position)
+	rset_id(id, "direction", direction)
+
+remote func set_position(newPosition):
+	position = newPosition
