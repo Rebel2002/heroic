@@ -81,10 +81,10 @@ func play_animation(animation):
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
 
-func _on_SpeechDisplayTimer_timeout():
+func _on_Speech_DisplayTimer_timeout():
 	$Speech.visible = false
 
-func _on_DisplayTimer_timeout():
+func _on_HealthBar_DisplayTimer_timeout():
 	$HealthBar.visible = false
 
 sync func _send_data(id):

@@ -43,7 +43,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Creature" type="KinematicBody2D"]
+[node name="Creature" type="KinematicBody2D" index="0"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
@@ -112,7 +112,6 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 
 [node name="HealthBar" type="TextureProgress" parent="." index="3"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -151,7 +150,7 @@ _sections_unfolded = [ "Radial Fill", "Textures" ]
 
 process_mode = 1
 wait_time = 3.0
-one_shot = false
+one_shot = true
 autostart = false
 
 [node name="Collision" type="CollisionShape2D" parent="." index="4"]
@@ -239,8 +238,8 @@ wait_time = 3.0
 one_shot = true
 autostart = false
 
-[connection signal="timeout" from="HealthBar/DisplayTimer" to="." method="_on_DisplayTimer_timeout"]
+[connection signal="timeout" from="HealthBar/DisplayTimer" to="." method="_on_HealthBar_DisplayTimer_timeout"]
 
-[connection signal="timeout" from="Speech/DisplayTimer" to="." method="_on_SpeechDisplayTimer_timeout"]
+[connection signal="timeout" from="Speech/DisplayTimer" to="." method="_on_Speech_DisplayTimer_timeout"]
 
 
