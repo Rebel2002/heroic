@@ -34,18 +34,9 @@ func load_sprite():
 
 # Override the parent function to add body parts animations
 func _set_health(value):
-	health = value
-	
-	if (has_node("HealthBar")):
-		$HealthBar.visible = true
-		$HealthBar.value = value
-	
-	if (has_node("HealthBar/DisplayTimer")):
-		$HealthBar/DisplayTimer.start()
+	._set_health(value)
 	
 	if health <= 0:
-		can_move = false
-		$Body/Animation.play("Death")
 		$Hair/Animation.play("Death")
 		$Eyes/Animation.play("Death")
 
