@@ -1,19 +1,23 @@
 extends KinematicBody2D
 
-export var game_name = "" setget _set_game_name
-export (int) var speed  = 200 # How fast the player will move (pixels/sec).
-export (int) sync var health = 8 setget _set_health
-remote var velocity = Vector2()
-sync var currentAction
-sync var direction = DOWN
+var game_name = "" setget _set_game_name
+var speed  = 200 # How fast the player will move (pixels/sec).
 var can_move = true
+
+remote var health = 8 setget _set_health
+remote var velocity = Vector2()
+remote var current_action = 0
+remote var direction = DOWN
 enum {UP, DOWN, LEFT, RIGHT}
 
 func _ready():
+	# Set health bar values
 	$HealthBar.max_value = health
 	$HealthBar.value = health
-	if get_tree().has_network_peer() and !get_tree().is_network_server() and !is_network_master():
-		rpc_id(1, "_send_data", Global.id)
+	
+	# Request data from the server
+	if get_tree().has_network_peer() and not is_network_master() and not get_tree().is_network_server():
+		rpc_id(1, "_synchronize_data", get_tree().get_network_unique_id())
 
 func _set_game_name(string):
 	game_name = string
@@ -26,13 +30,29 @@ func _set_health(value):
 	if (has_node("HealthBar")):
 		$HealthBar.visible = true
 		$HealthBar.value = value
-	
-	if (has_node("HealthBar/DisplayTimer")):
 		$HealthBar/DisplayTimer.start()
 	
 	if health <= 0:
 		can_move = false
 		$Body/Animation.play("Death")
+
+func _on_Speech_DisplayTimer_timeout():
+	$Speech.visible = false
+
+func _on_HealthBar_DisplayTimer_timeout():
+	$HealthBar.visible = false
+
+remote func _synchronize_data(id):
+	# Send values if if they are not default
+	if position != Vector2():
+		rpc_unreliable_id(id, "set_position", position)
+	if direction != DOWN:
+		rset_id(id, "direction", direction)
+	if current_action != 0:
+		rset_id(id, "current_action", current_action)
+
+remote func set_position(value):
+	position = value
 
 func say(text):
 	$Speech/RichTextLabel.bbcode_text = "[center]" + text + "[/center]"
@@ -80,16 +100,3 @@ func play_animation(animation):
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
-
-func _on_Speech_DisplayTimer_timeout():
-	$Speech.visible = false
-
-func _on_HealthBar_DisplayTimer_timeout():
-	$HealthBar.visible = false
-
-sync func _send_data(id):
-	rpc_id(id, "set_position", position)
-	rset_id(id, "direction", direction)
-
-remote func set_position(newPosition):
-	position = newPosition

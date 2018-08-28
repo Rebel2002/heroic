@@ -9,7 +9,14 @@ export (int, 1, 3) var skintone = 1
 
 func _ready():
 	load_sprite()
-	pass
+
+# Override the parent function to add body parts animations
+func _set_health(value):
+	._set_health(value)
+
+	if health <= 0:
+		$Hair/Animation.play("Death")
+		$Eyes/Animation.play("Death")
 
 func load_sprite():
 	$Body.texture = load("res://Sprites/Creatures/Character/" +
@@ -31,14 +38,6 @@ func load_sprite():
 						hair +
 						".png")
 		$Hair.modulate = hair_color
-
-# Override the parent function to add body parts animations
-func _set_health(value):
-	._set_health(value)
-	
-	if health <= 0:
-		$Hair/Animation.play("Death")
-		$Eyes/Animation.play("Death")
 
 # Override the parent function to add body parts animations
 func play_animation(animation):

@@ -51,9 +51,6 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-game_name = ""
-speed = 200
-health = 8
 
 [node name="Body" type="Sprite" parent="." index="0"]
 
@@ -112,7 +109,6 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 
 [node name="HealthBar" type="TextureProgress" parent="." index="3"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

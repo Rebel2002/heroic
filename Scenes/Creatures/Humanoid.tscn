@@ -395,10 +395,6 @@ editor/display_folded = true
 
 shape = SubResource( 10 )
 
-[node name="Speech" parent="." index="5"]
-
-editor/display_folded = true
-
 [node name="Eyes" type="Sprite" parent="." index="6"]
 
 editor/display_folded = true
