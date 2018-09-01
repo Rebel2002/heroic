@@ -5,7 +5,7 @@ var speed  = 200 # How fast the player will move (pixels/sec).
 var can_move = true
 
 remote var health = 8 setget _set_health
-remote var velocity = Vector2()
+remote var velocity = Vector2() setget _set_velocity
 remote var current_action = 0
 remote var direction = DOWN
 enum {UP, DOWN, LEFT, RIGHT}
@@ -35,6 +35,10 @@ func _set_health(value):
 	if health <= 0:
 		can_move = false
 		$Body/Animation.play("Death")
+
+func _set_velocity(value):
+	velocity = value
+	calculate_direction()
 
 func _on_Speech_DisplayTimer_timeout():
 	$Speech.visible = false
@@ -96,7 +100,7 @@ func direction_string():
 		RIGHT:
 			return "Right"
 
-func play_animation(animation):
+sync func play_animation(animation):
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)

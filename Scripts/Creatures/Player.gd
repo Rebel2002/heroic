@@ -31,12 +31,13 @@ func _process(delta):
 				current_action = WALKING
 				velocity = velocity.normalized() * speed
 			
+			calculate_direction()
+			
 			rset("current_action", current_action)
 			rset("velocity", velocity)
 			rpc_unreliable("set_position", position) # Send position to avoid desync
 		
 		# Make actions
-		calculate_direction()
 		match current_action:
 			WALKING:
 				play_animation("Walk")
