@@ -46,6 +46,7 @@ func _set_race(Id):
 func _set_hair(Id):
 	$Character.hair = $Panel/Controls/Hair/Type.get_item_text(Id)
 	$Character.load_sprite()
+	$Character/Hair.modulate = $Panel/Controls/Hair/ColorPicker.color
 
 func _set_eyes(Id):
 	$Character.eyes = $Panel/Controls/Eyes/Type.get_item_text(Id)

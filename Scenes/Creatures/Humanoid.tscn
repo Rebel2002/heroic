@@ -397,7 +397,6 @@ shape = SubResource( 10 )
 
 [node name="Eyes" type="Sprite" parent="." index="6"]
 
-editor/display_folded = true
 texture = ExtResource( 4 )
 vframes = 21
 hframes = 13
@@ -425,7 +424,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="Hair" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 texture = ExtResource( 5 )
 vframes = 21
 hframes = 13
