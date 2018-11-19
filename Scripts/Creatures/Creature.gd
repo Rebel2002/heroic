@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-var game_name = "" setget _set_game_name
+var game_name = "" setget set_game_name
 var speed  = 200 # How fast the player will move (pixels/sec).
 var can_move = true
 
-remote var health = 8 setget _set_health
-remote var velocity = Vector2() setget _set_velocity
+remote var health = 8 setget set_health
+remote var velocity = Vector2() setget set_velocity
 remote var current_action = 0
 remote var direction = DOWN
 enum {UP, DOWN, LEFT, RIGHT}
@@ -19,12 +19,12 @@ func _ready():
 	if get_tree().has_network_peer() and not is_network_master() and not get_tree().is_network_server():
 		rpc_id(1, "synchronize_data", get_tree().get_network_unique_id())
 
-func _set_game_name(string):
+func set_game_name(string):
 	game_name = string
 	if has_node("Name"):
 		$Name.text = string
 
-func _set_health(value):
+func set_health(value):
 	health = value
 	
 	if (has_node("HealthBar")):
@@ -36,7 +36,7 @@ func _set_health(value):
 		can_move = false
 		$Body/Animation.play("Death")
 
-func _set_velocity(value):
+func set_velocity(value):
 	velocity = value
 	calculate_direction()
 
@@ -104,6 +104,3 @@ sync func play_animation(animation):
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
-
-func _on_Animation_animation_finished(anim_name):
-	pass # replace with function body

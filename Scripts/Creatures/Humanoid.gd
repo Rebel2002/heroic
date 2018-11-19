@@ -11,8 +11,8 @@ func _ready():
 	load_sprite()
 
 # Override the parent function to add body parts animations
-func _set_health(value):
-	._set_health(value)
+func set_health(value):
+	.set_health(value)
 
 	if health <= 0:
 		$Hair/Animation.play("Death")

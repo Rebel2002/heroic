@@ -359,7 +359,7 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[node name="Humanoid" instance=ExtResource( 1 )]
+[node name="Humanoid" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 sex = "Male"

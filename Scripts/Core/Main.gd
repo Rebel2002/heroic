@@ -5,7 +5,7 @@ func _ready():
 	rpc("add_player", Global.id, Global.player) # Will call only server and local!
 	get_tree().connect("network_peer_disconnected", self, "remove_player")
 
-sync func add_player(id, data, announce):
+sync func add_player(id, data):
 	if get_tree().is_network_server() and id != 1:
 		# Send server time
 		$Ui/CurrentTime.rpc_id(id, "set_time", OS.get_time())
