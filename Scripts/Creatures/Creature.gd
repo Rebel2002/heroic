@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var BattleText = preload("res://Scenes/Effects/BattleText.tscn")
+
 # Stats
 var game_name = "" setget set_game_name
 var speed  = 200 # How fast the player will move (pixels/sec).
@@ -27,6 +29,11 @@ func set_game_name(string):
 		$Name.text = string
 
 func set_health(value):
+	# Show damage
+	var battle_text = BattleText.instance()
+	battle_text.damage(value - health)
+	add_child(battle_text)
+	
 	health = value
 	
 	if (has_node("HealthBar")):
@@ -108,7 +115,6 @@ sync func play_animation(animation):
 		$Body/Animation.play(animation)
 
 func _on_animation_finished(anim_name):
-	print(Global.dice(4))
 	if get_tree().is_network_server() and anim_name.begins_with("MeleeAttack"):
 		# Detect objects in damage area and make damage
 		for body in $DamageArea.get_overlapping_bodies():
@@ -118,6 +124,5 @@ func _on_animation_finished(anim_name):
 				or direction == DOWN and body.position.y > self.position.y
 				or direction == LEFT and body.position.x < self.position.x
 				or direction == RIGHT and body.position.x > self.position.x):
-					body.health -= randi() % 3 + Global.modifier(strength)
+					body.health -= Global.dice(4) + Global.modifier(strength)
 					body.rset("health", body.health)
-					print(body.health)
