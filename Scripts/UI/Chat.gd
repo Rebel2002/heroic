@@ -16,7 +16,7 @@ sync func send_message(id, new_text):
 	get_node("../../World/Objects/Player" + str(id)).say(new_text)
 	$ChatWindow.bbcode_text += "\n[color=green]" + Global.players[id]["nickname"] + "[/color]: " + new_text
 
-remote func announce_connected(player_name):
+sync func announce_connected(player_name):
 	$ChatWindow.bbcode_text += "\n[color=gray]" + player_name + " has joined the game.[/color]" 
 
 func announce_disconnected(player_name):

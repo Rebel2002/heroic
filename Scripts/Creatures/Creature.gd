@@ -17,7 +17,7 @@ func _ready():
 	
 	# Request data from the server
 	if get_tree().has_network_peer() and not is_network_master() and not get_tree().is_network_server():
-		rpc_id(1, "_synchronize_data", get_tree().get_network_unique_id())
+		rpc_id(1, "synchronize_data", get_tree().get_network_unique_id())
 
 func _set_game_name(string):
 	game_name = string
@@ -46,7 +46,7 @@ func _on_Speech_DisplayTimer_timeout():
 func _on_HealthBar_DisplayTimer_timeout():
 	$HealthBar.visible = false
 
-remote func _synchronize_data(id):
+remote func synchronize_data(id):
 	# Send values if if they are not default
 	if position != Vector2():
 		rpc_unreliable_id(id, "set_position", position)
@@ -104,3 +104,6 @@ sync func play_animation(animation):
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
+
+func _on_Animation_animation_finished(anim_name):
+	pass # replace with function body

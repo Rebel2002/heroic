@@ -384,7 +384,7 @@ custom_solver_bias = 0.0
 radius = 8.87003
 height = 25.5473
 
-[node name="Wolf" index="0" instance=ExtResource( 1 )]
+[node name="Wolf" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "collision" ]

@@ -385,11 +385,6 @@ anims/WalkDown = SubResource( 6 )
 anims/WalkLeft = SubResource( 7 )
 anims/WalkRight = SubResource( 8 )
 anims/WalkUp = SubResource( 9 )
-_sections_unfolded = [ "Playback Options" ]
-
-[node name="HealthBar" parent="." index="3"]
-
-editor/display_folded = true
 
 [node name="Collision" parent="." index="4"]
 

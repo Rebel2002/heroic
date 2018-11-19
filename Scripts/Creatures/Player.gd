@@ -11,7 +11,7 @@ func _process(delta):
 		# Read pressed keys
 		if (is_network_master()):
 			current_action = NONE
-			if (Input.is_action_just_pressed("ui_attack") 
+			if (Input.is_action_just_pressed("ui_attack")
 			or $Body/Animation.current_animation == "MeleeAttack" + direction_string()):
 				current_action = ATTACKING
 			

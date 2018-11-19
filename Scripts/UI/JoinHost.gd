@@ -23,7 +23,7 @@ func _on_Join_pressed():
 func _on_Host_pressed():
 	# Create server
 	var host = NetworkedMultiplayerENet.new()
-	host.create_server(Global.port)
+	host.create_server(Global.port, 4)
 	get_tree().set_network_peer(host)
 	get_tree().change_scene("res://Scenes/Core/Main.tscn")
 

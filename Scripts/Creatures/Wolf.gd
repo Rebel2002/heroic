@@ -26,8 +26,8 @@ func _process(delta):
 		play_animation("Run")
 		move_and_collide(velocity * delta)
 
-remote func _synchronize_data(id):
-	._synchronize_data(id)
+remote func synchronize_data(id):
+	.synchronize_data(id)
 	
 	if current_target != null:
 		rset_id(id, "current_target", current_target)

@@ -17,6 +17,14 @@ visible = false
 
 position = Vector2( -0.172241, 26.9568 )
 
+[node name="Eyes" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="Hair" parent="." index="7"]
+
+editor/display_folded = true
+
 [node name="Camera" type="Camera2D" parent="." index="8"]
 
 anchor_mode = 1
