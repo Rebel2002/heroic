@@ -11,9 +11,6 @@ func _process(delta):
 		# Read pressed keys
 		if (is_network_master()):
 			current_action = NONE
-			if (Input.is_action_just_pressed("ui_attack")
-			or $Body/Animation.current_animation == "MeleeAttack" + direction_string()):
-				current_action = ATTACKING
 			
 			# Change the player's vector depending on the keys
 			velocity = Vector2()
@@ -30,8 +27,11 @@ func _process(delta):
 			if velocity.length() > 0:
 				current_action = WALKING
 				velocity = velocity.normalized() * speed
+				calculate_direction()
 			
-			calculate_direction()
+			if (Input.is_action_just_pressed("ui_attack")
+			or $Body/Animation.current_animation == "MeleeAttack" + direction_string()):
+				current_action = ATTACKING
 			
 			rset("current_action", current_action)
 			rset("velocity", velocity)

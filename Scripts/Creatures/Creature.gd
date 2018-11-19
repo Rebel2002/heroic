@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
+# Stats
 var game_name = "" setget set_game_name
 var speed  = 200 # How fast the player will move (pixels/sec).
+var strength = 15
 var can_move = true
 
-remote var health = 8 setget set_health
+remote var health = 200 setget set_health
 remote var velocity = Vector2() setget set_velocity
 remote var current_action = 0
 remote var direction = DOWN
@@ -104,3 +106,17 @@ sync func play_animation(animation):
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
+
+func _on_animation_finished(anim_name):
+	if get_tree().is_network_server() and anim_name.begins_with("MeleeAttack"):
+		# Detect objects in damage area and make damage
+		for body in $DamageArea.get_overlapping_bodies():
+			if body.is_in_group("Players") and body.health > 0 and body != self:
+				# Check the position for damage only by facing the target.
+				if (direction == UP and body.position.y < self.position.y
+				or direction == DOWN and body.position.y > self.position.y
+				or direction == LEFT and body.position.x < self.position.x
+				or direction == RIGHT and body.position.x > self.position.x):
+					body.health -= randi() % 3 + Global.modifier(strength)
+					body.rset("health", body.health)
+					print(body.health)

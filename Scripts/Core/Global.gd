@@ -10,3 +10,6 @@ var player = {}
 # Session
 var players = {}
 var id
+
+func modifier(attribute):
+	return floor((attribute - 10) / 2)

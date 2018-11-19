@@ -43,7 +43,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Creature" type="KinematicBody2D"]
+[node name="Creature" type="KinematicBody2D" index="0"]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
@@ -83,7 +83,23 @@ audio_bus_name = "Master"
 
 [node name="Collision" type="CollisionShape2D" parent="VisibleArea" index="0"]
 
-[node name="Name" type="Label" parent="." index="2"]
+[node name="DamageArea" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="Collision" type="CollisionShape2D" parent="DamageArea" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Name" type="Label" parent="." index="3"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -107,7 +123,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
 
-[node name="HealthBar" type="TextureProgress" parent="." index="3"]
+[node name="HealthBar" type="TextureProgress" parent="." index="4"]
 
 editor/display_folded = true
 anchor_left = 0.5
@@ -150,13 +166,13 @@ wait_time = 3.0
 one_shot = true
 autostart = false
 
-[node name="Collision" type="CollisionShape2D" parent="." index="4"]
+[node name="Collision" type="CollisionShape2D" parent="." index="5"]
 
 position = Vector2( -1.1722, 26.9568 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Speech" type="Control" parent="." index="5"]
+[node name="Speech" type="Control" parent="." index="6"]
 
 editor/display_folded = true
 visible = false
@@ -235,7 +251,7 @@ wait_time = 3.0
 one_shot = true
 autostart = false
 
-[connection signal="animation_finished" from="Body/Animation" to="." method="_on_Animation_animation_finished"]
+[connection signal="animation_finished" from="Body/Animation" to="." method="_on_animation_finished"]
 
 [connection signal="timeout" from="HealthBar/DisplayTimer" to="." method="_on_HealthBar_DisplayTimer_timeout"]
 

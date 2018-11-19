@@ -427,19 +427,19 @@ visible = false
 
 shape = SubResource( 21 )
 
-[node name="Name" parent="." index="2"]
+[node name="Name" parent="." index="3"]
 
 margin_top = -82.0
 margin_bottom = -68.0
 text = "Wolf"
 
-[node name="HealthBar" parent="." index="3"]
+[node name="HealthBar" parent="." index="4"]
 
 margin_top = -68.0
 margin_bottom = -57.0
 _sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
 
-[node name="Collision" parent="." index="4"]
+[node name="Collision" parent="." index="5"]
 
 position = Vector2( 0, 23 )
 shape = SubResource( 22 )

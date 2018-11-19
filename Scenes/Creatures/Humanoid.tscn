@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Creature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Humanoid.gd" type="Script" id=2]
@@ -173,13 +173,18 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=22]
+
+custom_solver_bias = 0.0
+radius = 17.7608
+
+[sub_resource type="CapsuleShape2D" id=23]
 
 custom_solver_bias = 0.0
 radius = 4.05609
 height = 17.8203
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=24]
 
 length = 0.4
 loop = false
@@ -197,7 +202,7 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=25]
 
 length = 0.7
 loop = true
@@ -215,7 +220,7 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=26]
 
 length = 0.7
 loop = true
@@ -233,7 +238,7 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=27]
 
 length = 0.7
 loop = true
@@ -251,7 +256,7 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=28]
 
 length = 0.7
 loop = true
@@ -269,7 +274,7 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=29]
 
 length = 0.4
 loop = false
@@ -287,7 +292,7 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=30]
 
 length = 0.7
 loop = true
@@ -305,7 +310,7 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=31]
 
 length = 0.7
 loop = true
@@ -323,7 +328,7 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=32]
 
 length = 0.7
 loop = true
@@ -341,7 +346,7 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 
 length = 0.7
 loop = true
@@ -386,12 +391,24 @@ anims/WalkLeft = SubResource( 7 )
 anims/WalkRight = SubResource( 8 )
 anims/WalkUp = SubResource( 9 )
 
-[node name="Collision" parent="." index="4"]
+[node name="DamageArea" parent="." index="2"]
 
-shape = SubResource( 10 )
+editor/display_folded = false
 
-[node name="Eyes" type="Sprite" parent="." index="6"]
+[node name="Collision" parent="DamageArea" index="0"]
 
+position = Vector2( -1.44247, 26.6045 )
+rotation = 1.5708
+shape = SubResource( 22 )
+
+[node name="Collision" parent="." index="5"]
+
+shape = SubResource( 23 )
+
+[node name="Eyes" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( -3.01599, -4.93399 )
 texture = ExtResource( 4 )
 vframes = 21
 hframes = 13
@@ -405,20 +422,21 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 11 )
+anims/Death = SubResource( 24 )
 anims/MeleeAttackDown = SubResource( 2 )
 anims/MeleeAttackLeft = SubResource( 3 )
 anims/MeleeAttackRight = SubResource( 4 )
 anims/MeleeAttackUp = SubResource( 5 )
-anims/WalkDown = SubResource( 12 )
-anims/WalkLeft = SubResource( 13 )
-anims/WalkRight = SubResource( 14 )
-anims/WalkUp = SubResource( 15 )
+anims/WalkDown = SubResource( 25 )
+anims/WalkLeft = SubResource( 26 )
+anims/WalkRight = SubResource( 27 )
+anims/WalkUp = SubResource( 28 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Hair" type="Sprite" parent="." index="7"]
+[node name="Hair" type="Sprite" parent="." index="8"]
 
+editor/display_folded = true
 texture = ExtResource( 5 )
 vframes = 21
 hframes = 13
@@ -432,15 +450,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 16 )
+anims/Death = SubResource( 29 )
 anims/MeleeAttackDown = SubResource( 2 )
 anims/MeleeAttackLeft = SubResource( 3 )
 anims/MeleeAttackRight = SubResource( 4 )
 anims/MeleeAttackUp = SubResource( 5 )
-anims/WalkDown = SubResource( 17 )
-anims/WalkLeft = SubResource( 18 )
-anims/WalkRight = SubResource( 19 )
-anims/WalkUp = SubResource( 20 )
+anims/WalkDown = SubResource( 30 )
+anims/WalkLeft = SubResource( 31 )
+anims/WalkRight = SubResource( 32 )
+anims/WalkUp = SubResource( 21 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
