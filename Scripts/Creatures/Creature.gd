@@ -108,6 +108,7 @@ sync func play_animation(animation):
 		$Body/Animation.play(animation)
 
 func _on_animation_finished(anim_name):
+	print(Global.dice(4))
 	if get_tree().is_network_server() and anim_name.begins_with("MeleeAttack"):
 		# Detect objects in damage area and make damage
 		for body in $DamageArea.get_overlapping_bodies():

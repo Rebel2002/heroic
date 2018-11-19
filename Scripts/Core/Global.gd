@@ -13,3 +13,6 @@ var id
 
 func modifier(attribute):
 	return floor((attribute - 10) / 2)
+
+func dice(faces_count):
+	return randi() % faces_count + 1
