@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/UI/TouchA.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/UI/TouchR.png" type="Texture" id=4]
 
-[node name="TouchControls" type="Control" index="0"]
+[node name="TouchControls" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.5

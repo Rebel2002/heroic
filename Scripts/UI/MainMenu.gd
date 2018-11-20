@@ -15,7 +15,7 @@ func _on_NewGame_pressed():
 	get_tree().change_scene("res://Scenes/UI/CreateCharacter.tscn")
 
 func _on_Settings_pressed():
-	pass # Settings? We don't need settings.
+	get_tree().change_scene("res://Scenes/UI/Settings.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()

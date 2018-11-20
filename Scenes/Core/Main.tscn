@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/UI/Chat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/UI/Inventory.tscn" type="PackedScene" id=7]
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 
