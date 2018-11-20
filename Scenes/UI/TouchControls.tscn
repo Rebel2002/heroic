@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/UI/TouchA.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/UI/TouchR.png" type="Texture" id=4]
 
-[node name="TouchControls" type="Control"]
+[node name="TouchControls" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -362,7 +362,6 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="A" type="Control" parent="." index="8"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -391,7 +390,7 @@ shape_centered = true
 shape_visible = true
 passby_press = false
 action = "ui_attack"
-visibility_mode = 0
+visibility_mode = 1
 _sections_unfolded = [ "Transform" ]
 
 [node name="R" type="Control" parent="." index="9"]
@@ -424,6 +423,6 @@ shape_centered = true
 shape_visible = true
 passby_press = false
 action = "ui_inventory"
-visibility_mode = 0
+visibility_mode = 1
 
 
