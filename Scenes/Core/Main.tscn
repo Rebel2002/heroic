@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Core/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Locations/World.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/UI/TouchControls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/CurrentTime.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/Chat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/Inventory.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node" index="0"]
 
@@ -33,5 +34,9 @@ anchor_left = 1.0
 anchor_right = 1.0
 
 [node name="Chat" parent="Ui" index="3" instance=ExtResource( 6 )]
+
+[node name="Inventory" parent="Ui" index="4" instance=ExtResource( 7 )]
+
+visible = false
 
 
