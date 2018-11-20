@@ -26,6 +26,8 @@ func load_sprite():
 						"/" +
 						str(skintone) +
 						".png")
+						
+	# Orcs do not have hair and eye sprites
 	if race != "Orc":
 		$Eyes.texture = load("res://Sprites/Creatures/Character/" +
 						sex +
@@ -38,6 +40,9 @@ func load_sprite():
 						hair +
 						".png")
 		$Hair.modulate = hair_color
+	else:
+		$Eyes.texture = null
+		$Hair.texture = null
 
 # Override the parent function to add body parts animations
 func play_animation(animation):
