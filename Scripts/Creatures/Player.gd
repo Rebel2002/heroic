@@ -12,6 +12,12 @@ func _process(delta):
 		if (is_network_master()):
 			current_action = NONE
 			
+			# Pick an item
+			if Input.is_action_just_pressed("ui_pickup"):
+				for object in $InterractArea.get_overlapping_areas():
+					if object.is_in_group("Item"):
+						object.queue_free()
+			
 			# Change the player's vector depending on the keys
 			velocity = Vector2()
 			if Input.is_action_pressed("ui_up"):

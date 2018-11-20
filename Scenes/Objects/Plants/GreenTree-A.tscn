@@ -43,6 +43,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Transparency" parent="." index="2" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 3.93371, -52.1902 )
 
 [node name="Collision" type="CollisionShape2D" parent="Transparency" index="0"]

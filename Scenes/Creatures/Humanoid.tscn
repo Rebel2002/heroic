@@ -173,18 +173,18 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="CircleShape2D" id=22]
+[sub_resource type="CircleShape2D" id=21]
 
 custom_solver_bias = 0.0
-radius = 17.7608
+radius = 16.0529
 
-[sub_resource type="CapsuleShape2D" id=23]
+[sub_resource type="CapsuleShape2D" id=10]
 
 custom_solver_bias = 0.0
 radius = 4.05609
 height = 17.8203
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=11]
 
 length = 0.4
 loop = false
@@ -202,7 +202,7 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=12]
 
 length = 0.7
 loop = true
@@ -220,7 +220,7 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=13]
 
 length = 0.7
 loop = true
@@ -238,7 +238,7 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=14]
 
 length = 0.7
 loop = true
@@ -256,7 +256,7 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=15]
 
 length = 0.7
 loop = true
@@ -274,7 +274,7 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=16]
 
 length = 0.4
 loop = false
@@ -292,7 +292,7 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=17]
 
 length = 0.7
 loop = true
@@ -310,7 +310,7 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=18]
 
 length = 0.7
 loop = true
@@ -328,7 +328,7 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=19]
 
 length = 0.7
 loop = true
@@ -346,7 +346,7 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=20]
 
 length = 0.7
 loop = true
@@ -391,19 +391,18 @@ anims/WalkLeft = SubResource( 7 )
 anims/WalkRight = SubResource( 8 )
 anims/WalkUp = SubResource( 9 )
 
-[node name="DamageArea" parent="." index="2"]
+[node name="InterractArea" parent="." index="2"]
 
 editor/display_folded = false
 
-[node name="Collision" parent="DamageArea" index="0"]
+[node name="Collision" parent="InterractArea" index="0"]
 
-position = Vector2( -1.44247, 26.6045 )
-rotation = 1.5708
-shape = SubResource( 22 )
+position = Vector2( -1.04901, 25.5244 )
+shape = SubResource( 21 )
 
 [node name="Collision" parent="." index="5"]
 
-shape = SubResource( 23 )
+shape = SubResource( 10 )
 
 [node name="Eyes" type="Sprite" parent="." index="7"]
 
@@ -422,15 +421,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 24 )
+anims/Death = SubResource( 11 )
 anims/MeleeAttackDown = SubResource( 2 )
 anims/MeleeAttackLeft = SubResource( 3 )
 anims/MeleeAttackRight = SubResource( 4 )
 anims/MeleeAttackUp = SubResource( 5 )
-anims/WalkDown = SubResource( 25 )
-anims/WalkLeft = SubResource( 26 )
-anims/WalkRight = SubResource( 27 )
-anims/WalkUp = SubResource( 28 )
+anims/WalkDown = SubResource( 12 )
+anims/WalkLeft = SubResource( 13 )
+anims/WalkRight = SubResource( 14 )
+anims/WalkUp = SubResource( 15 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -450,15 +449,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 29 )
+anims/Death = SubResource( 16 )
 anims/MeleeAttackDown = SubResource( 2 )
 anims/MeleeAttackLeft = SubResource( 3 )
 anims/MeleeAttackRight = SubResource( 4 )
 anims/MeleeAttackUp = SubResource( 5 )
-anims/WalkDown = SubResource( 30 )
-anims/WalkLeft = SubResource( 31 )
-anims/WalkRight = SubResource( 32 )
-anims/WalkUp = SubResource( 21 )
+anims/WalkDown = SubResource( 17 )
+anims/WalkLeft = SubResource( 18 )
+anims/WalkRight = SubResource( 19 )
+anims/WalkUp = SubResource( 20 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 

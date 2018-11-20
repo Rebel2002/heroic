@@ -83,9 +83,8 @@ audio_bus_name = "Master"
 
 [node name="Collision" type="CollisionShape2D" parent="VisibleArea" index="0"]
 
-[node name="DamageArea" type="Area2D" parent="." index="2"]
+[node name="InterractArea" type="Area2D" parent="." index="2"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -95,7 +94,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Transform" ]
 
-[node name="Collision" type="CollisionShape2D" parent="DamageArea" index="0"]
+[node name="Collision" type="CollisionShape2D" parent="InterractArea" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
