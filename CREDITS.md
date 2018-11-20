@@ -99,6 +99,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0
 
+### [Onscreen Controls](https://www.kenney.nl/assets/onscreen-controls)
+
+**Authors:** Kenney.
+
+**Licenses:** CC0
+
 ## Used Fonts
 
 ### [basis33](https://github.com/Manchson/basis33)
