@@ -11,7 +11,7 @@ func _process(delta):
 			visible = true
 
 func _on_MainMenu_pressed():
-	get_tree().network_peer.close_connection()
+	get_tree().set_network_peer(null)
 	Global.players.clear()
 	get_tree().change_scene("res://Scenes/UI/MainMenu.tscn")
 
