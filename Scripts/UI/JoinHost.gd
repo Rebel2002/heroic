@@ -23,9 +23,11 @@ func _on_Join_pressed():
 func _on_Host_pressed():
 	# Create server
 	var host = NetworkedMultiplayerENet.new()
-	host.create_server(Global.port, 4)
-	get_tree().set_network_peer(host)
-	get_tree().change_scene("res://Scenes/Core/Main.tscn")
+	if host.create_server(Global.port) == OK:
+		get_tree().set_network_peer(host)
+		get_tree().change_scene("res://Scenes/Core/Main.tscn")
+	else:
+		$Panel/Status.text = "Unable to create server."
 
 # Callback from SceneTree, only for clients (not server)
 func _on_connected_to_server():
