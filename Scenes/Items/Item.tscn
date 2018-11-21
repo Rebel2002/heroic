@@ -1,6 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Item" type="Area2D" groups=[
+[ext_resource path="res://Scripts/Items/Item.gd" type="Script" id=1]
+
+[node name="Item" type="Area2D" index="0" groups=[
 "Item",
 ]]
 
@@ -12,6 +14,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
