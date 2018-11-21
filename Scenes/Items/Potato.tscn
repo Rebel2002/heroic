@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Items/Item.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Items/Vegies.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Items/Potato.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,18 +22,21 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+stackable = true
+items = 1
+price = 0
+type = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, 21 )
 texture = ExtResource( 2 )
-vframes = 8
-hframes = 16
-_sections_unfolded = [ "Animation", "Offset" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [node name="Collision" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.15778, 20.8206 )
+position = Vector2( 0, 20 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 
