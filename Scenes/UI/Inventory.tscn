@@ -1,19 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Styles/MenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Styles/Main.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/UI/Inventory.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 
-[node name="Inventory" type="WindowDialog"]
+[node name="Inventory" type="WindowDialog" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -415.0
-margin_top = -220.0
-margin_right = 415.0
-margin_bottom = 220.0
+margin_left = -256.5
+margin_top = -60.0
+margin_right = 256.5
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -25,7 +24,7 @@ popup_exclusive = false
 window_title = "Inventory"
 resizable = false
 script = ExtResource( 2 )
-_sections_unfolded = [ "Theme" ]
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
 [node name="ItemList" type="ItemList" parent="." index="1"]
 
@@ -40,13 +39,13 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-items = [ "", ExtResource( 3 ), false, "", ExtResource( 3 ), false ]
+items = [  ]
 select_mode = 0
 allow_reselect = false
 max_columns = 10
 same_column_width = true
 icon_mode = 0
 fixed_icon_size = Vector2( 0, 0 )
-_sections_unfolded = [ "Columns", "Icon", "Theme", "custom_constants" ]
+_sections_unfolded = [ "Anchor", "Icon" ]
 
 
