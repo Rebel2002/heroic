@@ -422,5 +422,5 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = SubResource( 18 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/colors", "Label/colors", "LineEdit/colors", "MenuButton", "MenuButton/styles", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu/fonts", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles" ]
+_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/colors", "ItemList/styles", "Label/colors", "LineEdit/colors", "MenuButton", "MenuButton/styles", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu/fonts", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles" ]
 

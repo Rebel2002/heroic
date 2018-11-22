@@ -35,10 +35,11 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
-mouse_filter = 0
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 1 )
 items = [  ]
 select_mode = 0
 allow_reselect = false
@@ -46,6 +47,6 @@ max_columns = 10
 same_column_width = true
 icon_mode = 0
 fixed_icon_size = Vector2( 0, 0 )
-_sections_unfolded = [ "Anchor", "Icon" ]
+_sections_unfolded = [ "Anchor", "Columns", "Icon", "Material", "Mouse", "Pause", "Theme", "Visibility" ]
 
 
