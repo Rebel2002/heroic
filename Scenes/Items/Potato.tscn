@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
-[node name="Potato" type="Area2D" index="0" groups=[
+[node name="Potato" type="Area2D" groups=[
 "Item",
 ]]
 
@@ -22,10 +22,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-stackable = true
-items = 1
-price = 0
-type = null
+stack = 50
+count = 45
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
