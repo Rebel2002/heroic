@@ -27,7 +27,6 @@ func _input(event):
 			show()
 	elif event is InputEventMouseButton:
 		if event.button_index == BUTTON_RIGHT and not event.pressed:
-			print(123)
 			# Left button click
 			if cursor_item != null:
 				# Cancel moving operation
@@ -128,7 +127,7 @@ func set_item(slot, item):
 		$ItemList.set_item_icon(slot, item.get_node("Sprite").texture)
 		$ItemList.set_item_metadata(slot, item)
 		if item.stackable():
-			$ItemList.set_item_text(slot, str(item.count))
+			$ItemList.set_item_text(slot, str(item.count)) # Show count in text property
 	else:
 		# Set empty slot
 		$ItemList.set_item_icon(slot, empty_slot)

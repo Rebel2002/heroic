@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://Styles/GameNameFont.tres" type="DynamicFont" id=2]
 
 [node name="Item" type="Area2D" index="0" groups=[
 "Item",
@@ -16,13 +17,39 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+game_name = ""
+stack = 1
+count = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, 31 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Collision" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0, 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Name" type="Label" parent="." index="2"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 8.0
+margin_bottom = -18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = " (1)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 

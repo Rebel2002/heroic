@@ -1,21 +1,14 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Creatures/Creature.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Styles/GameNameFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Sprites/UI/EmptyBar.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/UI/GreenBar.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/UI/Speech.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=1]
-
-size = 12
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 
 content_margin_left = 3.0
 content_margin_right = 3.0
@@ -35,12 +28,12 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 
 size = 12
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 2 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
 [node name="Creature" type="KinematicBody2D"]
@@ -114,7 +107,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -207,8 +200,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = ""
@@ -239,7 +232,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
