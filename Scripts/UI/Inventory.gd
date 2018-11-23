@@ -1,7 +1,6 @@
 extends WindowDialog
 
 const empty_slot = preload("res://Sprites/Items/EmptySlot.png")
-const potato = preload("res://Scenes/Items/Potato.tscn")
 const inventory_size = 18
 
 var cursor_item
@@ -52,6 +51,10 @@ func _input(event):
 				# Put item to slot under mouse
 				var slot = $ItemList.get_item_at_position($ItemList.get_local_mouse_position(), true)
 				if slot == -1:
+					# Check if cursor is outside window
+					if not get_rect().has_point(get_viewport().get_mouse_position()):
+						rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
+						remove_item_from_cursor()
 					return
 				
 				var slot_item = $ItemList.get_item_metadata(slot)
@@ -72,6 +75,12 @@ func _input(event):
 					set_item(cursor_item_slot, slot_item)
 					set_item(slot, cursor_item)
 					remove_item_from_cursor()
+
+sync func drop_item(item_name, count, coordinats):
+	var item = load(item_name).instance()
+	item.position = coordinats
+	item.count = count
+	$"../../World/Objects".add_child(item)
 
 func pick_item(item):
 	#  Try to add to stack first

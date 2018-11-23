@@ -47,6 +47,6 @@ max_columns = 10
 same_column_width = true
 icon_mode = 0
 fixed_icon_size = Vector2( 0, 0 )
-_sections_unfolded = [ "Anchor", "Columns", "Icon", "Material", "Mouse", "Pause", "Theme", "Visibility" ]
+_sections_unfolded = [ "Columns", "Icon", "Material", "Pause", "Visibility" ]
 
 
