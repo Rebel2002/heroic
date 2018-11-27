@@ -17,6 +17,9 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+game_name = ""
+stack = 1
+count = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -43,7 +46,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
-text = " (1)"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

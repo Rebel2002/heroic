@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Tilesets/Dirt.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Grass.tres" type="TileSet" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://Scenes/Objects/Other/BenchHorizontalC.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Objects/Other/BenchHorizontalA.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Objects/Other/BenchHorizontalB.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Items/Mace.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 
@@ -92,7 +93,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background", "Tonemap" ]
 
-[node name="World" type="WorldEnvironment"]
+[node name="World" type="WorldEnvironment" index="0"]
 
 environment = SubResource( 1 )
 
@@ -194,12 +195,28 @@ position = Vector2( 276.826, 561.853 )
 
 position = Vector2( 391.657, 342.444 )
 
-[node name="WoodBenchHorizontalA" parent="Objects" index="12" instance=ExtResource( 9 )]
+[node name="Mace" parent="Objects" index="12" groups=[
+"Item",
+] instance=ExtResource( 12 )]
+
+position = Vector2( 382.274, 228.389 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+stack = 1
+count = 1
+
+[node name="Potato" parent="Objects" index="13" instance=ExtResource( 13 )]
+
+position = Vector2( 331.304, 270.495 )
+
+[node name="WoodBenchHorizontalA" parent="Objects" index="14" instance=ExtResource( 9 )]
 
 position = Vector2( 566.438, 581.654 )
-
-[node name="Potato" parent="Objects" index="13" instance=ExtResource( 12 )]
-
-position = Vector2( 297.924, 331.933 )
 
 

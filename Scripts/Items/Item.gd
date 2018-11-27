@@ -1,7 +1,7 @@
 tool
 extends Area2D
 
-export(String) var game_name = "" setget set_name
+export(String) var game_name = "" setget set_game_name
 export(int) var stack = 1
 export(int) var count = 1
 
@@ -11,10 +11,10 @@ sync func pick():
 func stackable():
 	return stack != 1
 
-func set_name(name):
-	game_name = name
+func set_game_name(new_name):
+	game_name = new_name
 	if has_node("Name"):
 		if stackable():
-			$Name.text = name + " (" + str(count) + ")"
+			$Name.text = new_name + " (" + str(count) + ")"
 		else:
-			$Name.text = name
+			$Name.text = new_name

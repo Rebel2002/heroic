@@ -57,6 +57,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0 / GPL 3.0
 
+### [LPC Weapons: two bows, a spear and a trident](https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident)
+
+**Authors:** daneeklu
+
+**Licenses:** CC-BY-SA 3.0
+
 ### [LPC Windows & Doors](https://opengameart.org/content/lpc-windows-doors)
 
 **Authors:** bluecarrot16, Lanea Zimmerman (Sharm), Daniel Armstrong (HughSpectrum), Casper Nilsson and Anamaris and Krusmira.
