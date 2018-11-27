@@ -17,9 +17,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-game_name = ""
-stack = 1
-count = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
