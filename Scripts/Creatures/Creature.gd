@@ -3,8 +3,9 @@ extends KinematicBody2D
 var BattleText = preload("res://Scenes/Effects/BattleText.tscn")
 
 # Stats
-var game_name = "" setget set_game_name
-var speed  = 200 # How fast the player will move (pixels/sec).
+export(String) var game_name = "" setget set_game_name
+export(Vector2) var damage = Vector2(1, 1)
+var speed  = 200 # How fast creature will move (pixels/sec).
 var strength = 15
 var can_move = true
 
@@ -124,4 +125,4 @@ func _on_animation_finished(anim_name):
 				or direction == DOWN and body.position.y > self.position.y
 				or direction == LEFT and body.position.x < self.position.x
 				or direction == RIGHT and body.position.x > self.position.x):
-					body.rset("health", body.health - Global.dice(4) - Global.modifier(strength))
+					body.rset("health", body.health - Global.random(damage) - Global.modifier(strength))

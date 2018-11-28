@@ -14,5 +14,8 @@ var id
 func modifier(attribute):
 	return floor((attribute - 10) / 2)
 
-func dice(faces_count):
-	return randi() % faces_count + 1
+func random(vector):
+	if vector.x == vector.y:
+		return vector.x
+	else:
+		return randi() % int(vector.y - vector.x) + vector.x

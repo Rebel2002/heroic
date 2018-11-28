@@ -44,9 +44,12 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+game_name = ""
+damage = Vector2( 1, 1 )
 
 [node name="Body" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( -1, 0 )
 vframes = 21
 hframes = 13
@@ -78,6 +81,7 @@ audio_bus_name = "Master"
 
 [node name="InterractArea" type="Area2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

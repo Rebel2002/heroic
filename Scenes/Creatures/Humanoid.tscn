@@ -500,7 +500,6 @@ skintone = 1
 
 [node name="Body" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 3 )
 frame = 260
 
@@ -515,10 +514,6 @@ anims/WalkDown = SubResource( 6 )
 anims/WalkLeft = SubResource( 7 )
 anims/WalkRight = SubResource( 8 )
 anims/WalkUp = SubResource( 9 )
-
-[node name="InterractArea" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="Collision" parent="InterractArea" index="0"]
 

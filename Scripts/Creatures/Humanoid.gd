@@ -9,7 +9,7 @@ export(String, "Blue", "Brown", "Gray", "Green", "Orange", "Purple", "Red", "Yel
 export (int, 1, 3) var skintone = 1
 
 # Equipment
-sync var weapon setget set_weapon
+var weapon
 
 func _ready():
 	load_sprite()
@@ -22,12 +22,13 @@ func set_health(value):
 		$Hair/Animation.play("Death")
 		$Eyes/Animation.play("Death")
 
-func set_weapon(weapon_name):
+sync func equip_weapon(weapon_name):
 	if weapon_name != null:
-		weapon = load("res://Scenes/Items/" + weapon_name + ".tscn")
+		var weapon = load("res://Scenes/Items/" + weapon_name + ".tscn").instance()
 		$Weapon.texture = load("res://Sprites/Items/" + weapon_name + "Animation.png")
+		damage = weapon.damage
 	else:
-		weapon = null
+		damage = Vector2(1, 1)
 		$Weapon.texture = null
 
 func load_sprite():
@@ -65,6 +66,8 @@ func play_animation(animation):
 		$Eyes/Animation.play(animation)
 		if $Weapon/Animation.has_animation(animation):
 			$Weapon/Animation.play(animation)
+		else:
+			$Weapon.visible = false
 
 func stop_animation():
 	match direction:

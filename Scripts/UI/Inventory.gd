@@ -49,11 +49,11 @@ func _input(event):
 			if item != null and item.is_in_group("Weapon"):
 				# Equip / Unequip item
 				if $ItemList.get_item_custom_bg_color(slot) == empty_color:
-					get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", item.get_name())
+					get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", item.get_name())
 					$ItemList.set_item_custom_bg_color(slot, equipped_color)
 					item.equipped = true
 				else:
-					get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", null)
+					get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", null)
 					$ItemList.set_item_custom_bg_color(slot, empty_color)
 					item.equipped = false
 				$ItemList.update() # Update window to show bg color

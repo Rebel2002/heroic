@@ -11,8 +11,7 @@ extents = Vector2( 12, 12 )
 [node name="Mace" index="0" instance=ExtResource( 1 )]
 
 game_name = "Mace"
-min_damage = 1
-max_damage = 6
+damage = Vector2( 1, 6 )
 
 [node name="Sprite" parent="." index="0"]
 
