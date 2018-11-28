@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Creatures/Humanoid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Player.gd" type="Script" id=2]
 
-[node name="Player" index="0" groups=[
+[node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
 
@@ -12,12 +12,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Body" parent="." index="0"]
 
-editor/display_folded = true
 frame = 130
-
-[node name="InterractArea" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="Collision" parent="InterractArea" index="0"]
 
@@ -31,7 +26,11 @@ visible = false
 
 position = Vector2( -0.172241, 26.9568 )
 
-[node name="Camera" type="Camera2D" parent="." index="9"]
+[node name="Weapon" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="Camera" type="Camera2D" parent="." index="10"]
 
 visible = false
 anchor_mode = 1

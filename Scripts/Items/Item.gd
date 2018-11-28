@@ -5,6 +5,8 @@ export(String) var game_name = "" setget set_game_name
 export(int) var stack = 1
 export(int) var count = 1
 
+var equipped = false
+
 sync func pick():
 	queue_free()
 

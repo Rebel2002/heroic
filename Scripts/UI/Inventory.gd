@@ -25,17 +25,28 @@ func _input(event):
 			hide()
 		else:
 			show()
-	elif event is InputEventMouseButton:
+		return
+		
+	if event is InputEventMouseButton:
+		# Left button click
 		if event.button_index == BUTTON_RIGHT and not event.pressed:
-			# Left button click
 			if cursor_item != null:
 				# Cancel moving operation
 				set_item(cursor_item_slot, cursor_item)
 				remove_item_from_cursor()
-		elif event.button_index == BUTTON_LEFT and not event.pressed:
-			# Right button click
+				return
+			
+			var slot = $ItemList.get_item_at_position($ItemList.get_local_mouse_position(), true)
+			if slot == -1:
+				return
+			
+			activate(slot)
+			return
+			
+		# Right button click
+		if event.button_index == BUTTON_LEFT and not event.pressed:
+			# Pick item from slot under mouse
 			if cursor_item == null:
-				# Pick item from slot under mouse
 				var slot = $ItemList.get_item_at_position($ItemList.get_local_mouse_position(), true)
 				if slot == -1:
 					return
@@ -46,34 +57,35 @@ func _input(event):
 					cursor_item_slot = slot
 					add_item_to_cursor(slot_item)
 					set_item(slot, null)
-			else:
-				# Put item to slot under mouse
-				var slot = $ItemList.get_item_at_position($ItemList.get_local_mouse_position(), true)
-				if slot == -1:
-					# Check if cursor is outside window
-					if not get_rect().has_point(get_viewport().get_mouse_position()):
-						rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
-						remove_item_from_cursor()
-					return
-				
-				var slot_item = $ItemList.get_item_metadata(slot)
-				if slot_item != null and slot_item.get_name() == cursor_item.get_name():
-					# Try to add item to stack
-					var items_in_slot = int($ItemList.get_item_text(slot))
-					
-					# Check if item fits to stack
-					if items_in_slot + cursor_item.count <= cursor_item.stack:
-						$ItemList.set_item_text(slot, str(items_in_slot + cursor_item.count))
-						remove_item_from_cursor()
-					else:
-						# Add the maximum quantity
-						$ItemList.set_item_text(slot, str(cursor_item.stack))
-						cursor_item.count -= cursor_item.stack - items_in_slot
-				else:
-					# Swap items
-					set_item(cursor_item_slot, slot_item)
-					set_item(slot, cursor_item)
+				return
+			
+			# Put item to slot under mouse
+			var slot = $ItemList.get_item_at_position($ItemList.get_local_mouse_position(), true)
+			if slot == -1:
+				# Drop item if cursor is outside window
+				if not get_rect().has_point(get_viewport().get_mouse_position()):
+					rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
 					remove_item_from_cursor()
+				return
+			
+			var slot_item = $ItemList.get_item_metadata(slot)
+			if slot_item != null and slot_item.get_name() == cursor_item.get_name():
+				# Try to add item to stack
+				var items_in_slot = int($ItemList.get_item_text(slot))
+				
+				# Check if item fits to stack
+				if items_in_slot + cursor_item.count <= cursor_item.stack:
+					$ItemList.set_item_text(slot, str(items_in_slot + cursor_item.count))
+					remove_item_from_cursor()
+				else:
+					# Add the maximum quantity
+					$ItemList.set_item_text(slot, str(cursor_item.stack))
+					cursor_item.count -= cursor_item.stack - items_in_slot
+			else:
+				# Swap items
+				set_item(cursor_item_slot, slot_item)
+				set_item(slot, cursor_item)
+				remove_item_from_cursor()
 
 sync func drop_item(item_name, count, coordinats):
 	var item = load(item_name).instance()
@@ -126,13 +138,35 @@ func set_item(slot, item):
 		# Set item data
 		$ItemList.set_item_icon(slot, item.get_node("Sprite").texture)
 		$ItemList.set_item_metadata(slot, item)
+		
+		if item.equipped:
+			$ItemList.set_item_custom_bg_color(slot, Color(0, 0.7, 0, 0.5))
+		
+		# Show count in text property
 		if item.stackable():
-			$ItemList.set_item_text(slot, str(item.count)) # Show count in text property
+			$ItemList.set_item_text(slot, str(item.count))
+		else:
+			$ItemList.set_item_text(slot, "")
 	else:
 		# Set empty slot
 		$ItemList.set_item_icon(slot, empty_slot)
 		$ItemList.set_item_metadata(slot, null)
+		$ItemList.set_item_custom_bg_color(slot, Color(0, 0, 0, 0))
 		$ItemList.set_item_text(slot, "")
+
+func activate(slot):
+	var item = $ItemList.get_item_metadata(slot)
+	if item != null and item.is_in_group("Weapon"):
+		# Equip / Unequip item
+		if $ItemList.get_item_custom_bg_color(slot) == Color(0, 0, 0, 0):
+			get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", item.get_name())
+			$ItemList.set_item_custom_bg_color(slot, Color(0, 0.7, 0, 0.5))
+			item.equipped = true
+		else:
+			get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", null)
+			$ItemList.set_item_custom_bg_color(slot, Color(0, 0, 0, 0))
+			item.equipped = false
+		$ItemList.update() # Update window to show bg color
 
 func add_item_to_cursor(item):
 	cursor_item = item

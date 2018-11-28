@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Creature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Humanoid.gd" type="Script" id=2]
@@ -173,18 +173,18 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
-[sub_resource type="CircleShape2D" id=21]
+[sub_resource type="CircleShape2D" id=10]
 
 custom_solver_bias = 0.0
 radius = 16.0529
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CapsuleShape2D" id=11]
 
 custom_solver_bias = 0.0
 radius = 4.05609
 height = 17.8203
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 length = 0.4
 loop = false
@@ -200,24 +200,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 261, 265 ]
-}
-
-[sub_resource type="Animation" id=12]
-
-length = 0.7
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 131, 138 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -235,7 +217,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 118, 125 ]
+"values": [ 131, 138 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -253,7 +235,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 144, 151 ]
+"values": [ 118, 125 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -271,10 +253,28 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 105, 112 ]
+"values": [ 144, 151 ]
 }
 
 [sub_resource type="Animation" id=16]
+
+length = 0.7
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 105, 112 ]
+}
+
+[sub_resource type="Animation" id=17]
 
 length = 0.4
 loop = false
@@ -292,7 +292,7 @@ tracks/0/keys = {
 "values": [ 261, 265 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 
 length = 0.7
 loop = true
@@ -310,7 +310,7 @@ tracks/0/keys = {
 "values": [ 131, 138 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
 
 length = 0.7
 loop = true
@@ -328,7 +328,7 @@ tracks/0/keys = {
 "values": [ 118, 125 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
 
 length = 0.7
 loop = true
@@ -346,7 +346,7 @@ tracks/0/keys = {
 "values": [ 144, 151 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 
 length = 0.7
 loop = true
@@ -364,6 +364,130 @@ tracks/0/keys = {
 "values": [ 105, 112 ]
 }
 
+[sub_resource type="Animation" id=22]
+
+resource_name = "MeleeAttackDown"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 12, 17 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=23]
+
+resource_name = "MeleeAttackLeft"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=24]
+
+resource_name = "MeleeAttackRight"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 18, 23 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=25]
+
+resource_name = "MeleeAttackUp"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [node name="Humanoid" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
@@ -376,6 +500,7 @@ skintone = 1
 
 [node name="Body" parent="." index="0"]
 
+editor/display_folded = true
 texture = ExtResource( 3 )
 frame = 260
 
@@ -391,19 +516,22 @@ anims/WalkLeft = SubResource( 7 )
 anims/WalkRight = SubResource( 8 )
 anims/WalkUp = SubResource( 9 )
 
+[node name="InterractArea" parent="." index="2"]
+
+editor/display_folded = true
+
 [node name="Collision" parent="InterractArea" index="0"]
 
 position = Vector2( -1.04901, 25.5244 )
-shape = SubResource( 21 )
+shape = SubResource( 10 )
 
 [node name="Collision" parent="." index="5"]
 
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="Eyes" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
-position = Vector2( -3.01599, -4.93399 )
 texture = ExtResource( 4 )
 vframes = 21
 hframes = 13
@@ -417,15 +545,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 11 )
+anims/Death = SubResource( 12 )
 anims/MeleeAttackDown = SubResource( 2 )
 anims/MeleeAttackLeft = SubResource( 3 )
 anims/MeleeAttackRight = SubResource( 4 )
 anims/MeleeAttackUp = SubResource( 5 )
-anims/WalkDown = SubResource( 12 )
-anims/WalkLeft = SubResource( 13 )
-anims/WalkRight = SubResource( 14 )
-anims/WalkUp = SubResource( 15 )
+anims/WalkDown = SubResource( 13 )
+anims/WalkLeft = SubResource( 14 )
+anims/WalkRight = SubResource( 15 )
+anims/WalkUp = SubResource( 16 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -445,16 +573,38 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Death = SubResource( 16 )
+anims/Death = SubResource( 17 )
 anims/MeleeAttackDown = SubResource( 2 )
 anims/MeleeAttackLeft = SubResource( 3 )
 anims/MeleeAttackRight = SubResource( 4 )
 anims/MeleeAttackUp = SubResource( 5 )
-anims/WalkDown = SubResource( 17 )
-anims/WalkLeft = SubResource( 18 )
-anims/WalkRight = SubResource( 19 )
-anims/WalkUp = SubResource( 20 )
+anims/WalkDown = SubResource( 18 )
+anims/WalkLeft = SubResource( 19 )
+anims/WalkRight = SubResource( 20 )
+anims/WalkUp = SubResource( 21 )
 blend_times = [ "WalkDown", "WalkDown", 1.0 ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Weapon" type="Sprite" parent="." index="9"]
+
+visible = false
+vframes = 4
+hframes = 6
+frame = 11
+_sections_unfolded = [ "Animation", "Material", "Offset", "Transform", "Visibility", "Z Index" ]
+
+[node name="Animation" type="AnimationPlayer" parent="Weapon" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/MeleeAttackDown = SubResource( 22 )
+anims/MeleeAttackLeft = SubResource( 23 )
+anims/MeleeAttackRight = SubResource( 24 )
+anims/MeleeAttackUp = SubResource( 25 )
+blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 

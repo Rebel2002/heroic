@@ -1,11 +1,15 @@
 extends "res://Scripts/Creatures/Creature.gd"
 
+# Visual properties
 export(String, "Male", "Female") var sex = "Male"
 export(String, "Human", "Elf", "Orc", "Skeleton") var race = "Human"
 export(String) var hair = "Pixie"
 export(Color) var hair_color = Color(1, 1, 1)
 export(String, "Blue", "Brown", "Gray", "Green", "Orange", "Purple", "Red", "Yellow") var eyes = "Blue"
 export (int, 1, 3) var skintone = 1
+
+# Equipment
+sync var weapon setget set_weapon
 
 func _ready():
 	load_sprite()
@@ -17,6 +21,14 @@ func set_health(value):
 	if health <= 0:
 		$Hair/Animation.play("Death")
 		$Eyes/Animation.play("Death")
+
+func set_weapon(weapon_name):
+	if weapon_name != null:
+		weapon = load("res://Scenes/Items/" + weapon_name + ".tscn")
+		$Weapon.texture = load("res://Sprites/Items/" + weapon_name + "Animation.png")
+	else:
+		weapon = null
+		$Weapon.texture = null
 
 func load_sprite():
 	$Body.texture = load("res://Sprites/Creatures/Character/" +
@@ -51,6 +63,8 @@ func play_animation(animation):
 		$Body/Animation.play(animation)
 		$Hair/Animation.play(animation)
 		$Eyes/Animation.play(animation)
+		if $Weapon/Animation.has_animation(animation):
+			$Weapon/Animation.play(animation)
 
 func stop_animation():
 	match direction:
