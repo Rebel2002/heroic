@@ -3,6 +3,11 @@ extends WindowDialog
 const empty_slot = preload("res://Sprites/Items/EmptySlot.png")
 const inventory_size = 18
 
+# Colors for equipping
+const equipped_color = Color(0, 0.7, 0, 0.5)
+const empty_color = Color(0, 0, 0, 0)
+
+# Item attached to the cursor
 var cursor_item
 var cursor_item_slot
 
@@ -40,7 +45,18 @@ func _input(event):
 			if slot == -1:
 				return
 			
-			activate(slot)
+			var item = $ItemList.get_item_metadata(slot)
+			if item != null and item.is_in_group("Weapon"):
+				# Equip / Unequip item
+				if $ItemList.get_item_custom_bg_color(slot) == empty_color:
+					get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", item.get_name())
+					$ItemList.set_item_custom_bg_color(slot, equipped_color)
+					item.equipped = true
+				else:
+					get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", null)
+					$ItemList.set_item_custom_bg_color(slot, empty_color)
+					item.equipped = false
+				$ItemList.update() # Update window to show bg color
 			return
 			
 		# Right button click
@@ -93,7 +109,7 @@ sync func drop_item(item_name, count, coordinats):
 	item.count = count
 	$"../../World/Objects".add_child(item)
 
-func pick_item(item):
+func add_item(item):
 	#  Try to add to stack first
 	if item.stackable():
 		for i in range($ItemList.get_item_count()):
@@ -107,8 +123,7 @@ func pick_item(item):
 					# Check if item fits to stack
 				if items_in_slot + item.count <= item.stack:
 					$ItemList.set_item_text(i, str(items_in_slot + item.count))
-					item.rpc("pick") # Item added, pick it up from the world
-					return
+					return true
 				else:
 					# Add maximum quantity to slot and continue search
 					$ItemList.set_item_text(i, str(item.stack))
@@ -124,23 +139,20 @@ func pick_item(item):
 	# Check if inventory is full
 	if new_slot == null:
 		print("Inventory is full")
-		return
+		return false
 	
 	# Add item to this slot
 	# Use dublicate since the item will be removed from the world
 	set_item(new_slot, item.duplicate())
-	
-	# Item added, pick it up from the world
-	item.rpc("pick")
+	return true
 
 func set_item(slot, item):
 	if item != null:
 		# Set item data
 		$ItemList.set_item_icon(slot, item.get_node("Sprite").texture)
 		$ItemList.set_item_metadata(slot, item)
-		
 		if item.equipped:
-			$ItemList.set_item_custom_bg_color(slot, Color(0, 0.7, 0, 0.5))
+			$ItemList.set_item_custom_bg_color(slot, equipped_color)
 		
 		# Show count in text property
 		if item.stackable():
@@ -151,22 +163,8 @@ func set_item(slot, item):
 		# Set empty slot
 		$ItemList.set_item_icon(slot, empty_slot)
 		$ItemList.set_item_metadata(slot, null)
-		$ItemList.set_item_custom_bg_color(slot, Color(0, 0, 0, 0))
+		$ItemList.set_item_custom_bg_color(slot, empty_color)
 		$ItemList.set_item_text(slot, "")
-
-func activate(slot):
-	var item = $ItemList.get_item_metadata(slot)
-	if item != null and item.is_in_group("Weapon"):
-		# Equip / Unequip item
-		if $ItemList.get_item_custom_bg_color(slot) == Color(0, 0, 0, 0):
-			get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", item.get_name())
-			$ItemList.set_item_custom_bg_color(slot, Color(0, 0.7, 0, 0.5))
-			item.equipped = true
-		else:
-			get_node("../../World/Objects/Player" + str(Global.id)).rset("weapon", null)
-			$ItemList.set_item_custom_bg_color(slot, Color(0, 0, 0, 0))
-			item.equipped = false
-		$ItemList.update() # Update window to show bg color
 
 func add_item_to_cursor(item):
 	cursor_item = item

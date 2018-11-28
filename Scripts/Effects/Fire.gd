@@ -17,5 +17,4 @@ func _on_Fire_body_exited(body):
 func _on_DamageTimer_timeout():
 	for body in get_overlapping_bodies():
 		if body.is_in_group("Players") and body.health > 0:
-			body.health -= Global.dice(4)
-			body.rset("health", body.health)
+			body.rset("health", body.health - Global.dice(4))

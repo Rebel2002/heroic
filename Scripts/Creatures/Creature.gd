@@ -8,7 +8,7 @@ var speed  = 200 # How fast the player will move (pixels/sec).
 var strength = 15
 var can_move = true
 
-remote var health = 200 setget set_health
+sync var health = 200 setget set_health
 remote var velocity = Vector2() setget set_velocity
 remote var current_action = 0
 remote var direction = DOWN
@@ -124,5 +124,4 @@ func _on_animation_finished(anim_name):
 				or direction == DOWN and body.position.y > self.position.y
 				or direction == LEFT and body.position.x < self.position.x
 				or direction == RIGHT and body.position.x > self.position.x):
-					body.health -= Global.dice(4) + Global.modifier(strength)
-					body.rset("health", body.health)
+					body.rset("health", body.health - Global.dice(4) - Global.modifier(strength))

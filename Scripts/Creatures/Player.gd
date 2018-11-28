@@ -16,7 +16,9 @@ func _process(delta):
 			if Input.is_action_just_pressed("ui_pickup"):
 				for object in $InterractArea.get_overlapping_areas():
 					if object.is_in_group("Item"):
-						get_node("../../../Ui/Inventory").pick_item(object)
+						if get_node("../../../Ui/Inventory").add_item(object):
+							# Item added, pick it up from the world
+							object.rpc("pick")
 			
 			# Change the player's vector depending on the keys
 			velocity = Vector2()
