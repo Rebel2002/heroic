@@ -60,8 +60,7 @@ func _input(event):
 			var slot = $ItemList.get_item_at_position($ItemList.get_local_mouse_position(), true)
 			if slot == -1:
 				if not get_rect().has_point(get_viewport().get_mouse_position()):
-					rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
-					_remove_item_from_cursor()
+					drop_item_from_cursor()
 				return
 			
 			# Put item to slot under mouse
@@ -163,6 +162,12 @@ func put_item_from_cursor(slot):
 		set_item(cursor_item_slot, slot_item, slot_color)
 		set_item(slot, cursor_item, cursor_item_bg_color)
 		_remove_item_from_cursor()
+
+func drop_item_from_cursor():
+	if cursor_item_bg_color == equipped_color:
+		get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", null)
+	rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
+	_remove_item_from_cursor()
 
 func equip(slot):
 	var item = $ItemList.get_item_metadata(slot)
