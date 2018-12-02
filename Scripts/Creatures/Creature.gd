@@ -119,7 +119,7 @@ func _on_animation_finished(anim_name):
 	if get_tree().is_network_server() and anim_name.begins_with("MeleeAttack"):
 		# Detect objects in damage area and make damage
 		for body in $InterractArea.get_overlapping_bodies():
-			if body.is_in_group("Players") and body.health > 0 and body != self:
+			if body.is_in_group("Creature") and body.health > 0 and body != self:
 				# Check the position for damage only by facing the target.
 				if (direction == UP and body.position.y < self.position.y
 				or direction == DOWN and body.position.y > self.position.y

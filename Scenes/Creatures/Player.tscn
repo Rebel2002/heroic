@@ -18,10 +18,6 @@ frame = 130
 
 position = Vector2( -0.66156, 25.2174 )
 
-[node name="HealthBar" parent="." index="4"]
-
-visible = false
-
 [node name="Collision" parent="." index="5"]
 
 position = Vector2( -0.172241, 26.9568 )

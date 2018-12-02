@@ -36,7 +36,9 @@ use_filter = true
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[node name="Creature" type="KinematicBody2D"]
+[node name="Creature" type="KinematicBody2D" groups=[
+"Creature",
+]]
 
 position = Vector2( 503.016, 274.934 )
 input_pickable = false
@@ -122,6 +124,7 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fon
 [node name="HealthBar" type="TextureProgress" parent="." index="4"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
