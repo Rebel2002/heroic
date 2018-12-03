@@ -9,7 +9,7 @@ var speed  = 200 # How fast creature will move (pixels/sec).
 var strength = 15
 var can_move = true
 
-sync var health = 200 setget set_health
+sync var health = 6 setget set_health
 remote var velocity = Vector2() setget set_velocity
 remote var current_action = 0
 remote var direction = DOWN
@@ -67,6 +67,9 @@ remote func synchronize_data(id):
 
 remote func set_position(value):
 	position = value
+
+sync func remove():
+	queue_free()
 
 func say(text):
 	$Speech/RichTextLabel.bbcode_text = "[center]" + text + "[/center]"

@@ -445,13 +445,6 @@ position = Vector2( 0, 23 )
 shape = SubResource( 22 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="RandomActionTimer" type="Timer" parent="." index="6"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
 [node name="Sound" type="AudioStreamPlayer2D" parent="." index="7"]
 
 visible = false
@@ -463,6 +456,13 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="RandomActionTimer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="body_entered" from="VisibleArea" to="." method="_on_VisibleArea_body_entered"]
 

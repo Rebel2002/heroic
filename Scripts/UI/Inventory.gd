@@ -166,7 +166,7 @@ func put_item_from_cursor(slot):
 func drop_item_from_cursor():
 	if cursor_item_bg_color == equipped_color:
 		get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", null)
-	rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
+	get_node("../..").rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
 	_remove_item_from_cursor()
 
 func equip(slot):
@@ -180,9 +180,3 @@ func equip(slot):
 			get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", null)
 			$ItemList.set_item_custom_bg_color(slot, unequipped_color)
 		$ItemList.update() # Update window to show bg color
-
-sync func drop_item(item_name, count, coordinats):
-	var item = load(item_name).instance()
-	item.position = coordinats
-	item.count = count
-	$"../../World/Objects".add_child(item)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Items/Item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Items/Food.gd" type="Script" id=2]
+
+[node name="Food" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+satiety = 1
+
+

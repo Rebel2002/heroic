@@ -42,3 +42,9 @@ func remove_player(id):
 func disconnect():
 	OS.alert("Server closed connection")
 	$Ui/GameMenu._on_MainMenu_pressed()
+
+sync func drop_item(item_name, count, coordinats):
+	var item = load(item_name).instance()
+	item.position = coordinats
+	item.count = count
+	$World/Objects.add_child(item)

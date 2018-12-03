@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Items/Item.gd" type="Script" id=1]
 [ext_resource path="res://Styles/GameNameFont.tres" type="DynamicFont" id=2]
 
-[node name="Item" type="Area2D" index="0" groups=[
+[node name="Item" type="Area2D" groups=[
 "Item",
 ]]
 

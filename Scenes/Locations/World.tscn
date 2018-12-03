@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tilesets/Dirt.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Grass.tres" type="TileSet" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Scenes/Items/Mace.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Creatures/Dummy.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Creatures/Chicken.tscn" type="PackedScene" id=15]
+
+
 
 [sub_resource type="Environment" id=1]
 
@@ -211,5 +214,9 @@ position = Vector2( 566.438, 581.654 )
 [node name="Dummy" parent="Objects" index="15" instance=ExtResource( 14 )]
 
 position = Vector2( 686.231, 255.176 )
+
+[node name="Chicken" parent="Objects" index="16" instance=ExtResource( 15 )]
+
+position = Vector2( 738.92, 176.74 )
 
 

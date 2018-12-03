@@ -21,6 +21,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY 3.0 / GPL 3.0 / GPL 2.0 / OGA-BY 3.0
 
+### [LPC style farm animals](https://opengameart.org/content/lpc-style-farm-animals)
+
+**Authors:** Daniel Eddeland
+
+**Licenses:** CC-BY 3.0 / GPL 2.0
+
 ### [LPC base assets (sprites & map tiles)](https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles)
 
 **Authors:** Lanea Zimmerman (Sharm), Stephen Challener (Redshrike), Charles Sanchez (CharlesGabriel), Manuel Riecke (MrBeast), Daniel Armstrong (HughSpectrum).
