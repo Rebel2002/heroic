@@ -4,7 +4,7 @@ func _ready():
 	Global.id = get_tree().get_network_unique_id()
 	rpc("add_player", Global.id, Global.player) # Will call only server and local!
 	get_tree().connect("network_peer_disconnected", self, "remove_player")
-	get_tree().connect("server_disconnected", self, "disconnect")
+	get_tree().connect("server_disconnected", self, "_on_server_disconnected")
 
 sync func add_player(id, data):
 	if get_tree().is_network_server() and id != 1:
@@ -39,7 +39,7 @@ func remove_player(id):
 	Global.players.erase(id)
 	get_node("World/Objects/Player" + str(id)).queue_free()
 
-func disconnect():
+func _on_server_disconnected():
 	OS.alert("Server closed connection")
 	$Ui/GameMenu._on_MainMenu_pressed()
 

@@ -5,504 +5,165 @@
 [ext_resource path="res://Styles/LabelFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/Creatures/Humanoid.tscn" type="PackedScene" id=4]
 
-
 [node name="PlayerCreation" type="Control"]
-
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1.0
 margin_top = -1.0
 margin_right = -1.0
 margin_bottom = -1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Pause", "Theme" ]
 
-[node name="Panel" type="Panel" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Panel" type="Panel" parent="."]
 margin_left = 61.0
 margin_top = 93.0
 margin_right = 371.0
 margin_bottom = 423.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 theme = ExtResource( 1 )
-_sections_unfolded = [ "Theme" ]
 
-[node name="Controls" type="VBoxContainer" parent="Panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Controls" type="VBoxContainer" parent="Panel"]
 margin_left = 51.0
 margin_top = 49.0
 margin_right = 262.0
 margin_bottom = 264.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 11
-alignment = 0
-_sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="Nickname" type="HBoxContainer" parent="Panel/Controls" index="0"]
-
+[node name="Nickname" type="HBoxContainer" parent="Panel/Controls"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 211.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Title" type="Label" parent="Panel/Controls/Nickname" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="Panel/Controls/Nickname"]
 margin_top = 3.0
 margin_right = 84.0
 margin_bottom = 23.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Nickname:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Text" type="LineEdit" parent="Panel/Controls/Nickname" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Text" type="LineEdit" parent="Panel/Controls/Nickname"]
 margin_left = 88.0
 margin_right = 209.5
 margin_bottom = 26.25
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
 text = "Nagibator999"
 expand_to_text_length = true
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
 caret_blink = true
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Caret", "Grow Direction", "Rect" ]
 
-[node name="Sex" type="HBoxContainer" parent="Panel/Controls" index="1"]
-
+[node name="Sex" type="HBoxContainer" parent="Panel/Controls"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 37.0
 margin_right = 211.0
 margin_bottom = 72.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Title" type="Label" parent="Panel/Controls/Sex" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="Panel/Controls/Sex"]
 margin_top = 7.0
 margin_right = 35.0
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Sex:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Sex" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Type" type="OptionButton" parent="Panel/Controls/Sex"]
 margin_left = 39.0
-margin_right = 97.75
+margin_right = 99.75
 margin_bottom = 35.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Male"
-flat = false
-align = 0
 items = [ "Male", null, false, -1, null, "Female", null, false, -1, null ]
 selected = 0
 
-[node name="Race" type="HBoxContainer" parent="Panel/Controls" index="2"]
-
+[node name="Race" type="HBoxContainer" parent="Panel/Controls"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 83.0
 margin_right = 211.0
 margin_bottom = 118.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Title" type="Label" parent="Panel/Controls/Race" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="Panel/Controls/Race"]
 margin_top = 7.0
 margin_right = 45.0
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Race:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Race" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Type" type="OptionButton" parent="Panel/Controls/Race"]
 margin_left = 49.0
-margin_right = 120.75
+margin_right = 122.75
 margin_bottom = 35.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Human"
-flat = false
-align = 0
 items = [ "Human", null, false, -1, null, "Elf", null, false, -1, null, "Orc", null, false, -1, null ]
 selected = 0
 
-[node name="Hair" type="HBoxContainer" parent="Panel/Controls" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Hair" type="HBoxContainer" parent="Panel/Controls"]
 margin_top = 129.0
 margin_right = 211.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Title" type="Label" parent="Panel/Controls/Hair" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="Panel/Controls/Hair"]
 margin_top = 7.0
 margin_right = 37.0
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Hair:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Hair" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Type" type="OptionButton" parent="Panel/Controls/Hair"]
 margin_left = 41.0
-margin_right = 106.75
+margin_right = 108.75
 margin_bottom = 35.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Bangs"
-flat = false
-align = 0
 items = [ "Bangs", null, false, -1, null, "BangsLong", null, false, -1, null, "BangsShort", null, false, -1, null, "BedHead", null, false, -1, null, "XLongKnot", null, false, -1, null, "Jewfro", null, false, -1, null, "ShortKnot", null, false, -1, null, "LongHawk", null, false, -1, null, "LongKnot", null, false, -1, null, "Plain", null, false, -1, null, "Messy1", null, false, -1, null, "Messy2", null, false, -1, null, "Mohawk", null, false, -1, null, "Shorthawk", null, false, -1, null, "Ponytail", null, false, -1, null, "Parted", null, false, -1, null, "Pixie", null, false, -1, null, "Loose", null, true, -1, null, "Page", null, true, -1, null, "Page2", null, true, -1, null, "Ponytail2", null, true, -1, null, "Princess", null, true, -1, null, "Long", null, true, -1, null, "ShoulderL", null, true, -1, null, "ShoulderR", null, true, -1, null, "Swoop", null, true, -1, null, "Unkempt", null, true, -1, null, "XLong", null, true, -1, null, "Bunches", null, true, -1, null, "BangsLong2", null, true, -1, null ]
 selected = 0
 
-[node name="ColorPicker" type="ColorPickerButton" parent="Panel/Controls/Hair" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 110.0
+[node name="ColorPicker" type="ColorPickerButton" parent="Panel/Controls/Hair"]
+margin_left = 112.0
 margin_right = 211.0
 margin_bottom = 35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
 custom_constants/hseparation = 0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 color = Color( 1, 1, 1, 1 )
 edit_alpha = false
-_sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="Skintone" type="HBoxContainer" parent="Panel/Controls" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Skintone" type="HBoxContainer" parent="Panel/Controls"]
 margin_top = 175.0
 margin_right = 211.0
 margin_bottom = 210.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Title" type="Label" parent="Panel/Controls/Skintone" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="Panel/Controls/Skintone"]
 margin_top = 7.0
 margin_right = 76.0
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Skintone:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Skintone" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Type" type="OptionButton" parent="Panel/Controls/Skintone"]
 margin_left = 80.0
-margin_right = 111.75
+margin_right = 113.75
 margin_bottom = 35.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "1"
-flat = false
-align = 0
 items = [ "1", null, false, -1, null, "2", null, false, -1, null, "3", null, false, -1, null ]
 selected = 0
 
-[node name="Eyes" type="HBoxContainer" parent="Panel/Controls" index="5"]
-
+[node name="Eyes" type="HBoxContainer" parent="Panel/Controls"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 221.0
 margin_right = 211.0
 margin_bottom = 256.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Title" type="Label" parent="Panel/Controls/Eyes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="Panel/Controls/Eyes"]
 margin_top = 7.0
 margin_right = 42.0
 margin_bottom = 27.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Eyes:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Eyes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Type" type="OptionButton" parent="Panel/Controls/Eyes"]
 margin_left = 46.0
-margin_right = 101.75
+margin_right = 103.75
 margin_bottom = 35.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Blue"
-flat = false
-align = 0
 items = [ "Blue", null, false, -1, null, "Brown", null, false, -1, null, "Gray", null, false, -1, null, "Green", null, false, -1, null, "Orange", null, false, -1, null, "Purple", null, false, -1, null, "Red", null, false, -1, null, "Yellow", null, false, -1, null ]
 selected = 0
 
-[node name="Title" type="Label" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="."]
 margin_top = 50.0
 margin_right = 1024.0
 margin_bottom = 77.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "Create new character"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Done" type="Button" parent="." index="2"]
-
+[node name="Done" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -511,37 +172,14 @@ margin_left = -116.0
 margin_top = -90.0
 margin_right = 115.0
 margin_bottom = -70.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Done"
-flat = false
-align = 1
 
-[node name="Character" parent="." index="3" instance=ExtResource( 4 )]
-
+[node name="Character" parent="." instance=ExtResource( 4 )]
 position = Vector2( 511.372, 228.108 )
-
 [connection signal="item_selected" from="Panel/Controls/Sex/Type" to="." method="_set_sex"]
-
 [connection signal="item_selected" from="Panel/Controls/Race/Type" to="." method="_set_race"]
-
 [connection signal="item_selected" from="Panel/Controls/Hair/Type" to="." method="_set_hair"]
-
 [connection signal="color_changed" from="Panel/Controls/Hair/ColorPicker" to="." method="_on_Color_color_changed"]
-
 [connection signal="item_selected" from="Panel/Controls/Skintone/Type" to="." method="_set_skintone"]
-
 [connection signal="item_selected" from="Panel/Controls/Eyes/Type" to="." method="_set_eyes"]
-
 [connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]
-
-

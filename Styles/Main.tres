@@ -16,315 +16,137 @@
 [ext_resource path="res://Sprites/UI/PanelBlue.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 14
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="StyleBoxTexture" id=2]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 48, 16 )
 margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 5.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=3]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 48, 16 )
 margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 5.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Margin", "Modulate" ]
 
 [sub_resource type="StyleBoxTexture" id=4]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 48, 16 )
 margin_left = 3.0
 margin_right = 3.0
 margin_top = 5.0
 margin_bottom = 5.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=5]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 6, 10 )
 margin_left = 2.0
 margin_right = 2.0
 margin_top = 2.0
 margin_bottom = 2.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Content Margin", "Expand Margin", "Margin", "Modulate" ]
 
 [sub_resource type="StyleBoxTexture" id=6]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 6, 10 )
 margin_left = 2.0
 margin_right = 2.125
 margin_top = 3.0
 margin_bottom = 2.875
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch" ]
 
 [sub_resource type="StyleBoxTexture" id=7]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-margin_left = 0.0
-margin_right = 0.0
-margin_top = 0.0
-margin_bottom = 0.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-
 [sub_resource type="DynamicFont" id=8]
-
-size = 16
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=9]
-
 size = 14
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="StyleBoxTexture" id=10]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 93, 94 )
 margin_left = 5.0
 margin_right = 4.5
 margin_top = 6.25
 margin_bottom = 3.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Modulate" ]
 
 [sub_resource type="StyleBoxTexture" id=11]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 8.0
 margin_right = 6.75
 margin_top = 7.125
 margin_bottom = 11.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
 
 [sub_resource type="StyleBoxTexture" id=12]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 7.25
 margin_right = 7.5
 margin_top = 7.25
 margin_bottom = 11.25
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
 
 [sub_resource type="StyleBoxTexture" id=13]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 190, 49 )
 margin_left = 7.25
 margin_right = 6.75
 margin_top = 11.5
 margin_bottom = 7.25
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
 
 [sub_resource type="StyleBoxTexture" id=14]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
 margin_right = 3.125
 margin_top = 3.125
 margin_bottom = 3.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="DynamicFont" id=15]
-
 size = 12
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="StyleBoxTexture" id=16]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 3.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=17]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 3.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch" ]
 
 [sub_resource type="DynamicFont" id=18]
-
 size = 10
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [resource]
-
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
@@ -422,5 +244,3 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = SubResource( 18 )
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-_sections_unfolded = [ "ColorPicker", "ColorPicker/constants", "ColorPicker/icons", "Dialogs", "Dialogs/constants", "HSlider/icons", "HSlider/styles", "ItemList", "ItemList/colors", "ItemList/styles", "Label/colors", "LineEdit/colors", "MenuButton", "MenuButton/styles", "Panel/styles", "PanelContainer", "PanelContainer/styles", "PopupMenu/fonts", "ReferenceRect", "ReferenceRect/styles", "TabContainer", "TabContainer/styles", "TooltipPanel", "TooltipPanel/styles", "Tree", "Tree/styles" ]
-
