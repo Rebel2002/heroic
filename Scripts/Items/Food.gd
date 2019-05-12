@@ -1,3 +1,3 @@
-extends "res://Scripts/Items/Item.gd"
+extends Item
 
 export(int) var satiety = 1

@@ -1,13 +1,13 @@
-extends "res://Scripts/Creatures/Creature.gd"
+extends Creature
 
 var current_target
 enum {NONE, WALKING, EATING}
 
-func _ready():
+func _ready() -> void:
 	if get_tree().is_network_server():
 		make_random_action()
 	
-func _process(delta):
+func _process(delta: float) -> void:
 	if get_tree().is_network_server():
 		rpc_unreliable("set_position", position) # Send position to avoid desync
 	
@@ -25,20 +25,20 @@ func _process(delta):
 			play_animation("Eat")
 
 # Add transformation baked chicken to deathdd
-remote func set_health(value):
+remote func set_health(value: int) -> void:
 	if value > 0:
 		.set_health(value)
 	else:
 		get_node("../../..").rpc("drop_item", "res://Scenes/Items/BackedChicken.tscn", 1, position)
 		rpc("remove")
 
-remote func synchronize_data(id):
+remote func synchronize_data(id: int) -> void:
 	.synchronize_data(id)
 	
 	if current_target != null:
 		rset_id(id, "current_target", current_target)
 
-sync func stop_animation():
+sync func stop_animation() -> void:
 	$Body/Animation.stop()
 	match direction:
 		UP:
@@ -50,7 +50,7 @@ sync func stop_animation():
 		RIGHT:
 			$Body.set_frame(12)
 
-func make_random_action():
+func make_random_action() -> void:
 	current_action = randi() % 3
 	rset("current_action", current_action)
 	
@@ -67,7 +67,7 @@ func make_random_action():
 	$RandomActionTimer.start()
 
 # Generate random movement
-func randomize_velocity():
+func randomize_velocity() -> void:
 	velocity = Vector2(randi() % 3 - 1, randi() % 3 - 1)
 	velocity = velocity.normalized() * speed / 2
 	if velocity.length() != 0:

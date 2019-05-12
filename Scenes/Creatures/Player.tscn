@@ -6,51 +6,19 @@
 [node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
-
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Body" parent="." index="0"]
-
 frame = 130
 
 [node name="Collision" parent="InterractArea" index="0"]
-
 position = Vector2( -0.66156, 25.2174 )
 
 [node name="Collision" parent="." index="5"]
-
 position = Vector2( -0.172241, 26.9568 )
 
 [node name="Weapon" parent="." index="9"]
-
 editor/display_folded = true
 
 [node name="Camera" type="Camera2D" parent="." index="10"]
-
 visible = false
-anchor_mode = 1
-rotating = false
-current = false
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-_sections_unfolded = [ "Editor" ]
-
-

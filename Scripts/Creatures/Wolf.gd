@@ -1,13 +1,13 @@
-extends "res://Scripts/Creatures/Creature.gd"
+extends Creature
 
-remote var current_target
+remote var current_target: PhysicsBody2D
 enum {NONE, WALKING, HOWLING, RUNNING}
 
-func _ready():
+func _ready() -> void:
 	if get_tree().is_network_server():
 		make_random_action()
 	
-func _process(delta):
+func _process(delta: float) -> void:
 	if get_tree().is_network_server():
 		rpc_unreliable("set_position", position) # Send position to avoid desync
 	
@@ -26,13 +26,13 @@ func _process(delta):
 		play_animation("Run")
 		move_and_collide(velocity * delta)
 
-remote func synchronize_data(id):
+remote func synchronize_data(id: int) -> void:
 	.synchronize_data(id)
 	
 	if current_target != null:
 		rset_id(id, "current_target", current_target)
 
-sync func stop_animation():
+sync func stop_animation() -> void:
 	$Body/Animation.stop()
 	match direction:
 		UP:
@@ -44,7 +44,7 @@ sync func stop_animation():
 		RIGHT:
 			$Body.set_frame(10)
 
-func make_random_action():
+func make_random_action() -> void:
 	var time = OS.get_time().hour
 	
 	# Set NONE, WALKING or HOWLING
@@ -68,7 +68,7 @@ func make_random_action():
 	$RandomActionTimer.start()
 
 # Generate random movement
-func randomize_velocity():
+func randomize_velocity() -> void:
 	velocity = Vector2(randi() % 3 - 1, randi() % 3 - 1)
 	velocity = velocity.normalized() * speed / 2
 	if velocity.length() != 0:
@@ -77,7 +77,7 @@ func randomize_velocity():
 	else:
 		randomize_velocity() # If generated velocity is equal to zero
 
-func calculate_direction():
+func calculate_direction() -> void:
 	.calculate_direction()
 	
 	# Move interface
@@ -89,7 +89,7 @@ func calculate_direction():
 			$Name.rect_position.y = -26
 			$HealthBar.rect_position.y = -12
 
-func _on_VisibleArea_body_entered(body):
+func _on_VisibleArea_body_entered(body: PhysicsBody2D) -> void:
 	if get_tree().is_network_server() and body.is_in_group("Players") and current_target == null:
 		$RandomActionTimer.stop()
 		current_target = body
@@ -97,7 +97,7 @@ func _on_VisibleArea_body_entered(body):
 		rset("current_target", current_target)
 		rset("current_action", current_action)
 
-func _on_VisibleArea_body_exited(body):
+func _on_VisibleArea_body_exited(body: PhysicsBody2D) -> void:
 	if get_tree().is_network_server() and body.is_in_group("Players") and current_target == body:
 		
 		# Search for a new target

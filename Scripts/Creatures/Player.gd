@@ -1,12 +1,12 @@
-extends "res://Scripts/Creatures/Humanoid.gd"
+extends Humanoid
 
 enum {NONE, WALKING, ATTACKING}
 
-func _ready():
+func _ready() -> void:
 	if is_network_master():
 		$Camera.make_current()
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if can_move:
 		# Read pressed keys
 		if (is_network_master()):

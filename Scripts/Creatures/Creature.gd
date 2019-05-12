@@ -1,6 +1,7 @@
 extends KinematicBody2D
+class_name Creature
 
-var BattleText = preload("res://Scenes/Effects/BattleText.tscn")
+var BattleText: Resource = preload("res://Scenes/Effects/BattleText.tscn")
 
 # Stats
 export(String) var game_name = "" setget set_game_name
@@ -9,13 +10,13 @@ var speed  = 200 # How fast creature will move (pixels/sec).
 var strength = 15
 var can_move = true
 
-sync var health = 6 setget set_health
-remote var velocity = Vector2() setget set_velocity
-remote var current_action = 0
-remote var direction = DOWN
+sync var health: int = 6 setget set_health
+remote var velocity: Vector2 setget set_velocity
+remote var current_action: int
+remote var direction: int = DOWN
 enum {UP, DOWN, LEFT, RIGHT}
 
-func _ready():
+func _ready() -> void:
 	# Set health bar values
 	$HealthBar.max_value = health
 	$HealthBar.value = health
@@ -24,12 +25,12 @@ func _ready():
 	if get_tree().has_network_peer() and not is_network_master() and not get_tree().is_network_server():
 		rpc_id(1, "synchronize_data", get_tree().get_network_unique_id())
 
-func set_game_name(string):
-	game_name = string
+func set_game_name(name: String) -> void:
+	game_name = name
 	if has_node("Name"):
-		$Name.text = string
+		$Name.text = name
 
-func set_health(value):
+func set_health(value: int) -> void:
 	# Show damage
 	var battle_text = BattleText.instance()
 	battle_text.damage(value - health)
@@ -46,17 +47,17 @@ func set_health(value):
 		can_move = false
 		$Body/Animation.play("Death")
 
-func set_velocity(value):
+func set_velocity(value) -> void:
 	velocity = value
 	calculate_direction()
 
-func _on_Speech_DisplayTimer_timeout():
+func _on_Speech_DisplayTimer_timeout() -> void:
 	$Speech.visible = false
 
-func _on_HealthBar_DisplayTimer_timeout():
+func _on_HealthBar_DisplayTimer_timeout() -> void:
 	$HealthBar.visible = false
 
-remote func synchronize_data(id):
+remote func synchronize_data(id: int) -> void:
 	# Send values if if they are not default
 	if position != Vector2():
 		rpc_unreliable_id(id, "set_position", position)
@@ -65,17 +66,17 @@ remote func synchronize_data(id):
 	if current_action != 0:
 		rset_id(id, "current_action", current_action)
 
-remote func set_position(value):
-	position = value
+remote func set_position(pos: Vector2) -> void:
+	position = pos
 
-sync func remove():
+sync func remove() -> void:
 	queue_free()
 
-func say(text):
+func say(text: String) -> void:
 	$Speech/RichTextLabel.bbcode_text = "[center]" + text + "[/center]"
 	
 	# Vertical size
-	var lines = ceil(float(text.length()) / 17)
+	var lines: float = ceil(float(text.length()) / 17)
 	$Speech/RichTextLabel.rect_size.y = 6 + 14 * lines
 	$Speech/RichTextLabel.rect_position.y = 8 - 14 * (lines - 1)
 	
@@ -92,7 +93,7 @@ func say(text):
 	# Wait and hide dialog
 	$Speech/DisplayTimer.start()
 
-func calculate_direction():
+func calculate_direction() -> void:
 	if velocity.x < 0.3 * speed and velocity.x > -0.3 * speed and velocity.y < 0:
 		direction = UP
 	elif velocity.x < -0.3 * speed:
@@ -102,7 +103,7 @@ func calculate_direction():
 	elif velocity.x > 0.3 * speed:
 		direction = RIGHT
 
-func direction_string():
+func direction_string() -> String:
 	match direction:
 		UP:
 			return "Up"
@@ -113,19 +114,23 @@ func direction_string():
 		RIGHT:
 			return "Right"
 
-sync func play_animation(animation):
+sync func play_animation(animation: String) -> void:
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
 
-func _on_animation_finished(anim_name):
-	if get_tree().is_network_server() and anim_name.begins_with("MeleeAttack"):
-		# Detect objects in damage area and make damage
-		for body in $InterractArea.get_overlapping_bodies():
-			if body.is_in_group("Creature") and body.health > 0 and body != self:
-				# Check the position for damage only by facing the target.
-				if (direction == UP and body.position.y < self.position.y
+func _on_animation_finished(animation: String) -> void:
+	if not get_tree().is_network_server() or not animation.begins_with("MeleeAttack"):
+		return
+	
+	# Detect objects in damage area and make damage
+	for body in $InterractArea.get_overlapping_bodies():
+		if body == self or not body.is_in_group("Creature") or body.health <= 0:
+			continue
+
+		# Check the position for damage only by facing the target.
+		if (direction == UP and body.position.y < self.position.y
 				or direction == DOWN and body.position.y > self.position.y
 				or direction == LEFT and body.position.x < self.position.x
 				or direction == RIGHT and body.position.x > self.position.x):
-					body.rset("health", body.health - Global.random(damage) - Global.modifier(strength))
+			body.rset("health", body.health - Global.random(damage) - Global.modifier(strength))

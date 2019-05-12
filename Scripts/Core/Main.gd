@@ -1,12 +1,12 @@
 extends Node
 
-func _ready():
+func _ready() -> void:
 	Global.id = get_tree().get_network_unique_id()
 	rpc("add_player", Global.id, Global.player) # Will call only server and local!
 	get_tree().connect("network_peer_disconnected", self, "remove_player")
 	get_tree().connect("server_disconnected", self, "_on_server_disconnected")
 
-sync func add_player(id, data):
+sync func add_player(id: int, data: Dictionary) -> void:
 	if get_tree().is_network_server() and id != 1:
 		# Send server time
 		$Ui/CurrentTime.rpc_id(id, "set_time", OS.get_time())
@@ -24,26 +24,19 @@ sync func add_player(id, data):
 	var player = load("res://Scenes/Creatures/Player.tscn").instance()
 	player.set_network_master(id)
 	player.set_name("Player" + str(id))
-	player.game_name = data["nickname"]
-	player.sex = data["sex"]
-	player.race = data["race"]
-	player.skintone = data["skintone"]
-	player.hair = data["hair"]
-	player.hair_color = data["hair_color"]
-	player.eyes = data["eyes"]
-	player.load_sprite()
+	player.set_data(data)
 	$World/Objects.add_child(player)
 	
-func remove_player(id):
+func remove_player(id: int) -> void:
 	$Ui/Chat.announce_disconnected(Global.players[id]["nickname"])
 	Global.players.erase(id)
 	get_node("World/Objects/Player" + str(id)).queue_free()
 
-func _on_server_disconnected():
+func _on_server_disconnected() -> void:
 	OS.alert("Server closed connection")
 	$Ui/GameMenu._on_MainMenu_pressed()
 
-sync func drop_item(item_name, count, coordinats):
+sync func drop_item(item_name: String, count: int, coordinats: Vector2) -> void:
 	var item = load(item_name).instance()
 	item.position = coordinats
 	item.count = count

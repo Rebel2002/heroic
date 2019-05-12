@@ -22,138 +22,132 @@ margin_right = 371.0
 margin_bottom = 423.0
 theme = ExtResource( 1 )
 
-[node name="Controls" type="VBoxContainer" parent="Panel"]
-margin_left = 51.0
-margin_top = 49.0
-margin_right = 262.0
-margin_bottom = 264.0
-custom_constants/separation = 11
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -106.0
+margin_top = -120.0
+margin_right = 107.0
+margin_bottom = 110.0
+columns = 2
 
-[node name="Nickname" type="HBoxContainer" parent="Panel/Controls"]
-editor/display_folded = true
-margin_right = 211.0
-margin_bottom = 26.0
-
-[node name="Title" type="Label" parent="Panel/Controls/Nickname"]
+[node name="NicknameLabel" type="Label" parent="Panel/GridContainer"]
 margin_top = 3.0
-margin_right = 84.0
+margin_right = 88.0
 margin_bottom = 23.0
 text = "Nickname:"
+align = 2
 
-[node name="Text" type="LineEdit" parent="Panel/Controls/Nickname"]
-margin_left = 88.0
-margin_right = 209.5
+[node name="Nickname" type="LineEdit" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_right = 213.5
 margin_bottom = 26.25
 text = "Nagibator999"
 expand_to_text_length = true
 caret_blink = true
 
-[node name="Sex" type="HBoxContainer" parent="Panel/Controls"]
-editor/display_folded = true
+[node name="SexLabel" type="Label" parent="Panel/GridContainer"]
 margin_top = 37.0
-margin_right = 211.0
-margin_bottom = 72.0
-
-[node name="Title" type="Label" parent="Panel/Controls/Sex"]
-margin_top = 7.0
-margin_right = 35.0
-margin_bottom = 27.0
+margin_right = 88.0
+margin_bottom = 57.0
 text = "Sex:"
+align = 2
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Sex"]
-margin_left = 39.0
-margin_right = 99.75
-margin_bottom = 35.5
+[node name="Sex" type="OptionButton" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_top = 30.0
+margin_right = 213.0
+margin_bottom = 65.5
 text = "Male"
 items = [ "Male", null, false, -1, null, "Female", null, false, -1, null ]
 selected = 0
 
-[node name="Race" type="HBoxContainer" parent="Panel/Controls"]
-editor/display_folded = true
-margin_top = 83.0
-margin_right = 211.0
-margin_bottom = 118.0
-
-[node name="Title" type="Label" parent="Panel/Controls/Race"]
-margin_top = 7.0
-margin_right = 45.0
-margin_bottom = 27.0
+[node name="RaceLabel" type="Label" parent="Panel/GridContainer"]
+margin_top = 76.0
+margin_right = 88.0
+margin_bottom = 96.0
 text = "Race:"
+align = 2
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Race"]
-margin_left = 49.0
-margin_right = 122.75
-margin_bottom = 35.5
+[node name="Race" type="OptionButton" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_top = 69.0
+margin_right = 213.0
+margin_bottom = 104.5
 text = "Human"
 items = [ "Human", null, false, -1, null, "Elf", null, false, -1, null, "Orc", null, false, -1, null ]
 selected = 0
 
-[node name="Hair" type="HBoxContainer" parent="Panel/Controls"]
-margin_top = 129.0
-margin_right = 211.0
-margin_bottom = 164.0
-
-[node name="Title" type="Label" parent="Panel/Controls/Hair"]
-margin_top = 7.0
-margin_right = 37.0
-margin_bottom = 27.0
+[node name="HairLabel" type="Label" parent="Panel/GridContainer"]
+margin_top = 115.0
+margin_right = 88.0
+margin_bottom = 135.0
 text = "Hair:"
+align = 2
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Hair"]
-margin_left = 41.0
-margin_right = 108.75
-margin_bottom = 35.5
+[node name="Hair" type="OptionButton" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_top = 108.0
+margin_right = 213.0
+margin_bottom = 143.5
 text = "Bangs"
 items = [ "Bangs", null, false, -1, null, "BangsLong", null, false, -1, null, "BangsShort", null, false, -1, null, "BedHead", null, false, -1, null, "XLongKnot", null, false, -1, null, "Jewfro", null, false, -1, null, "ShortKnot", null, false, -1, null, "LongHawk", null, false, -1, null, "LongKnot", null, false, -1, null, "Plain", null, false, -1, null, "Messy1", null, false, -1, null, "Messy2", null, false, -1, null, "Mohawk", null, false, -1, null, "Shorthawk", null, false, -1, null, "Ponytail", null, false, -1, null, "Parted", null, false, -1, null, "Pixie", null, false, -1, null, "Loose", null, true, -1, null, "Page", null, true, -1, null, "Page2", null, true, -1, null, "Ponytail2", null, true, -1, null, "Princess", null, true, -1, null, "Long", null, true, -1, null, "ShoulderL", null, true, -1, null, "ShoulderR", null, true, -1, null, "Swoop", null, true, -1, null, "Unkempt", null, true, -1, null, "XLong", null, true, -1, null, "Bunches", null, true, -1, null, "BangsLong2", null, true, -1, null ]
 selected = 0
 
-[node name="ColorPicker" type="ColorPickerButton" parent="Panel/Controls/Hair"]
-margin_left = 112.0
-margin_right = 211.0
-margin_bottom = 35.0
+[node name="HairColorLabel" type="Label" parent="Panel/GridContainer"]
+margin_top = 149.0
+margin_right = 88.0
+margin_bottom = 169.0
+text = "Hair color:"
+align = 2
+
+[node name="HairColor" type="ColorPickerButton" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_top = 147.0
+margin_right = 213.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( -810.5, -174 )
 size_flags_horizontal = 3
 custom_constants/hseparation = 0
 color = Color( 1, 1, 1, 1 )
 edit_alpha = false
 
-[node name="Skintone" type="HBoxContainer" parent="Panel/Controls"]
-margin_top = 175.0
-margin_right = 211.0
-margin_bottom = 210.0
-
-[node name="Title" type="Label" parent="Panel/Controls/Skintone"]
-margin_top = 7.0
-margin_right = 76.0
-margin_bottom = 27.0
+[node name="SkintoneLabel" type="Label" parent="Panel/GridContainer"]
+margin_top = 178.0
+margin_right = 88.0
+margin_bottom = 198.0
 text = "Skintone:"
+align = 2
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Skintone"]
-margin_left = 80.0
-margin_right = 113.75
-margin_bottom = 35.5
-text = "1"
-items = [ "1", null, false, -1, null, "2", null, false, -1, null, "3", null, false, -1, null ]
-selected = 0
+[node name="Skintone" type="ColorPickerButton" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_top = 176.0
+margin_right = 213.0
+margin_bottom = 201.0
+rect_pivot_offset = Vector2( -810.5, -174 )
+size_flags_horizontal = 3
+custom_constants/hseparation = 0
+color = Color( 1, 1, 1, 1 )
+edit_alpha = false
 
-[node name="Eyes" type="HBoxContainer" parent="Panel/Controls"]
-editor/display_folded = true
-margin_top = 221.0
-margin_right = 211.0
-margin_bottom = 256.0
-
-[node name="Title" type="Label" parent="Panel/Controls/Eyes"]
-margin_top = 7.0
-margin_right = 42.0
-margin_bottom = 27.0
+[node name="EyesLabel" type="Label" parent="Panel/GridContainer"]
+margin_top = 207.0
+margin_right = 88.0
+margin_bottom = 227.0
 text = "Eyes:"
+align = 2
 
-[node name="Type" type="OptionButton" parent="Panel/Controls/Eyes"]
-margin_left = 46.0
-margin_right = 103.75
-margin_bottom = 35.5
-text = "Blue"
-items = [ "Blue", null, false, -1, null, "Brown", null, false, -1, null, "Gray", null, false, -1, null, "Green", null, false, -1, null, "Orange", null, false, -1, null, "Purple", null, false, -1, null, "Red", null, false, -1, null, "Yellow", null, false, -1, null ]
-selected = 0
+[node name="Eyes" type="ColorPickerButton" parent="Panel/GridContainer"]
+margin_left = 92.0
+margin_top = 205.0
+margin_right = 213.0
+margin_bottom = 230.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 0
+color = Color( 1, 1, 1, 1 )
+edit_alpha = false
 
 [node name="Title" type="Label" parent="."]
 margin_top = 50.0
@@ -176,10 +170,10 @@ text = "Done"
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
 position = Vector2( 511.372, 228.108 )
-[connection signal="item_selected" from="Panel/Controls/Sex/Type" to="." method="_set_sex"]
-[connection signal="item_selected" from="Panel/Controls/Race/Type" to="." method="_set_race"]
-[connection signal="item_selected" from="Panel/Controls/Hair/Type" to="." method="_set_hair"]
-[connection signal="color_changed" from="Panel/Controls/Hair/ColorPicker" to="." method="_on_Color_color_changed"]
-[connection signal="item_selected" from="Panel/Controls/Skintone/Type" to="." method="_set_skintone"]
-[connection signal="item_selected" from="Panel/Controls/Eyes/Type" to="." method="_set_eyes"]
+[connection signal="item_selected" from="Panel/GridContainer/Sex" to="." method="_change_sex"]
+[connection signal="item_selected" from="Panel/GridContainer/Race" to="." method="_change_race"]
+[connection signal="item_selected" from="Panel/GridContainer/Hair" to="." method="_change_hair"]
+[connection signal="color_changed" from="Panel/GridContainer/HairColor" to="." method="_change_hair_color"]
+[connection signal="color_changed" from="Panel/GridContainer/Skintone" to="." method="_change_skintone_color"]
+[connection signal="color_changed" from="Panel/GridContainer/Eyes" to="." method="_change_eyes_color"]
 [connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

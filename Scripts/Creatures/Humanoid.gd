@@ -1,64 +1,29 @@
-extends "res://Scripts/Creatures/Creature.gd"
+extends Creature
+class_name Humanoid
 
 # Visual properties
-export(String, "Male", "Female") var sex = "Male"
-export(String, "Human", "Elf", "Orc", "Skeleton") var race = "Human"
-export(String) var hair = "Pixie"
-export(Color) var hair_color = Color(1, 1, 1)
-export(String, "Blue", "Brown", "Gray", "Green", "Orange", "Purple", "Red", "Yellow") var eyes = "Blue"
-export (int, 1, 3) var skintone = 1
+export(String) var nickname = "Name" setget set_nickname
+export(String, "Male", "Female") var sex = "Male" setget set_sex
+export(String, "Human", "Elf", "Orc") var race = "Human" setget set_race
+export(String) var hair = "Pixie" setget set_hair
+export(Color) var hair_color = Color(1, 1, 1) setget set_hair_color
+export(Color) var skintone = Color(1, 1, 1) setget set_skintone
+export(Color) var eyes = Color(1, 1, 1) setget set_eyes
 
 # Equipment
+# warning-ignore:unused_class_variable
 var weapon
 
-func _ready():
-	load_sprite()
-
 # Override the parent function to add body parts animations
-func set_health(value):
+func set_health(value) -> void:
 	.set_health(value)
 
 	if health <= 0:
 		$Hair/Animation.play("Death")
 		$Eyes/Animation.play("Death")
 
-sync func equip_weapon(weapon_name):
-	if weapon_name != null:
-		var weapon = load("res://Scenes/Items/" + weapon_name + ".tscn").instance()
-		$Weapon.texture = load("res://Sprites/Items/" + weapon_name + "Animation.png")
-		damage = weapon.damage
-	else:
-		damage = Vector2(1, 1)
-		$Weapon.texture = null
-
-func load_sprite():
-	$Body.texture = load("res://Sprites/Creatures/Character/" +
-						sex +
-						"/Races/" +
-						race +
-						"/" +
-						str(skintone) +
-						".png")
-						
-	# Orcs do not have hair and eye sprites
-	if race != "Orc":
-		$Eyes.texture = load("res://Sprites/Creatures/Character/" +
-						sex +
-						"/Eyes/" +
-						eyes +
-						".png")
-		$Hair.texture = load("res://Sprites/Creatures/Character/" +
-						sex +
-						"/Hairs/" +
-						hair +
-						".png")
-		$Hair.modulate = hair_color
-	else:
-		$Eyes.texture = null
-		$Hair.texture = null
-
 # Override the parent function to add body parts animations
-func play_animation(animation):
+func play_animation(animation) -> void:
 	animation += direction_string() # Add animation direction
 	if $Body/Animation.current_animation != animation:
 		$Body/Animation.play(animation)
@@ -69,7 +34,7 @@ func play_animation(animation):
 		else:
 			$Weapon.visible = false
 
-func stop_animation():
+func stop_animation() -> void:
 	match direction:
 		UP:
 			$Body.set_frame(104)
@@ -87,3 +52,81 @@ func stop_animation():
 			$Body.set_frame(143)
 			$Hair.set_frame(143)
 			$Eyes.set_frame(143)
+
+func set_data(data: Dictionary) -> void:
+	self.nickname = data["nickname"]
+	self.sex = data["sex"]
+	self.race = data["race"]
+	self.hair = data["hair"]
+	self.hair_color = data["hair_color"]
+	self.skintone = data["skintone"]
+	self.eyes = data["eyes"]
+
+func data() -> Dictionary:
+	var data = Dictionary()
+	data["nickname"] = nickname
+	data["sex"] = sex
+	data["race"] = race
+	data["hair"] = hair
+	data["hair_color"] = hair_color
+	data["skintone"] = skintone
+	data["eyes"] = eyes
+	
+	return data
+
+func set_nickname(name: String) -> void:
+	nickname = name
+	$Name.text = nickname
+
+func set_sex(name: String) -> void:
+	sex = name
+	$Body.texture = load("res://Sprites/Creatures/Character/"
+			+ sex
+			+ "/Races/"
+			+ race
+			+ ".png")
+	$Body.modulate = skintone
+
+func set_race(name: String) -> void:
+	race = name
+	$Body.texture = load("res://Sprites/Creatures/Character/"
+			+ sex
+			+ "/Races/"
+			+ race
+			+ ".png")
+	$Body.modulate = skintone
+
+func set_hair(name: String) -> void:
+	# Orcs do not have hair
+	if race == "Orc":
+		return
+	
+	hair = name
+	$Hair.texture = load("res://Sprites/Creatures/Character/"
+			+ sex
+			+ "/Hairs/"
+			+ hair
+			+ ".png")
+	$Hair.modulate = hair_color
+
+func set_hair_color(color: Color) -> void:
+	hair_color = color
+	$Hair.modulate = hair_color
+
+func set_skintone(color: Color) -> void:
+	skintone = color
+	$Body.modulate = skintone
+
+func set_eyes(color: Color) -> void:
+	# Orcs do not have eye sprites
+	eyes = color
+	$Eyes.modulate = eyes
+
+sync func equip_weapon(weapon_name) -> void:
+	if weapon_name != null:
+		var weapon = load("res://Scenes/Items/" + weapon_name + ".tscn").instance()
+		$Weapon.texture = load("res://Sprites/Items/" + weapon_name + "Animation.png")
+		damage = weapon.damage
+	else:
+		damage = Vector2(1, 1)
+		$Weapon.texture = null

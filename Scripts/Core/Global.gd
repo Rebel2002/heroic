@@ -1,14 +1,19 @@
 extends Node
 
 # Connection
+# warning-ignore:unused_class_variable
 var ip
+# warning-ignore:unused_class_variable
 var port = 10567
 
 # Current character
-var player = {}
+# warning-ignore:unused_class_variable
+var player: Dictionary
 
 # Session
-var players = {}
+# warning-ignore:unused_class_variable
+var players: Dictionary
+# warning-ignore:unused_class_variable
 var id
 
 func modifier(attribute):

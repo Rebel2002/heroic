@@ -8,9 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BattleText",
+"language": "GDScript",
+"path": "res://Scripts/Effects/BattleText.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Creature",
+"language": "GDScript",
+"path": "res://Scripts/Creatures/Creature.gd"
+}, {
+"base": "Creature",
+"class": "Humanoid",
+"language": "GDScript",
+"path": "res://Scripts/Creatures/Humanoid.gd"
+}, {
+"base": "Area2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Scripts/Items/Item.gd"
+} ]
 _global_script_class_icons={
-
+"BattleText": "",
+"Creature": "",
+"Humanoid": "",
+"Item": ""
 }
 
 [application]

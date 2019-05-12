@@ -1,13 +1,13 @@
 extends Control
 
-func _ready():
+func _ready() -> void:
 	if get_tree().is_network_server():
 		set_time(OS.get_time())
 		$MinuteTimer.wait_time = 60 - OS.get_time().second
 		$MinuteTimer.start()
 		$MinuteTimer.wait_time = 60 # For next minutes
 
-sync func set_time(time):
+sync func set_time(time: Dictionary) -> void:
 	var timeString
 	
 	# Set hours
@@ -27,7 +27,7 @@ sync func set_time(time):
 	$Time.text = timeString
 	
 	# Set visibility
-	var minutes = time.hour * 60 + time.minute
+	var minutes: int = time.hour * 60 + time.minute
 	if time.hour >= 4 && time.hour < 6:
 		$"../../World".environment.tonemap_exposure = 0.007 * minutes - 1.52
 	elif time.hour >= 6 && time.hour < 19:
@@ -37,5 +37,5 @@ sync func set_time(time):
 	elif time.hour >= 21 || time.hour < 4:
 		$"../../World".environment.tonemap_exposure = 0.16
 
-func _on_MinuteTimer_timeout():
+func _on_MinuteTimer_timeout() -> void:
 		rpc("set_time", OS.get_time())

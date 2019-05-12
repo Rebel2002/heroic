@@ -4,32 +4,25 @@
 [ext_resource path="res://Sprites/Items/Potato.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
 [node name="Potato" instance=ExtResource( 1 )]
-
 game_name = "Potato"
 stack = 5
 count = 4
 
 [node name="Sprite" parent="." index="0"]
-
 position = Vector2( 0, 20 )
 texture = ExtResource( 2 )
 
 [node name="Collision" parent="." index="1"]
-
 position = Vector2( 0, 20 )
 shape = SubResource( 1 )
 
 [node name="Name" parent="." index="2"]
-
-margin_left = -49.0
-margin_top = -38.0
-margin_right = 5.0
-margin_bottom = -24.0
+margin_left = -27.0
+margin_top = -6.0
+margin_right = 27.0
+margin_bottom = 8.0
 text = "Potato (4)"
-
-
+align = 1

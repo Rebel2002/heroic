@@ -4,32 +4,24 @@
 [ext_resource path="res://Sprites/Items/Mace.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 12, 12 )
 
-[node name="Mace" index="0" instance=ExtResource( 1 )]
-
+[node name="Mace" instance=ExtResource( 1 )]
 game_name = "Mace"
 damage = Vector2( 1, 6 )
 
 [node name="Sprite" parent="." index="0"]
-
 position = Vector2( 0, 20 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Transform", "Z Index" ]
 
 [node name="Collision" parent="." index="1"]
-
 position = Vector2( 0, 20 )
 shape = SubResource( 1 )
 
 [node name="Name" parent="." index="2"]
-
-margin_left = -44.0
-margin_top = -38.0
-margin_right = -4.0
-margin_bottom = -24.0
+margin_left = -20.0
+margin_top = -6.0
+margin_right = 20.0
+margin_bottom = 8.0
 text = "Mace"
-
-
+align = 1

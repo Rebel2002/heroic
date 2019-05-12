@@ -5,11 +5,9 @@
 [ext_resource path="res://Sprites/Lightmaps/CircleLightmap.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
-
 resource_name = "fire"
 length = 1.1
 loop = true
-step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -24,85 +22,32 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
 extents = Vector2( 7.47108, 10.4922 )
 
 [node name="Fire" type="Area2D"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 23 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 4
 frame = 11
-_sections_unfolded = [ "Animation" ]
 
-[node name="Animation" type="AnimationPlayer" parent="Sprite" index="0"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
+[node name="Animation" type="AnimationPlayer" parent="Sprite"]
 anims/fire = SubResource( 1 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
 
-[node name="Collision" type="CollisionShape2D" parent="." index="1"]
-
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.628044, 21.686 )
 shape = SubResource( 2 )
 
-[node name="DamageTimer" type="Timer" parent="." index="2"]
+[node name="DamageTimer" type="Timer" parent="."]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="Light2D" type="Light2D" parent="." index="3"]
-
+[node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 0, 26.8221 )
-enabled = true
-editor_only = false
 texture = ExtResource( 3 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
 color = Color( 0.949219, 0.782045, 0.211349, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Shadow" ]
-
 [connection signal="body_entered" from="." to="." method="_on_Fire_body_entered"]
-
 [connection signal="body_exited" from="." to="." method="_on_Fire_body_exited"]
-
 [connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
-
-
