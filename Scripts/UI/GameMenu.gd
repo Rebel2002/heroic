@@ -1,11 +1,8 @@
 extends Control
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		if is_visible_in_tree():
-			visible = false
-		else:
-			visible = true
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		visible = !visible
 
 func _on_MainMenu_pressed() -> void:
 	get_tree().set_network_peer(null)

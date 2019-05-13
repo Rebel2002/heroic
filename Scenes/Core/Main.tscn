@@ -3,9 +3,9 @@
 [ext_resource path="res://Scripts/Core/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Locations/World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/GameMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/UI/TouchControls.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/UI/CurrentTime.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/UI/Chat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/Chat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/TouchControls.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/UI/CurrentTime.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/UI/Inventory.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node"]
@@ -18,12 +18,12 @@ script = ExtResource( 1 )
 [node name="GameMenu" parent="Ui" instance=ExtResource( 3 )]
 visible = false
 
-[node name="TouchControls" parent="Ui" instance=ExtResource( 4 )]
+[node name="Chat" parent="Ui" instance=ExtResource( 4 )]
 
-[node name="CurrentTime" parent="Ui" instance=ExtResource( 5 )]
+[node name="TouchControls" parent="Ui" instance=ExtResource( 5 )]
+
+[node name="CurrentTime" parent="Ui" instance=ExtResource( 6 )]
 anchor_left = 1.0
 anchor_right = 1.0
-
-[node name="Chat" parent="Ui" instance=ExtResource( 6 )]
 
 [node name="Inventory" parent="Ui" instance=ExtResource( 7 )]

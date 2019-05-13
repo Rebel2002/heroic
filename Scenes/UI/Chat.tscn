@@ -6,9 +6,7 @@
 [ext_resource path="res://Sprites/UI/PanelBrown.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Hardpixel.otf" type="DynamicFontData" id=5]
 
-
 [sub_resource type="StyleBoxTexture" id=1]
-
 content_margin_left = 6.0
 content_margin_right = 6.0
 content_margin_top = 6.0
@@ -19,18 +17,10 @@ margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 3.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Axis Stretch", "Content Margin", "Margin" ]
 
 [sub_resource type="StyleBoxTexture" id=2]
-
 content_margin_left = 6.0
 content_margin_right = 6.0
 content_margin_top = 6.0
@@ -41,99 +31,41 @@ margin_left = 3.0
 margin_right = 3.0
 margin_top = 3.0
 margin_bottom = 3.0
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-modulate_color = Color( 1, 1, 1, 1 )
-draw_center = true
-_sections_unfolded = [ "Content Margin", "Margin" ]
 
 [sub_resource type="DynamicFont" id=3]
-
 size = 10
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 5 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Chat" type="Control"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+focus_mode = 1
 script = ExtResource( 1 )
 
-[node name="ChatWindow" type="RichTextLabel" parent="." index="0"]
-
-anchor_left = 0.0
+[node name="ChatWindow" type="RichTextLabel" parent="."]
 anchor_top = 1.0
-anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 6.0
 margin_top = 477.0
 margin_right = 201.0
 margin_bottom = 567.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
 focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 theme = ExtResource( 2 )
 custom_styles/normal = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
 scroll_following = true
 selection_enabled = true
-override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Caret", "Pause", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="InputField" type="LineEdit" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="InputField" type="LineEdit" parent="."]
 margin_left = 5.0
 margin_top = 572.0
 margin_right = 200.0
 margin_bottom = 597.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
+focus_mode = 1
 theme = ExtResource( 2 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
+focus_mode = 1
 caret_blink = true
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "custom_styles" ]
-
 [connection signal="text_entered" from="InputField" to="." method="_on_InputField_text_entered"]
-
-
