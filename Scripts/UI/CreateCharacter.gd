@@ -21,7 +21,7 @@ func _ready() -> void:
 	$Panel/GridContainer/Skintone.color = Color(randf(), randf(), randf())
 	$Panel/GridContainer/Eyes.color = Color(randf(), randf(), randf())
 
-func _change_nickname(nickname: String):
+func _change_nickname(nickname: String) -> void:
 	$Character.game_name = nickname
 	$Done.disabled = nickname.empty()
 

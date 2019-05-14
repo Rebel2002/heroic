@@ -27,8 +27,7 @@ func _ready() -> void:
 
 func set_game_name(name: String) -> void:
 	game_name = name
-	if has_node("Name"):
-		$Name.text = name
+	$Name.text = name
 
 func set_health(value: int) -> void:
 	# Show damage
@@ -37,11 +36,9 @@ func set_health(value: int) -> void:
 	add_child(battle_text)
 	
 	health = value
-	
-	if (has_node("HealthBar")):
-		$HealthBar.visible = true
-		$HealthBar.value = value
-		$HealthBar/DisplayTimer.start()
+	$HealthBar.visible = true
+	$HealthBar.value = value
+	$HealthBar/DisplayTimer.start()
 	
 	if health <= 0:
 		can_move = false

@@ -16,8 +16,7 @@ func stackable() -> bool:
 
 func set_game_name(new_name: String) -> void:
 	game_name = new_name
-	if has_node("Name"):
-		if stackable():
-			$Name.text = new_name + " (" + str(count) + ")"
-		else:
-			$Name.text = new_name
+	if stackable():
+		$Name.text = new_name + " (" + str(count) + ")"
+	else:
+		$Name.text = new_name
