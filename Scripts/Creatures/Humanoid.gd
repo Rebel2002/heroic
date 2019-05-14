@@ -2,7 +2,6 @@ extends Creature
 class_name Humanoid
 
 # Visual properties
-export(String) var nickname = "Name" setget set_nickname
 export(String, "Male", "Female") var sex = "Male" setget set_sex
 export(String, "Human", "Elf", "Orc") var race = "Human" setget set_race
 export(String) var hair = "Pixie" setget set_hair
@@ -54,7 +53,7 @@ func stop_animation() -> void:
 			$Eyes.set_frame(143)
 
 func set_data(data: Dictionary) -> void:
-	self.nickname = data["nickname"]
+	self.game_name = data["game_name"]
 	self.sex = data["sex"]
 	self.race = data["race"]
 	self.hair = data["hair"]
@@ -64,7 +63,7 @@ func set_data(data: Dictionary) -> void:
 
 func data() -> Dictionary:
 	var data = Dictionary()
-	data["nickname"] = nickname
+	data["game_name"] = game_name
 	data["sex"] = sex
 	data["race"] = race
 	data["hair"] = hair
@@ -73,10 +72,6 @@ func data() -> Dictionary:
 	data["eyes"] = eyes
 	
 	return data
-
-func set_nickname(name: String) -> void:
-	nickname = name
-	$Name.text = nickname
 
 func set_sex(name: String) -> void:
 	sex = name
@@ -95,10 +90,13 @@ func set_race(name: String) -> void:
 			+ race
 			+ ".png")
 	$Body.modulate = skintone
+	if race == "Orc":
+		self.hair = ""
 
 func set_hair(name: String) -> void:
 	# Orcs do not have hair
 	if race == "Orc":
+		$Hair.texture = null
 		return
 	
 	hair = name

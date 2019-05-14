@@ -44,7 +44,7 @@ align = 2
 margin_left = 92.0
 margin_right = 213.5
 margin_bottom = 26.25
-text = "Nagibator999"
+max_length = 12
 expand_to_text_length = true
 caret_blink = true
 
@@ -166,10 +166,12 @@ margin_left = -116.0
 margin_top = -90.0
 margin_right = 115.0
 margin_bottom = -70.0
+disabled = true
 text = "Done"
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
 position = Vector2( 511.372, 228.108 )
+[connection signal="text_changed" from="Panel/GridContainer/Nickname" to="." method="_change_nickname"]
 [connection signal="item_selected" from="Panel/GridContainer/Sex" to="." method="_change_sex"]
 [connection signal="item_selected" from="Panel/GridContainer/Race" to="." method="_change_race"]
 [connection signal="item_selected" from="Panel/GridContainer/Hair" to="." method="_change_hair"]

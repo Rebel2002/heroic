@@ -17,7 +17,7 @@ sync func add_player(id: int, data: Dictionary) -> void:
 			if peer_id != 1:
 				# Send new player data to all players except server
 				rpc_id(peer_id, "add_player", id, data)
-		$Ui/Chat.rpc("announce_connected", data["nickname"])
+		$Ui/Chat.rpc("announce_connected", data["game_name"])
 	
 	# Load player
 	Global.players[id] = data
@@ -28,7 +28,7 @@ sync func add_player(id: int, data: Dictionary) -> void:
 	$World/Objects.add_child(player)
 	
 func remove_player(id: int) -> void:
-	$Ui/Chat.announce_disconnected(Global.players[id]["nickname"])
+	$Ui/Chat.announce_disconnected(Global.players[id]["game_name"])
 	Global.players.erase(id)
 	get_node("World/Objects/Player" + str(id)).queue_free()
 

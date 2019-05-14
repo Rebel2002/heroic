@@ -15,7 +15,7 @@ func _on_InputField_text_entered(new_text: String) -> void:
 
 sync func send_message(id: int, text: String) -> void:
 	get_node("../../World/Objects/Player" + str(id)).say(text)
-	$ChatWindow.bbcode_text += "\n[color=green]" + Global.players[id]["nickname"] + "[/color]: " + text
+	$ChatWindow.bbcode_text += "\n[color=green]" + Global.players[id]["game_name"] + "[/color]: " + text
 
 sync func announce_connected(player_name: String) -> void:
 	$ChatWindow.bbcode_text += "\n[color=gray]" + player_name + " has joined the game.[/color]" 

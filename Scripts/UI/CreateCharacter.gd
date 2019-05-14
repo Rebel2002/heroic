@@ -15,10 +15,15 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	$Character.play_animation("Walk")
 	$Character/HealthBar.visible = false
+	$Character/Name.visible = false
 	
 	$Panel/GridContainer/HairColor.color = Color(randf(), randf(), randf())
 	$Panel/GridContainer/Skintone.color = Color(randf(), randf(), randf())
 	$Panel/GridContainer/Eyes.color = Color(randf(), randf(), randf())
+
+func _change_nickname(nickname: String):
+	$Character.game_name = nickname
+	$Done.disabled = nickname.empty()
 
 func _change_sex(id: int) -> void:
 	# Disable some hairs for male (id = 0)
