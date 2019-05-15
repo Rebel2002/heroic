@@ -27,12 +27,14 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent):
 	if event.is_action_pressed("ui_inventory"):
 		# Show / hide inventory
-		if visible:
-			hide()
-		else:
-			show()
+		get_tree().set_input_as_handled()
+		visible = !visible
 		return
-		
+	
+	if event.is_action_pressed("ui_cancel") and visible:
+		get_tree().set_input_as_handled()
+		hide()
+	
 	if event is InputEventMouseButton:
 		# Left button click
 		if event.button_index == BUTTON_RIGHT and not event.pressed:
