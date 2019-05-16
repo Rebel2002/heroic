@@ -7,7 +7,7 @@ func _ready() -> void:
 	if get_tree().is_network_server():
 		make_random_action()
 	
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if get_tree().is_network_server():
 		rpc_unreliable("set_position", position) # Send position to avoid desync
 	

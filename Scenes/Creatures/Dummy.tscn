@@ -44,7 +44,7 @@ tracks/0/keys = {
 "values": [ 8, 13 ]
 }
 
-[node name="Dummy" instance=ExtResource( 1 )]
+[node name="Dummy" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 game_name = "Dummy"
 

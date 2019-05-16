@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Creature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Creatures/Chicken.gd" type="Script" id=2]
-[ext_resource path="res://Chicken.tres" type="Animation" id=3]
-[ext_resource path="res://Sprites/Creatures/Chicken.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Creatures/Chicken.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -145,7 +144,6 @@ shape = SubResource( 2 )
 editor/display_folded = true
 
 [node name="Animation" parent="." index="6"]
-anims/EatDown = ExtResource( 3 )
 anims/EatLeft = SubResource( 3 )
 anims/EatRight = SubResource( 4 )
 anims/EatUp = SubResource( 5 )
@@ -156,7 +154,7 @@ anims/WalkUp = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="." index="7"]
 position = Vector2( 0, 17.8489 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 vframes = 8
 hframes = 4
 frame = 8
