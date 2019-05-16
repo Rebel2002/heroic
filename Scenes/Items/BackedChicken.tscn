@@ -18,7 +18,8 @@ position = Vector2( 0.153141, 21.5105 )
 shape = SubResource( 1 )
 
 [node name="Name" parent="." index="2"]
-margin_left = -19.6933
-margin_top = -3.20637
-margin_right = 20.3067
-margin_bottom = 10.7936
+margin_left = -40.7749
+margin_top = -4.26045
+margin_right = 41.2251
+margin_bottom = 9.73952
+text = "Backed Chicken"
