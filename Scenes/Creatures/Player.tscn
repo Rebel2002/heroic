@@ -8,17 +8,34 @@
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Body" parent="." index="0"]
-frame = 130
-
 [node name="Collision" parent="InterractArea" index="0"]
 position = Vector2( -0.66156, 25.2174 )
 
-[node name="Collision" parent="." index="5"]
+[node name="HealthBar" parent="." index="3"]
+editor/display_folded = true
+
+[node name="Collision" parent="." index="4"]
 position = Vector2( -0.172241, 26.9568 )
+
+[node name="Speech" parent="." index="5"]
+editor/display_folded = true
+
+[node name="Body" parent="." index="6"]
+editor/display_folded = true
+frame = 131
+
+[node name="Eyes" parent="." index="7"]
+frame = 131
+
+[node name="Hair" parent="." index="8"]
+frame = 131
 
 [node name="Weapon" parent="." index="9"]
 editor/display_folded = true
+frame = 12
 
-[node name="Camera" type="Camera2D" parent="." index="10"]
+[node name="Animation" parent="." index="10"]
+playback_process_mode = 0
+
+[node name="Camera" type="Camera2D" parent="." index="11"]
 visible = false

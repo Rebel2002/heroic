@@ -13,45 +13,6 @@ export(Color) var eyes = Color(1, 1, 1) setget set_eyes
 # warning-ignore:unused_class_variable
 var weapon
 
-# Override the parent function to add body parts animations
-func set_health(value) -> void:
-	.set_health(value)
-
-	if health <= 0:
-		$Hair/Animation.play("Death")
-		$Eyes/Animation.play("Death")
-
-# Override the parent function to add body parts animations
-func play_animation(animation) -> void:
-	animation += direction_string() # Add animation direction
-	if $Body/Animation.current_animation != animation:
-		$Body/Animation.play(animation)
-		$Hair/Animation.play(animation)
-		$Eyes/Animation.play(animation)
-		if $Weapon/Animation.has_animation(animation):
-			$Weapon/Animation.play(animation)
-		else:
-			$Weapon.visible = false
-
-func stop_animation() -> void:
-	match direction:
-		UP:
-			$Body.set_frame(104)
-			$Hair.set_frame(104)
-			$Eyes.set_frame(104)
-		LEFT:
-			$Body.set_frame(117)
-			$Hair.set_frame(117)
-			$Eyes.set_frame(117)
-		DOWN:
-			$Body.set_frame(130)
-			$Hair.set_frame(130)
-			$Eyes.set_frame(130)
-		RIGHT:
-			$Body.set_frame(143)
-			$Hair.set_frame(143)
-			$Eyes.set_frame(143)
-
 func set_data(data: Dictionary) -> void:
 	self.game_name = data["game_name"]
 	self.sex = data["sex"]

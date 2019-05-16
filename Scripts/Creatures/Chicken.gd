@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	
 	match current_action:
 		NONE:
-			stop_animation()
+			$Animation.stop()
 		WALKING:
 			# Try to move in random direction
 			if move_and_collide(velocity * delta) != null:

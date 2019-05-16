@@ -42,17 +42,11 @@ func set_health(value: int) -> void:
 	
 	if health <= 0:
 		can_move = false
-		$Body/Animation.play("Death")
+		$Animation.play("Death")
 
 func set_velocity(value) -> void:
 	velocity = value
 	calculate_direction()
-
-func _on_Speech_DisplayTimer_timeout() -> void:
-	$Speech.visible = false
-
-func _on_HealthBar_DisplayTimer_timeout() -> void:
-	$HealthBar.visible = false
 
 remote func synchronize_data(id: int) -> void:
 	# Send values if if they are not default
@@ -113,8 +107,13 @@ func direction_string() -> String:
 
 sync func play_animation(animation: String) -> void:
 	animation += direction_string() # Add animation direction
-	if $Body/Animation.current_animation != animation:
-		$Body/Animation.play(animation)
+	if $Animation.current_animation != animation:
+		$Animation.play(animation)
+
+sync func stop_animation() -> void:
+	if $Animation.is_playing():
+		$Animation.seek(0, true)
+		$Animation.stop()
 
 func _on_animation_finished(animation: String) -> void:
 	if not get_tree().is_network_server() or not animation.begins_with("MeleeAttack"):

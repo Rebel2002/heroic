@@ -4,14 +4,19 @@
 [ext_resource path="res://Scripts/Creatures/Dummy.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Creatures/Dummy.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.4044
+height = 5.00275
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.71664
+height = 8.92615
+
+[sub_resource type="Animation" id=3]
 resource_name = "Damaged"
 length = 0.8
-loop = false
-step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -23,14 +28,11 @@ tracks/0/keys = {
 "values": [ 0, 7 ]
 }
 
-[sub_resource type="Animation" id=2]
-
+[sub_resource type="Animation" id=4]
 resource_name = "Death"
 length = 0.6
-loop = false
-step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -42,54 +44,32 @@ tracks/0/keys = {
 "values": [ 8, 13 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 19.4044
-height = 5.00275
-
-[sub_resource type="CapsuleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 6.71664
-height = 8.92615
-
 [node name="Dummy" index="0" instance=ExtResource( 1 )]
-
 script = ExtResource( 2 )
 game_name = "Dummy"
 
-[node name="Body" parent="." index="0"]
+[node name="Collision" parent="InterractArea" index="0"]
+position = Vector2( 0, 7.96771 )
+shape = SubResource( 1 )
 
-editor/display_folded = false
+[node name="HealthBar" parent="." index="3"]
+editor/display_folded = true
+margin_top = -71.0
+margin_bottom = -60.0
+
+[node name="Collision" parent="." index="4"]
+position = Vector2( -0.771057, 21.6797 )
+shape = SubResource( 2 )
+
+[node name="Speech" parent="." index="5"]
+editor/display_folded = true
+
+[node name="Animation" parent="." index="6"]
+anims/Damaged = SubResource( 3 )
+anims/Death = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
 texture = ExtResource( 3 )
 vframes = 2
 hframes = 8
 frame = 7
-
-[node name="Animation" parent="Body" index="0"]
-
-anims/Damaged = SubResource( 1 )
-anims/Death = SubResource( 2 )
-
-[node name="InterractArea" parent="." index="2"]
-
-editor/display_folded = false
-
-[node name="Collision" parent="InterractArea" index="0"]
-
-position = Vector2( 0, 7.96771 )
-shape = SubResource( 3 )
-
-[node name="HealthBar" parent="." index="4"]
-
-editor/display_folded = false
-margin_top = -71.0
-margin_bottom = -60.0
-
-[node name="Collision" parent="." index="5"]
-
-position = Vector2( -0.771057, 21.6797 )
-shape = SubResource( 4 )
-
-
