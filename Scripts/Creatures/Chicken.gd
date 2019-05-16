@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	
 	match current_action:
 		NONE:
-			$Animation.stop()
+			stop_animation()
 		WALKING:
 			# Try to move in random direction
 			if move_and_collide(velocity * delta) != null:
@@ -37,18 +37,6 @@ remote func synchronize_data(id: int) -> void:
 	
 	if current_target != null:
 		rset_id(id, "current_target", current_target)
-
-sync func stop_animation() -> void:
-	$Body/Animation.stop()
-	match direction:
-		UP:
-			$Body.set_frame(0)
-		LEFT:
-			$Body.set_frame(4)
-		DOWN:
-			$Body.set_frame(8)
-		RIGHT:
-			$Body.set_frame(12)
 
 func make_random_action() -> void:
 	current_action = randi() % 3
