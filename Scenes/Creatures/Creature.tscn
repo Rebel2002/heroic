@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Creatures/Creature.gd" type="Script" id=1]
 [ext_resource path="res://Styles/GameNameFont.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/UI/Speech.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Creatures/Animation.gd" type="Script" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
 content_margin_left = 3.0
@@ -112,6 +113,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+script = ExtResource( 8 )
 [connection signal="timeout" from="HealthBar/DisplayTimer" to="HealthBar" method="set_visible" binds= [ false ]]
 [connection signal="timeout" from="Speech/DisplayTimer" to="Speech" method="set_visible" binds= [ false ]]
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

@@ -1,19 +1,7 @@
 extends Control
 
-func _process(_delta: float) -> void:
-	# Change the player's vector depending on the keys
-	if Input.is_action_pressed("ui_up"):
-		$Character.direction = $Character.UP
-	elif Input.is_action_pressed("ui_left"):
-		$Character.direction = $Character.LEFT
-	elif Input.is_action_pressed("ui_down"):
-		$Character.direction = $Character.DOWN
-	elif Input.is_action_pressed("ui_right"):
-		$Character.direction = $Character.RIGHT
-	$Character.play_animation("Walk")
-
 func _ready() -> void:
-	$Character.play_animation("Walk")
+	$Character/Animation.play_directional_animation("Walk")
 	$Character/HealthBar.visible = false
 	$Character/Name.visible = false
 	

@@ -94,27 +94,6 @@ func calculate_direction() -> void:
 	elif velocity.x > 0.3 * speed:
 		direction = RIGHT
 
-func direction_string() -> String:
-	match direction:
-		UP:
-			return "Up"
-		LEFT:
-			return "Left"
-		DOWN:
-			return "Down"
-		RIGHT:
-			return "Right"
-
-sync func play_animation(animation: String) -> void:
-	animation += direction_string() # Add animation direction
-	if $Animation.current_animation != animation:
-		$Animation.play(animation)
-
-sync func stop_animation() -> void:
-	if $Animation.is_playing():
-		$Animation.seek(0, true)
-		$Animation.stop()
-
 func _on_animation_finished(animation: String) -> void:
 	if not get_tree().is_network_server() or not animation.begins_with("MeleeAttack"):
 		return

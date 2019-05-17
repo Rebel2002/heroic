@@ -9,49 +9,53 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not can_move:
 		return
-		
-	# Read pressed keys
-	if (is_network_master()):
-		# Pick an item
-		if Input.is_action_just_pressed("ui_pickup"):
-			for object in $InterractArea.get_overlapping_areas():
-				if object.is_in_group("Item"):
-					if get_node("../../../Ui/Inventory").add_item(object):
-						# Item added, pick it up from the world
-						object.rpc("pick")
-		
-		# Change the player's vector depending on the keys
-		velocity = Vector2()
-		if Input.is_action_pressed("ui_up"):
-			velocity.y -= 1
-		if Input.is_action_pressed("ui_left"):
-			velocity.x -= 1
-		if Input.is_action_pressed("ui_down"):
-			velocity.y += 1
-		if Input.is_action_pressed("ui_right"):
-			velocity.x += 1
-		
-		# Normalize vector
-		if velocity.length() > 0:
-			current_action = WALKING
-			self.velocity = velocity.normalized() * speed
-		else:
-			current_action = NONE
-		
-		if (Input.is_action_just_pressed("ui_attack")
-				or $Animation.current_animation == "MeleeAttack" + direction_string()):
-			current_action = ATTACKING
-		
-		rset("current_action", current_action)
-		rset("velocity", velocity)
-		rpc_unreliable("set_position", position) # Send position to avoid desync
 	
 	# Make actions
+	get_input()
 	match current_action:
 		WALKING:
-			play_animation("Walk")
+			$Animation.play_directional_animation("Walk")
 			move_and_collide(velocity * delta)
 		ATTACKING:
-			play_animation("MeleeAttack")
+			$Animation.play_directional_animation("MeleeAttack")
 		NONE:
-			stop_animation()
+			$Animation.stop()
+
+# Read pressed keys
+func get_input() -> void:
+	if not is_network_master():
+		return
+		
+	# Pick an item
+	if Input.is_action_just_pressed("ui_pickup"):
+		for object in $InterractArea.get_overlapping_areas():
+			if object.is_in_group("Item") and get_node("../../../Ui/Inventory").add_item(object):
+				# Item added, pick it up from the world
+				object.rpc("pick")
+	
+	# Change the player's vector depending on the keys
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed("ui_up"):
+		velocity.y -= 1
+	if Input.is_action_pressed("ui_left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		velocity.y += 1
+	if Input.is_action_pressed("ui_right"):
+		velocity.x += 1
+	
+	# Normalize vector
+	if velocity == Vector2.ZERO:
+		current_action = NONE
+	else:
+		current_action = WALKING
+		self.velocity = velocity.normalized() * speed
+	
+	if (Input.is_action_just_pressed("ui_attack")
+			or $Animation.current_animation.begins_with("MeleeAttack")):
+		current_action = ATTACKING
+	
+	# Send input via network
+	rset("current_action", current_action)
+	rset("velocity", velocity)
+	rpc_unreliable("set_position", position) # Send position to avoid desync

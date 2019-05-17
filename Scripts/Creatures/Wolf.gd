@@ -17,13 +17,13 @@ func _process(delta: float) -> void:
 			if get_tree().is_network_server():
 				randomize_velocity() # Change direction if creature collides
 		else:
-			play_animation("Walk") # If moving successful
+			$Animation.play_directional_animation("Walk") # If moving successful
 	elif current_action == RUNNING:
 		if get_tree().is_network_server():
 			velocity = to_local(current_target.position).normalized() * speed
 			rset("velocity", velocity)
 			calculate_direction()
-		play_animation("Run")
+		$Animation.play_directional_animation("Run")
 		move_and_collide(velocity * delta)
 
 remote func synchronize_data(id: int) -> void:
@@ -56,13 +56,13 @@ func make_random_action() -> void:
 	
 	match current_action:
 		NONE:
-			rpc("stop_animation")
+			rpc("stop")
 			$RandomActionTimer.wait_time = 1
 		WALKING:
 			randomize_velocity()
 			$RandomActionTimer.wait_time = randi() % 5 + 2
 		HOWLING:
-			rpc("play_animation", "Howl")
+			$Animation.rpc("play_directional_animation", "Howl", direction)
 			$RandomActionTimer.wait_time = 1.8
 	
 	$RandomActionTimer.start()

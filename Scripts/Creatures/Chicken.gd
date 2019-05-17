@@ -1,6 +1,5 @@
 extends Creature
 
-var current_target
 enum {NONE, WALKING, EATING}
 
 func _ready() -> void:
@@ -13,30 +12,24 @@ func _physics_process(delta: float) -> void:
 	
 	match current_action:
 		NONE:
-			stop_animation()
+			$Animation.stop()
 		WALKING:
 			# Try to move in random direction
 			if move_and_collide(velocity * delta) != null:
 				if get_tree().is_network_server():
 					randomize_velocity() # Change direction if creature collides
 			else:
-				play_animation("Walk") # If moving successful
+				$Animation.play_directional_animation("Walk") # If moving successful
 		EATING:
-			play_animation("Eat")
+			$Animation.play_directional_animation("Eat")
 
-# Add transformation baked chicken to deathdd
+# Transformate into a backed chicken when dying
 remote func set_health(value: int) -> void:
 	if value > 0:
 		.set_health(value)
 	else:
 		get_node("../../..").rpc("drop_item", "res://Scenes/Items/BackedChicken.tscn", 1, position)
 		rpc("remove")
-
-remote func synchronize_data(id: int) -> void:
-	.synchronize_data(id)
-	
-	if current_target != null:
-		rset_id(id, "current_target", current_target)
 
 func make_random_action() -> void:
 	current_action = randi() % 3
@@ -57,9 +50,8 @@ func make_random_action() -> void:
 # Generate random movement
 func randomize_velocity() -> void:
 	velocity = Vector2(randi() % 3 - 1, randi() % 3 - 1)
-	velocity = velocity.normalized() * speed / 2
-	if velocity.length() != 0:
-		rset("velocity", velocity)
-		calculate_direction()
-	else:
+	self.velocity = velocity.normalized() * speed / 2
+	if velocity == Vector2.ZERO:
 		randomize_velocity() # If generated velocity is equal to zero
+	else:
+		rset("velocity", velocity)

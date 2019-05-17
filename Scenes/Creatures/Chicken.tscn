@@ -10,7 +10,7 @@
 radius = 4.93356
 height = 6.01422
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 resource_name = "EatDown"
 length = 0.4
 tracks/0/type = "value"
@@ -26,8 +26,7 @@ tracks/0/keys = {
 "values": [ 24, 27 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "EatLeft"
+[sub_resource type="Animation" id=4]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -42,8 +41,7 @@ tracks/0/keys = {
 "values": [ 20, 23 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "EatRight"
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -58,8 +56,7 @@ tracks/0/keys = {
 "values": [ 28, 31 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "EatUp"
+[sub_resource type="Animation" id=6]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -74,8 +71,7 @@ tracks/0/keys = {
 "values": [ 16, 19 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "WalkDown"
+[sub_resource type="Animation" id=7]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -90,8 +86,7 @@ tracks/0/keys = {
 "values": [ 8, 11 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "WalkLeft"
+[sub_resource type="Animation" id=8]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -106,8 +101,7 @@ tracks/0/keys = {
 "values": [ 4, 7 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "WalkRight"
+[sub_resource type="Animation" id=9]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -122,8 +116,7 @@ tracks/0/keys = {
 "values": [ 12, 15 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "WalkUp"
+[sub_resource type="Animation" id=10]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -160,14 +153,14 @@ shape = SubResource( 2 )
 editor/display_folded = true
 
 [node name="Animation" parent="." index="6"]
-anims/EatDown = SubResource( 10 )
-anims/EatLeft = SubResource( 3 )
-anims/EatRight = SubResource( 4 )
-anims/EatUp = SubResource( 5 )
-anims/WalkDown = SubResource( 6 )
-anims/WalkLeft = SubResource( 7 )
-anims/WalkRight = SubResource( 8 )
-anims/WalkUp = SubResource( 9 )
+anims/EatDown = SubResource( 3 )
+anims/EatLeft = SubResource( 4 )
+anims/EatRight = SubResource( 5 )
+anims/EatUp = SubResource( 6 )
+anims/WalkDown = SubResource( 7 )
+anims/WalkLeft = SubResource( 8 )
+anims/WalkRight = SubResource( 9 )
+anims/WalkUp = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="." index="7"]
 position = Vector2( 0, 17.8489 )
