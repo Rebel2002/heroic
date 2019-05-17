@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tilesets/Terrain.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Effects/Fire.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Items/Mace.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Creatures/Dummy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Creatures/Chicken.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Fountain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Effects/Fire.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Items/Mace.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Creatures/Dummy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Creatures/Chicken.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -21,17 +22,20 @@ tile_data = PoolIntArray( 327688, 0, 131072, 327689, 0, 131073, 327690, 0, 13107
 
 [node name="Objects" type="YSort" parent="."]
 
-[node name="Fire" parent="Objects" instance=ExtResource( 2 )]
+[node name="Fountain" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 482.107, 350.528 )
+
+[node name="Fire" parent="Objects" instance=ExtResource( 3 )]
 position = Vector2( 523.747, 246.229 )
 
-[node name="Mace" parent="Objects" instance=ExtResource( 3 )]
+[node name="Mace" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 382.274, 228.389 )
 
-[node name="Potato" parent="Objects" instance=ExtResource( 4 )]
+[node name="Potato" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 331.304, 270.495 )
 
-[node name="Dummy" parent="Objects" instance=ExtResource( 5 )]
+[node name="Dummy" parent="Objects" instance=ExtResource( 6 )]
 position = Vector2( 648.629, 250.476 )
 
-[node name="Chicken" parent="Objects" instance=ExtResource( 6 )]
+[node name="Chicken" parent="Objects" instance=ExtResource( 7 )]
 position = Vector2( 530.94, 204.746 )
