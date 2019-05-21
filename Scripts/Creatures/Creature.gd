@@ -98,6 +98,10 @@ func _on_animation_finished(animation: String) -> void:
 	if not get_tree().is_network_server() or not animation.begins_with("MeleeAttack"):
 		return
 	
+	# Reset animation state
+	$Animation.play_directional_animation("Walk")
+	$Animation.stop()
+	
 	# Detect objects in damage area and make damage
 	for body in $InterractArea.get_overlapping_bodies():
 		if body == self or not body.is_in_group("Creature") or body.health <= 0:

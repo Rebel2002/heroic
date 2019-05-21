@@ -521,7 +521,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="Humanoid" instance=ExtResource( 1 )]
+[node name="Humanoid" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="Collision" parent="InterractArea" index="0"]
