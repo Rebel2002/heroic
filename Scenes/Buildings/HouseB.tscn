@@ -96,6 +96,5 @@ frame = 3
 type = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 position = Vector2( 0, 31 )
-polygon = PoolVector2Array( -192, -200, -192, -127, -190, -127, -190, -32, -62, -32, -62, 0, -32, 0, -32, -12, 0, -12, 0, 0, 62, 0, 62, -96, 64, -96, 64, -200 )
+polygon = PoolVector2Array( -192, -200, -192, -127, -190, -127, -190, -32, -62, -32, -62, 0, -32, 0, -32, -12, 0, -12, 0, 0, 62, 0, 62, -32, 190, -32, 190, -128, 192, -128, 192, -200 )
