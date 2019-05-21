@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Tilesets/Walls.tres" type="TileSet" id=1]
+[ext_resource path="res://Sprites/Buildings/RoofCorners.png" type="Texture" id=2]
+[ext_resource path="res://Tilesets/Roof.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Buildings/Parts/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Buildings/Parts/Stairs.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Buildings/Parts/Chimney.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Buildings/Parts/Window.tscn" type="PackedScene" id=7]
+
+[sub_resource type="TileSet" id=1]
+0/name = "RoofCorners"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 96, 128 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="HouseA" type="StaticBody2D"]
+
+[node name="BackWall" type="TileMap" parent="."]
+position = Vector2( 0, 31 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -196614, 2, 0, -196613, 2, 1, -196612, 2, 1, -196611, 2, 1, -196610, 2, 2, -131078, 2, 65536, -131077, 2, 65537, -131076, 2, 65537, -131075, 2, 65537, -131074, 2, 65538, -65542, 2, 131072, -65541, 2, 131073, -65540, 2, 131073, -65539, 2, 131073, -65538, 2, 131074 )
+
+[node name="FrontWall" type="TileMap" parent="."]
+position = Vector2( 0, 31 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -131074, 2, 0, -131073, 2, 1, -196608, 2, 1, -196607, 2, 2, -65538, 2, 65536, -65537, 2, 65537, -131072, 2, 65537, -131071, 2, 65538, -2, 2, 131072, -1, 2, 131073, -65536, 2, 131073, -65535, 2, 131074 )
+
+[node name="RoofCorners" type="TileMap" parent="."]
+position = Vector2( 0, 31 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -393222, 0, 0, -458751, 0, 2, -327686, 0, 65536, -327685, 0, 131073, -327684, 0, 131073, -327683, 0, 131073, -327682, 0, 196608, -393215, 0, 65538, -262150, 0, 131072, -262149, 0, 131073, -262148, 0, 131073, -262147, 0, 131073, -262146, 0, 196608, -327679, 0, 65538, -196610, 0, 131072, -196609, 0, 131073, -262144, 0, 131073, -262143, 0, 131074 )
+
+[node name="Roof" type="TileMap" parent="."]
+position = Vector2( 0, 31 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -393221, 0, 0, -393220, 0, 1, -393219, 0, 1, -393218, 0, 1, -393217, 0, 1, -458752, 0, 2, -327685, 0, 131072, -327684, 0, 131073, -327683, 0, 131073, -327682, 0, 131073, -327681, 0, 196613, -393216, 0, 65538, -262145, 0, 131072, -327680, 0, 131074 )
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16, -5 )
+frame = 3
+type = 3
+arch = 2
+
+[node name="Stairs" parent="." instance=ExtResource( 5 )]
+position = Vector2( -16, 31 )
+
+[node name="Chimney" parent="." instance=ExtResource( 6 )]
+position = Vector2( 10.9853, -177.667 )
+frame = 2
+type = 2
+
+[node name="Window1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 28, -13 )
+frame = 3
+type = 3
+
+[node name="Window2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -151, -51 )
+frame = 3
+type = 3
+
+[node name="Window3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -93, -51 )
+frame = 3
+type = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 31 )
+polygon = PoolVector2Array( -192, -200, -192, -127, -190, -127, -190, -32, -62, -32, -62, 0, -32, 0, -32, -12, 0, -12, 0, 0, 62, 0, 62, -96, 64, -96, 64, -200 )
