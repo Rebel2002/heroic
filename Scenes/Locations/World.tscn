@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tilesets/Terrain.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Fountain.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Creatures/Chicken.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Buildings/HouseA.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Buildings/HouseB.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Buildings/Toilet.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -52,3 +53,6 @@ position = Vector2( 576, 130 )
 
 [node name="HouseB2" parent="Objects" instance=ExtResource( 9 )]
 position = Vector2( 926, 130 )
+
+[node name="Toilet" parent="Objects" instance=ExtResource( 10 )]
+position = Vector2( 724.305, 407.057 )
