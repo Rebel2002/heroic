@@ -2,6 +2,18 @@ extends Control
 
 signal time_changed(time)
 
+var tes: bool = false
+
+func _input(event: InputEvent):
+	if event.is_action_pressed("ui_attack"):
+		var time: Dictionary = OS.get_time()
+		tes = not tes
+		if tes:
+			time.hour = 21
+		else:
+			time.hour = 18
+		set_time(time)
+
 func _ready() -> void:
 	if get_tree().is_network_server():
 		set_time(OS.get_time())
@@ -27,8 +39,8 @@ sync func set_time(time: Dictionary) -> void:
 		timeString += str(time.minute)
 	
 	$Time.text = timeString
+	
+	emit_signal("time_changed", time)
 
 func _on_MinuteTimer_timeout() -> void:
-	var time: Dictionary = OS.get_time()
-	emit_signal("time_changed", time)
-	rpc("set_time", time)
+	rpc("set_time", OS.get_time())

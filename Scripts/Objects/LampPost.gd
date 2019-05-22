@@ -1,13 +1,13 @@
 tool
 extends StaticBody2D
 
-export(bool) var enabled = false setget set_enabled
+export(bool) var enable_light = false setget set_enable_light
 
-func set_enabled(value: bool) -> void:
-	enabled = value
-	$Lamp/Light.enabled = enabled
-	if enabled:
+func set_enable_light(enable: bool) -> void:
+	enable_light = enable
+	$Lamp/Light.enabled = enable_light
+	if enable_light:
 		$Lamp/Animation.play("Lighting")
 	else:
 		$Lamp/Animation.stop()
-		$Lamp/Lamp.frame = 0
+		$Lamp.frame = 0
