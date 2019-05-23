@@ -36,6 +36,24 @@ func _on_server_disconnected() -> void:
 	OS.alert("Server closed connection")
 	$Ui/GameMenu._on_MainMenu_pressed()
 
+func execute_command(command: String) -> void:
+	var parsed_command = command.split(' ', false)
+	match parsed_command[0]:
+		"/tome":
+			if parsed_command.size() != 2:
+				$Ui/Chat.show_information("Invalid number of arguments")
+				
+			var parsed_time = parsed_command[1].split(':', false)
+			if parsed_time.size() != 2:
+				$Ui/Chat.show_information("Invalid time: " + parsed_command[1])
+				return
+				
+			var time: Dictionary
+			time.hour = int(parsed_time[0])
+			time.minute = int(parsed_time[1])
+			$Ui/CurrentTime.rpc("set_time", time)
+			$Ui/Chat.show_information("Time was changed to " + parsed_command[1])
+
 sync func drop_item(item_name: String, count: int, coordinats: Vector2) -> void:
 	var item = load(item_name).instance()
 	item.position = coordinats

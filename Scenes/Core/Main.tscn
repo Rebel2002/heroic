@@ -27,4 +27,5 @@ anchor_left = 1.0
 anchor_right = 1.0
 
 [node name="Inventory" parent="Ui" instance=ExtResource( 7 )]
+[connection signal="command_entered" from="Ui/Chat" to="." method="execute_command"]
 [connection signal="time_changed" from="Ui/CurrentTime" to="World" method="set_time"]

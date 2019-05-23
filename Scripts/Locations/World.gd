@@ -22,6 +22,7 @@ func set_enable_lights(enable: bool) -> void:
 	if enable_lights == enable:
 		return
 	
+	enable_lights = enable
 	for node in $Objects.get_children():
 		if not node.has_method("set_enable_light"):
 			continue
