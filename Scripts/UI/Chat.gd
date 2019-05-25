@@ -14,21 +14,21 @@ func _input(event: InputEvent) -> void:
 		grab_focus() # Remove focus from input field (just focus parent)
 		emit_signal("chat_closed")
 
-func _on_InputField_text_entered(new_text: String) -> void:
+func _on_InputField_text_entered(message: String) -> void:
 	if $InputField.text.empty():
 		return
 	
 	$InputField.text = ""
 	
-	# Check if user execute
-	if new_text.begins_with('/') and is_network_master():
-		emit_signal("command_entered", new_text)
+	# Check if user execute command
+	if message.begins_with('/') and is_network_master():
+		emit_signal("command_entered", message)
 		return
-	rpc("send_message", Global.id, new_text)
+	rpc("send_message", Global.id, message)
 
-sync func send_message(id: int, text: String) -> void:
-	get_node("../../World/Objects/Player" + str(id)).say(text)
-	$ChatWindow.bbcode_text += "\n[color=green]" + Global.players[id]["game_name"] + "[/color]: " + text
+sync func send_message(id: int, message: String) -> void:
+	Global.players[id].say(message)
+	$ChatWindow.bbcode_text += "\n[color=green]" + Global.players[id].game_name + "[/color]: " + message
 
 func show_information(message: String) -> void:
 	$ChatWindow.bbcode_text += "\n[color=gray]" + message + "[/color]" 

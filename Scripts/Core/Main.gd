@@ -13,22 +13,22 @@ sync func add_player(id: int, data: Dictionary) -> void:
 		
 		for peer_id in Global.players:
 			# Send all players data to new player
-			rpc_id(id, "add_player", peer_id, Global.players[peer_id])
+			rpc_id(id, "add_player", peer_id, Global.players[peer_id].data())
 			if peer_id != 1:
 				# Send new player data to all players except server
 				rpc_id(peer_id, "add_player", id, data)
 		$Ui/Chat.rpc("announce_connected", data["game_name"])
 	
 	# Load player
-	Global.players[id] = data
 	var player = load("res://Scenes/Creatures/Player.tscn").instance()
 	player.set_network_master(id)
 	player.set_name("Player" + str(id))
 	player.set_data(data)
+	Global.players[id] = player
 	$World/Objects.add_child(player)
 	
 func remove_player(id: int) -> void:
-	$Ui/Chat.announce_disconnected(Global.players[id]["game_name"])
+	$Ui/Chat.announce_disconnected(Global.players[id].game_name)
 	Global.players.erase(id)
 	get_node("World/Objects/Player" + str(id)).queue_free()
 

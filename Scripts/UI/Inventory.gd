@@ -169,8 +169,8 @@ func put_item_from_cursor(slot: int) -> void:
 
 func drop_item_from_cursor() -> void:
 	if cursor_item_bg_color == equipped_color:
-		get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", null)
-	get_node("../..").rpc("drop_item", cursor_item.get_filename(), cursor_item.count, get_node("../../World/Objects/Player" + str(Global.id)).position)
+		Global.players[Global.id].rpc("equip_weapon", null)
+	get_node("../..").rpc("drop_item", cursor_item.get_filename(), cursor_item.count, Global.players[Global.id].position)
 	_remove_item_from_cursor()
 
 func equip(slot: int) -> void:
@@ -178,9 +178,9 @@ func equip(slot: int) -> void:
 	if item != null and item.is_in_group("Weapon"):
 		# Equip / Unequip item
 		if $ItemList.get_item_custom_bg_color(slot) == unequipped_color:
-			get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", item.get_name())
+			Global.players[Global.id].rpc("equip_weapon", item.get_name())
 			$ItemList.set_item_custom_bg_color(slot, equipped_color)
 		else:
-			get_node("../../World/Objects/Player" + str(Global.id)).rpc("equip_weapon", null)
+			Global.players[Global.id].rpc("equip_weapon", null)
 			$ItemList.set_item_custom_bg_color(slot, unequipped_color)
 		$ItemList.update() # Update window to show bg color
