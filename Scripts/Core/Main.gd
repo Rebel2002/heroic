@@ -50,14 +50,14 @@ func execute_command(command: String) -> void:
 				
 			var parsed_time: PoolStringArray = parsed_command[1].split(':', false)
 			if parsed_time.size() != 2:
-				$Ui/Chat.show_information("Invalid time: " + parsed_command[1])
+				$Ui/Chat.show_information("Invalid time: %s" % parsed_command[1])
 				return
 				
 			var time: Dictionary
 			time.hour = int(parsed_time[0])
 			time.minute = int(parsed_time[1])
 			$Ui/CurrentTime.rpc("set_time", time)
-			$Ui/Chat.show_information("Time was changed to " + parsed_command[1])
+			$Ui/Chat.show_information("Time was changed to %s" % parsed_command[1])
 		"/kill":
 			if parsed_command.size() != 2:
 				$Ui/Chat.show_information("Invalid number of arguments")
@@ -65,10 +65,27 @@ func execute_command(command: String) -> void:
 			
 			var id = int(parsed_command[1])
 			if not Global.players.has(id):
-				$Ui/Chat.show_information("Unable to find player with id: " + parsed_command[1])
+				$Ui/Chat.show_information("Unable to find player with id: %s" % parsed_command[1])
 				return
 			
 			Global.players[id].health = 0
+		"/noclip":
+			var collision: CollisionShape2D = Global.players[Global.id].get_node("Collision")
+			collision.disabled = not collision.disabled
+		"/tp":
+			if parsed_command.size() != 4:
+				$Ui/Chat.show_information("Invalid number of arguments")
+				return
+			
+			var id = int(parsed_command[1])
+			if not Global.players.has(id):
+				$Ui/Chat.show_information("Unable to find player with id: %s" % parsed_command[1])
+				return
+			
+			Global.players[id].position = Vector2(int(parsed_command[2]), int(parsed_command[3]))
+		"/pos":
+			var position: Vector2 = Global.players[Global.id].position
+			$Ui/Chat.show_information("Current position: %.2f %.2f" % [position.x, position.y])
 
 sync func drop_item(item_name: String, count: int, coordinats: Vector2) -> void:
 	var item = load(item_name).instance()
