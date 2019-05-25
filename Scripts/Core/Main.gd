@@ -39,7 +39,7 @@ func _on_server_disconnected() -> void:
 func execute_command(command: String) -> void:
 	var parsed_command = command.split(' ', false)
 	match parsed_command[0]:
-		"/tome":
+		"/time":
 			if parsed_command.size() != 2:
 				$Ui/Chat.show_information("Invalid number of arguments")
 				
