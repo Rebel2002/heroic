@@ -41,13 +41,14 @@ func _on_server_disconnected() -> void:
 	$Ui/GameMenu._on_MainMenu_pressed()
 
 func execute_command(command: String) -> void:
-	var parsed_command = command.split(' ', false)
+	var parsed_command: PoolStringArray = command.split(' ', false)
 	match parsed_command[0]:
 		"/time":
 			if parsed_command.size() != 2:
 				$Ui/Chat.show_information("Invalid number of arguments")
+				return
 				
-			var parsed_time = parsed_command[1].split(':', false)
+			var parsed_time: PoolStringArray = parsed_command[1].split(':', false)
 			if parsed_time.size() != 2:
 				$Ui/Chat.show_information("Invalid time: " + parsed_command[1])
 				return
@@ -57,6 +58,17 @@ func execute_command(command: String) -> void:
 			time.minute = int(parsed_time[1])
 			$Ui/CurrentTime.rpc("set_time", time)
 			$Ui/Chat.show_information("Time was changed to " + parsed_command[1])
+		"/kill":
+			if parsed_command.size() != 2:
+				$Ui/Chat.show_information("Invalid number of arguments")
+				return
+			
+			var id = int(parsed_command[1])
+			if not Global.players.has(id):
+				$Ui/Chat.show_information("Unable to find player with id: " + parsed_command[1])
+				return
+			
+			Global.players[id].health = 0
 
 sync func drop_item(item_name: String, count: int, coordinats: Vector2) -> void:
 	var item = load(item_name).instance()

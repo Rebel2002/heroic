@@ -1,4 +1,5 @@
 extends Humanoid
+class_name Player
 
 var user_input: bool = true setget set_user_input
 
