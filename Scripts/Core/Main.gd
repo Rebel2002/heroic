@@ -27,6 +27,10 @@ sync func add_player(id: int, data: Dictionary) -> void:
 	Global.players[id] = player
 	$World/Objects.add_child(player)
 	
+	if is_network_master():
+		$Ui/Chat/InputField.connect("focus_entered", player, "set_user_input", [false])
+		$Ui/Chat/InputField.connect("focus_exited", player, "set_user_input", [true])
+
 func remove_player(id: int) -> void:
 	$Ui/Chat.announce_disconnected(Global.players[id].game_name)
 	Global.players.erase(id)

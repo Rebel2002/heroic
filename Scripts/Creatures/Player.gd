@@ -1,5 +1,7 @@
 extends Humanoid
 
+var user_input: bool = true setget set_user_input
+
 enum {NONE, WALKING, ATTACKING}
 
 func _ready() -> void:
@@ -23,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
 # Read pressed keys
 func get_input() -> void:
-	if not is_network_master():
+	if not is_network_master() or not user_input:
 		return
 		
 	# Pick an item
@@ -59,3 +61,6 @@ func get_input() -> void:
 	rset("current_action", current_action)
 	rset("velocity", velocity)
 	rpc_unreliable("set_position", position) # Send position to avoid desync
+
+func set_user_input(enable: bool) -> void:
+	user_input = enable

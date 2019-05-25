@@ -1,24 +1,21 @@
 extends Control
 
 signal command_entered(command)
-signal chat_opened()
-signal chat_closed()
 
 func _input(event: InputEvent) -> void:
 	if not $InputField.has_focus() and event.is_action_pressed("ui_accept"):
 		get_tree().set_input_as_handled()
-		$InputField.grab_focus()
-		emit_signal("chat_opened")
+		set_input_focused(true)
 	elif $InputField.has_focus() and event.is_action_pressed("ui_cancel"):
 		get_tree().set_input_as_handled()
-		grab_focus() # Remove focus from input field (just focus parent)
-		emit_signal("chat_closed")
+		set_input_focused(false)
 
 func _on_InputField_text_entered(message: String) -> void:
 	if $InputField.text.empty():
 		return
 	
 	$InputField.text = ""
+	set_input_focused(false)
 	
 	# Check if user execute command
 	if message.begins_with('/') and is_network_master():
@@ -38,3 +35,9 @@ sync func announce_connected(player_name: String) -> void:
 
 func announce_disconnected(player_name: String) -> void:
 	$ChatWindow.bbcode_text += "\n[color=gray]" + player_name + " has left the game.[/color]"
+
+func set_input_focused(focused: bool) -> void:
+	if focused:
+		$InputField.grab_focus()
+	else:
+		grab_focus() # Remove focus from input field (just focus parent)
