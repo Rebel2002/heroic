@@ -33,6 +33,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0 / GPL 3.0
 
+### [LPC Tree Recolors](https://opengameart.org/content/lpc-tree-recolors)
+
+**Authors:** William.Thompsonj and C. Nilsson
+
+**Licenses:** CC-BY-SA 3.0 / GPL 3.0
+
 ### [Statues & Fountains Collection](https://opengameart.org/content/lpc-medieval-village-decorations)
 
 **Authors:** Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), Hyptosis, mold, Zachariah Husiar (Zabin), & Clint Bellanger.
