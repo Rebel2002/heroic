@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Locations/World.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Terrain.tres" type="TileSet" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Scenes/Objects/Barrel.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Objects/Trees/TreeA.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Objects/Trees/TreeB.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Objects/LogA.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Objects/LogB.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -50,7 +52,7 @@ tile_data = PoolIntArray( -1572819, 1, 131072, -1572818, 1, 131073, -1572817, 1,
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -1376207, 4, 131072, -1376206, 4, 131073, -1376205, 4, 131073, -1376204, 4, 131074, -1310672, 4, 131072, -1310671, 4, 65538, -1310670, 4, 196609, -1310669, 4, 327681, -1310668, 4, 65537, -1310667, 4, 131073, -1310666, 4, 131074, -1245136, 4, 196608, -1245135, 4, 327680, -1245134, 4, 196609, -1245133, 4, 327681, -1245132, 4, 327680, -1245131, 4, 327680, -1245130, 4, 196610, -1179600, 4, 262144, -1179599, 4, 262145, -1179598, 4, 262145, -1179597, 4, 2, -1179596, 4, 327682, -1179595, 4, 1, -1179594, 4, 262146, -1114061, 4, 262144, -1114060, 4, 262145, -1114059, 4, 262146 )
+tile_data = PoolIntArray( -1441742, 4, 131072, -1441741, 4, 131073, -1441740, 4, 131073, -1441739, 4, 131073, -1441738, 4, 131074, -1376207, 4, 131072, -1376206, 4, 65538, -1376205, 4, 196609, -1376204, 4, 196609, -1376203, 4, 327680, -1376202, 4, 65537, -1376201, 4, 131073, -1376200, 4, 131073, -1376199, 4, 131073, -1376198, 4, 131074, -1310672, 4, 131072, -1310671, 4, 65538, -1310670, 4, 196609, -1310669, 4, 327681, -1310668, 4, 327682, -1310667, 4, 327681, -1310666, 4, 327682, -1310665, 4, 327681, -1310664, 4, 327682, -1310663, 4, 327681, -1310662, 4, 196610, -1245136, 4, 196608, -1245135, 4, 327680, -1245134, 4, 196609, -1245133, 4, 327681, -1245132, 4, 327680, -1245131, 4, 327680, -1245130, 4, 327682, -1245129, 4, 327681, -1245128, 4, 327680, -1245127, 4, 1, -1245126, 4, 262146, -1179600, 4, 262144, -1179599, 4, 262145, -1179598, 4, 262145, -1179597, 4, 2, -1179596, 4, 327682, -1179595, 4, 1, -1179594, 4, 262145, -1179593, 4, 262145, -1179592, 4, 262145, -1179591, 4, 262146, -1114061, 4, 262144, -1114060, 4, 262145, -1114059, 4, 262146 )
 
 [node name="Objects" type="YSort" parent="."]
 
@@ -121,3 +123,9 @@ position = Vector2( 1246.51, -281.186 )
 
 [node name="TreeB" parent="Objects" instance=ExtResource( 18 )]
 position = Vector2( 1251.69, -477.566 )
+
+[node name="LogA" parent="Objects" instance=ExtResource( 19 )]
+position = Vector2( 1352, -380 )
+
+[node name="LogB" parent="Objects/LogA" instance=ExtResource( 20 )]
+position = Vector2( 16, -160 )
