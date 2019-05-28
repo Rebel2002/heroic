@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Locations/World.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Terrain.tres" type="TileSet" id=2]
@@ -8,32 +8,33 @@
 [ext_resource path="res://Scenes/Objects/Fountain.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Effects/Fire.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Items/Mace.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Creatures/Dummy.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Creatures/Chicken.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Buildings/HouseA.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Buildings/HouseB.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Buildings/Toilet.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Objects/Trees/TimeTree.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Objects/LampPostA.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Buildings/HouseC.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Objects/Barrel.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Objects/Trees/TreeA.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Objects/Trees/TreeB.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Objects/LogB.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Objects/LogA.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Objects/Reed.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Objects/Cattail.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Objects/CaneA.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/Objects/CaneB.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Scenes/Objects/CaneC.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Objects/Trees/TreeF.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Objects/Trees/TreeC.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Objects/Trees/TreeD.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/Objects/Trees/TreeE.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/Objects/Trees/TreeG.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Scenes/Objects/Trees/TreeH.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Scenes/Objects/Trees/TreeI.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/Creatures/Dummy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Creatures/Chicken.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Buildings/HouseA.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Buildings/HouseB.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Buildings/Toilet.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Objects/Trees/TimeTree.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Objects/LampPostA.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Buildings/HouseC.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Objects/Barrel.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Objects/Trees/TreeA.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Objects/Trees/TreeB.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Objects/LogB.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Objects/LogA.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Objects/Reed.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Objects/Cattail.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Objects/CaneA.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Objects/CaneB.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Objects/CaneC.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Objects/Trees/TreeF.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Objects/Trees/TreeC.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Objects/Trees/TreeD.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Objects/Trees/TreeE.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Objects/Trees/TreeG.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Objects/Trees/TreeH.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Objects/Trees/TreeI.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/Objects/ShoppingCart.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=35]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -88,7 +89,6 @@ frame = 2
 position = Vector2( 1810, -620 )
 
 [node name="Objects" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="BigBush" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 1359.34, -270 )
@@ -127,125 +127,130 @@ position = Vector2( 523.747, 246.229 )
 [node name="Mace" parent="Objects" instance=ExtResource( 8 )]
 position = Vector2( 382.274, 228.389 )
 
-[node name="Potato" parent="Objects" instance=ExtResource( 9 )]
-position = Vector2( 331.304, 270.495 )
-
-[node name="Dummy" parent="Objects" instance=ExtResource( 10 )]
+[node name="Dummy" parent="Objects" instance=ExtResource( 9 )]
 position = Vector2( 648.629, 250.476 )
 
-[node name="Chicken" parent="Objects" instance=ExtResource( 11 )]
+[node name="Chicken" parent="Objects" instance=ExtResource( 10 )]
 position = Vector2( 530.94, 204.746 )
 
-[node name="HouseA" parent="Objects" instance=ExtResource( 12 )]
+[node name="HouseA" parent="Objects" instance=ExtResource( 11 )]
 position = Vector2( 576, 130 )
 
-[node name="HouseB" parent="Objects" instance=ExtResource( 13 )]
+[node name="HouseB" parent="Objects" instance=ExtResource( 12 )]
 position = Vector2( 926, 128 )
 
-[node name="Toilet" parent="Objects" instance=ExtResource( 14 )]
+[node name="Toilet" parent="Objects" instance=ExtResource( 13 )]
 position = Vector2( 1570, -281.186 )
 
-[node name="TimeTree" parent="Objects" instance=ExtResource( 15 )]
+[node name="TimeTree" parent="Objects" instance=ExtResource( 14 )]
 position = Vector2( 700, 296.903 )
 
-[node name="LampPostA" parent="Objects" instance=ExtResource( 16 )]
+[node name="LampPostA" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 1000, 184.903 )
 
-[node name="LampPostA3" parent="Objects" instance=ExtResource( 16 )]
+[node name="LampPostA3" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 1000, -206 )
 
-[node name="LampPostA4" parent="Objects" instance=ExtResource( 16 )]
+[node name="LampPostA4" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 1310.51, -262 )
 
-[node name="LampPostA5" parent="Objects" instance=ExtResource( 16 )]
+[node name="LampPostA5" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 2145, -534 )
 
-[node name="LampPostA2" parent="Objects" instance=ExtResource( 16 )]
+[node name="LampPostA2" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 394, 184 )
 
-[node name="HouseC" parent="Objects" instance=ExtResource( 17 )]
+[node name="HouseC" parent="Objects" instance=ExtResource( 16 )]
 position = Vector2( 928, -256 )
 
-[node name="Barrel" parent="Objects" instance=ExtResource( 18 )]
+[node name="Barrel" parent="Objects" instance=ExtResource( 17 )]
 position = Vector2( 917, -230 )
 
-[node name="Barrel2" parent="Objects" instance=ExtResource( 18 )]
+[node name="Barrel2" parent="Objects" instance=ExtResource( 17 )]
 position = Vector2( 932, -221 )
 
-[node name="Barrel3" parent="Objects" instance=ExtResource( 18 )]
+[node name="Barrel3" parent="Objects" instance=ExtResource( 17 )]
 position = Vector2( 724, 110 )
 
-[node name="Barrel6" parent="Objects" instance=ExtResource( 18 )]
+[node name="Barrel6" parent="Objects" instance=ExtResource( 17 )]
 position = Vector2( 740, 310 )
 
-[node name="Barrel5" parent="Objects" instance=ExtResource( 18 )]
+[node name="Barrel5" parent="Objects" instance=ExtResource( 17 )]
 position = Vector2( 672.936, 337.051 )
 
-[node name="Barrel4" parent="Objects" instance=ExtResource( 18 )]
+[node name="Barrel4" parent="Objects" instance=ExtResource( 17 )]
 position = Vector2( 740, 270.495 )
 
-[node name="TreeA" parent="Objects" instance=ExtResource( 19 )]
+[node name="TreeA" parent="Objects" instance=ExtResource( 18 )]
 position = Vector2( 1246.51, -281.186 )
 
-[node name="TreeA4" parent="Objects" instance=ExtResource( 19 )]
+[node name="TreeA4" parent="Objects" instance=ExtResource( 18 )]
 position = Vector2( 1770, -291.186 )
 
-[node name="TreeA3" parent="Objects" instance=ExtResource( 19 )]
+[node name="TreeA3" parent="Objects" instance=ExtResource( 18 )]
 position = Vector2( 1292, -592.566 )
 
-[node name="TreeA2" parent="Objects" instance=ExtResource( 19 )]
+[node name="TreeA2" parent="Objects" instance=ExtResource( 18 )]
 position = Vector2( 2162, -718 )
 
-[node name="TreeB" parent="Objects" instance=ExtResource( 20 )]
+[node name="TreeB" parent="Objects" instance=ExtResource( 19 )]
 position = Vector2( 1251.69, -477.566 )
 
-[node name="TreeB2" parent="Objects" instance=ExtResource( 20 )]
+[node name="TreeB2" parent="Objects" instance=ExtResource( 19 )]
 position = Vector2( 1636, -350 )
 
-[node name="LogB" parent="Objects" instance=ExtResource( 21 )]
+[node name="LogB" parent="Objects" instance=ExtResource( 20 )]
 position = Vector2( 1368, -540 )
 
-[node name="LogA" parent="Objects" instance=ExtResource( 22 )]
+[node name="LogA" parent="Objects" instance=ExtResource( 21 )]
 position = Vector2( 1352, -380 )
 
-[node name="Reed" parent="Objects" instance=ExtResource( 23 )]
+[node name="Reed" parent="Objects" instance=ExtResource( 22 )]
 position = Vector2( 2440, -636 )
 
-[node name="Cattail" parent="Objects" instance=ExtResource( 24 )]
+[node name="Cattail" parent="Objects" instance=ExtResource( 23 )]
 position = Vector2( 1620, -580 )
 
-[node name="Cattail2" parent="Objects" instance=ExtResource( 24 )]
+[node name="Cattail2" parent="Objects" instance=ExtResource( 23 )]
 position = Vector2( 2300, -634 )
 
-[node name="CaneA" parent="Objects" instance=ExtResource( 25 )]
+[node name="CaneA" parent="Objects" instance=ExtResource( 24 )]
 position = Vector2( 1770, -580 )
 
-[node name="CaneB" parent="Objects" instance=ExtResource( 26 )]
+[node name="CaneB" parent="Objects" instance=ExtResource( 25 )]
 position = Vector2( 2340, -530 )
 
-[node name="CaneC" parent="Objects" instance=ExtResource( 27 )]
+[node name="CaneC" parent="Objects" instance=ExtResource( 26 )]
 position = Vector2( 1683, -715 )
 
-[node name="TreeF" parent="Objects" instance=ExtResource( 28 )]
+[node name="TreeF" parent="Objects" instance=ExtResource( 27 )]
 position = Vector2( 1510, -470.22 )
 
-[node name="TreeC" parent="Objects" instance=ExtResource( 29 )]
+[node name="TreeC" parent="Objects" instance=ExtResource( 28 )]
 position = Vector2( 1470, -285 )
 
-[node name="TreeD" parent="Objects" instance=ExtResource( 30 )]
+[node name="TreeD" parent="Objects" instance=ExtResource( 29 )]
 position = Vector2( 1260, -730 )
 
-[node name="TreeE" parent="Objects" instance=ExtResource( 31 )]
+[node name="TreeE" parent="Objects" instance=ExtResource( 30 )]
 position = Vector2( 1550, -650 )
 
-[node name="TreeC2" parent="Objects" instance=ExtResource( 29 )]
+[node name="TreeC2" parent="Objects" instance=ExtResource( 28 )]
 position = Vector2( 1970, -490 )
 
-[node name="TreeG" parent="Objects" instance=ExtResource( 32 )]
+[node name="TreeG" parent="Objects" instance=ExtResource( 31 )]
 position = Vector2( 1970, -380 )
 
-[node name="TreeH" parent="Objects" instance=ExtResource( 33 )]
+[node name="TreeH" parent="Objects" instance=ExtResource( 32 )]
 position = Vector2( 2150, -280 )
 
-[node name="TreeI" parent="Objects" instance=ExtResource( 34 )]
+[node name="TreeI" parent="Objects" instance=ExtResource( 33 )]
 position = Vector2( 1910, -700 )
+
+[node name="ShoppingCart" parent="Objects" instance=ExtResource( 34 )]
+position = Vector2( 1700, -220 )
+type = 1
+roof_color = Color( 0.941176, 0.545098, 0.545098, 1 )
+
+[node name="Potato" parent="Objects/ShoppingCart" instance=ExtResource( 35 )]
+position = Vector2( -16, -56 )

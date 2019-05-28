@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Objects/ShoppingCart.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Objects/ShoppingCart/Cart.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Objects/ShoppingCart/Roof.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 55, 25 )
+
+[node name="ShoppingCart" type="StaticBody2D"]
+script = ExtResource( 1 )
+roof_color = Color( 1, 1, 1, 1 )
+
+[node name="Cart" type="Sprite" parent="."]
+position = Vector2( 0, -23 )
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="Roof" type="Sprite" parent="."]
+position = Vector2( 0, -87 )
+texture = ExtResource( 3 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -25 )
+shape = SubResource( 1 )
