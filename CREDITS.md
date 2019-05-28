@@ -33,11 +33,11 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0 / GPL 3.0
 
-### [LPC Tree Recolors](https://opengameart.org/content/lpc-tree-recolors)
+### [LPC Trees](https://opengameart.org/content/lpc-trees)
 
-**Authors:** William.Thompsonj and C. Nilsson
+**Authors:** bluecarrot16, Jetrel, Zabin, Hyptosis, Surt, Buch, Johann Charlot, Stephen Challener and the [Open Surge team](http://opensnc.sourceforge.net), Gaurav Munjal, Ivan Voirol (Silver IV) Guido Bos, Yar, Paulina Riva (PauR), William.Thompsonj, Casper Nilsson, Hyptosis, ansimuz, qubodup, Bart K., Blarumyrran, Lanea Zimmerman (Sharm), Leonard Pabin, Chris Phillips, Barbara Rivera, and Talosaurus.
 
-**Licenses:** CC-BY-SA 3.0 / GPL 3.0
+**License:** CC-BY-SA 3.0
 
 ### [LPC Flowers / Plants / Fungi / Wood](https://opengameart.org/content/lpc-flowers-plants-fungi-wood)
 
@@ -50,12 +50,6 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 **Authors:** Lanea Zimmerman (Sharm), Reemax (Tuomo Untinen), Xenodora, Johann C, Johannes Sjölund, Hyptosis, HughSpectrum, Redshrike, William.Thompsonj, wulax, Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), mold, Zachariah Husiar (Zabin), Clint Bellanger, Jetrel, Guido Bos, Nemisys, Curt, Zabin, Daneeklu, Bertram, Daniel Eddeland (daneeklu).
 
 **Licenses:** CC-BY-SA 3.0
-
-### [LPC trees mega-pack](https://opengameart.org/content/lpc-tree)
-
-**Authors:** bluecarrot16, Jetrel, Zabin, Surt, Buch, Johann Charlot, Gaurav Munjal, Ivan Voirol (Silver IV), Guido Bos, Yar, Paulina Riva (PauR), William.Thompsonj, Casper Nilsson, Hyptosis, ansimuz, qubodup, Bart K., Blarumyrran, Lanea Zimmerman (Sharm), Leonard Pabin, Chris Phillips, Barbara Rivera, and Talosaurus, Stephen Challener and the [Open Surge team](http://opensnc.sourceforge.net).
-
-**License:** CC-BY-SA 3.0
 
 ### [LPC signposts, graves, line cloths and scare crow](https://opengameart.org/content/lpc-signposts-graves-line-cloths-and-scare-crow)
 

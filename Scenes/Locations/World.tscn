@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Locations/World.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Terrain.tres" type="TileSet" id=2]
@@ -27,6 +27,13 @@
 [ext_resource path="res://Scenes/Objects/CaneA.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/Objects/CaneB.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Objects/CaneC.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Objects/Trees/TreeF.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Objects/Trees/TreeC.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Objects/Trees/TreeD.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Objects/Trees/TreeE.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Objects/Trees/TreeG.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Objects/Trees/TreeH.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/Objects/Trees/TreeI.tscn" type="PackedScene" id=34]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -85,12 +92,26 @@ position = Vector2( 1810, -620 )
 [node name="BigBush" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 1360, -294 )
 
+[node name="BigBush5" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 1890, -304 )
+
+[node name="BigBush4" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 1360, -731 )
+
 [node name="BigBush2" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 1320, -490 )
 frame = 1
 
 [node name="BigBush3" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 1480, -390 )
+position = Vector2( 1634, -302 )
+frame = 2
+
+[node name="BigBush6" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 1580, -500 )
+frame = 2
+
+[node name="BigBush7" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 2162, -508 )
 frame = 2
 
 [node name="Fountain" parent="Objects" instance=ExtResource( 6 )]
@@ -133,7 +154,7 @@ position = Vector2( 1000, -206 )
 position = Vector2( 1310, -262 )
 
 [node name="LampPostA5" parent="Objects" instance=ExtResource( 16 )]
-position = Vector2( 1970, -546 )
+position = Vector2( 2145, -540 )
 
 [node name="LampPostA2" parent="Objects" instance=ExtResource( 16 )]
 position = Vector2( 394, 184 )
@@ -162,8 +183,20 @@ position = Vector2( 740, 270.495 )
 [node name="TreeA" parent="Objects" instance=ExtResource( 19 )]
 position = Vector2( 1246.51, -281.186 )
 
+[node name="TreeA4" parent="Objects" instance=ExtResource( 19 )]
+position = Vector2( 1770, -291.186 )
+
+[node name="TreeA3" parent="Objects" instance=ExtResource( 19 )]
+position = Vector2( 1292, -592.566 )
+
+[node name="TreeA2" parent="Objects" instance=ExtResource( 19 )]
+position = Vector2( 2162, -718 )
+
 [node name="TreeB" parent="Objects" instance=ExtResource( 20 )]
 position = Vector2( 1251.69, -477.566 )
+
+[node name="TreeB2" parent="Objects" instance=ExtResource( 20 )]
+position = Vector2( 1636, -350 )
 
 [node name="LogB" parent="Objects" instance=ExtResource( 21 )]
 position = Vector2( 1368, -540 )
@@ -188,3 +221,27 @@ position = Vector2( 2340, -530 )
 
 [node name="CaneC" parent="Objects" instance=ExtResource( 27 )]
 position = Vector2( 1683, -715 )
+
+[node name="TreeF" parent="Objects" instance=ExtResource( 28 )]
+position = Vector2( 1510, -470.22 )
+
+[node name="TreeC" parent="Objects" instance=ExtResource( 29 )]
+position = Vector2( 1470, -285 )
+
+[node name="TreeD" parent="Objects" instance=ExtResource( 30 )]
+position = Vector2( 1260, -730 )
+
+[node name="TreeE" parent="Objects" instance=ExtResource( 31 )]
+position = Vector2( 1550, -650 )
+
+[node name="TreeC2" parent="Objects" instance=ExtResource( 29 )]
+position = Vector2( 1970, -490 )
+
+[node name="TreeG" parent="Objects" instance=ExtResource( 32 )]
+position = Vector2( 1970, -380 )
+
+[node name="TreeH" parent="Objects" instance=ExtResource( 33 )]
+position = Vector2( 2150, -280 )
+
+[node name="TreeI" parent="Objects" instance=ExtResource( 34 )]
+position = Vector2( 1953, -720 )
