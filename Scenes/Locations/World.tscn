@@ -88,34 +88,38 @@ frame = 2
 position = Vector2( 1810, -620 )
 
 [node name="Objects" type="YSort" parent="."]
+editor/display_folded = true
 
 [node name="BigBush" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 1360, -294 )
+position = Vector2( 1359.34, -270 )
+type = 1
 
 [node name="BigBush5" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 1890, -304 )
+position = Vector2( 1850, -285 )
+type = 1
 
 [node name="BigBush4" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 1360, -731 )
+type = 2
 
 [node name="BigBush2" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 1320, -490 )
-frame = 1
+position = Vector2( 1319.51, -470.22 )
 
 [node name="BigBush3" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 1634, -302 )
-frame = 2
 
 [node name="BigBush6" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 1580, -500 )
-frame = 2
 
 [node name="BigBush7" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 2162, -508 )
-frame = 2
 
 [node name="Fountain" parent="Objects" instance=ExtResource( 6 )]
-position = Vector2( 1420, -440 )
+position = Vector2( 2070, -630 )
+
+[node name="Fountain2" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 1430, -428 )
+type = "Closed"
 
 [node name="Fire" parent="Objects" instance=ExtResource( 7 )]
 position = Vector2( 523.747, 246.229 )
@@ -151,10 +155,10 @@ position = Vector2( 1000, 184.903 )
 position = Vector2( 1000, -206 )
 
 [node name="LampPostA4" parent="Objects" instance=ExtResource( 16 )]
-position = Vector2( 1310, -262 )
+position = Vector2( 1310.51, -262 )
 
 [node name="LampPostA5" parent="Objects" instance=ExtResource( 16 )]
-position = Vector2( 2145, -540 )
+position = Vector2( 2145, -534 )
 
 [node name="LampPostA2" parent="Objects" instance=ExtResource( 16 )]
 position = Vector2( 394, 184 )
@@ -244,4 +248,4 @@ position = Vector2( 1970, -380 )
 position = Vector2( 2150, -280 )
 
 [node name="TreeI" parent="Objects" instance=ExtResource( 34 )]
-position = Vector2( 1953, -720 )
+position = Vector2( 1910, -700 )
