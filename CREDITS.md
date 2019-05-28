@@ -57,6 +57,12 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0 / GPL 3.0
 
+### [Wooden Benches (Mage City Arcanos Rework)](https://opengameart.org/content/wooden-benches-mage-city-arcanos-rework)
+
+**Authors:** Hyptosis & Jordan Irwin (AntumDeluge).
+
+**Licenses:** CC0
+
 ### [LPC Tile Atlas2](https://opengameart.org/content/lpc-tile-atlas2)
 
 **Authors:** Barbara Rivera, Chris Phillips, Daniel Eddeland, Anamaris and Krusmira (Emilio J Sanchez), Jonas Klinger, Joshua Taylor, Leo Villeveygoux, Mark Weyer, Matthew Nash, Skyler Robert Colladay, Lanea Zimmerman (Sharm), Stephen Challener (Redshrike), Charles Sanchez (CharlesGabriel), Manuel Riecke (MrBeast) and Daniel Armstrong (HughSpectrum).
