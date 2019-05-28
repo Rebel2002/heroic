@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Locations/World.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Terrain.tres" type="TileSet" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Scenes/Objects/Trees/TreeI.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scenes/Objects/ShoppingCart.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scenes/Items/Potato.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/Objects/Benches/BenchVerticalB.tscn" type="PackedScene" id=36]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -155,10 +156,13 @@ position = Vector2( 1000, -206 )
 position = Vector2( 1310.51, -262 )
 
 [node name="LampPostA5" parent="Objects" instance=ExtResource( 15 )]
-position = Vector2( 2145, -534 )
+position = Vector2( 2180, -540 )
 
 [node name="LampPostA2" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 394, 184 )
+
+[node name="LampPostA6" parent="Objects" instance=ExtResource( 15 )]
+position = Vector2( 1950, -670 )
 
 [node name="HouseC" parent="Objects" instance=ExtResource( 16 )]
 position = Vector2( 928, -256 )
@@ -254,3 +258,10 @@ roof_color = Color( 0.941176, 0.545098, 0.545098, 1 )
 
 [node name="Potato" parent="Objects/ShoppingCart" instance=ExtResource( 35 )]
 position = Vector2( -16, -56 )
+
+[node name="BenchVerticalB" parent="Objects" instance=ExtResource( 36 )]
+position = Vector2( 1920, -580 )
+
+[node name="BenchVerticalB2" parent="Objects" instance=ExtResource( 36 )]
+position = Vector2( 2210, -580 )
+flipped = true
