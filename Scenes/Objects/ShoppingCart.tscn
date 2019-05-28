@@ -9,7 +9,6 @@ extents = Vector2( 55, 25 )
 
 [node name="ShoppingCart" type="StaticBody2D"]
 script = ExtResource( 1 )
-roof_color = Color( 1, 1, 1, 1 )
 
 [node name="Cart" type="Sprite" parent="."]
 position = Vector2( 0, -23 )
