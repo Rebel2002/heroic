@@ -39,9 +39,15 @@ Daniel Eddeland, Shaun Williams, Joe White, Mark Weyer, Barbara Rivera, JRConway
 
 **Licenses:** CC-BY-SA 3.0 / GPL 3.0
 
-### [Statues & Fountains Collection](https://opengameart.org/content/lpc-medieval-village-decorations)
+### [LPC Flowers / Plants / Fungi / Wood](https://opengameart.org/content/lpc-flowers-plants-fungi-wood)
 
-**Authors:** Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), Hyptosis, mold, Zachariah Husiar (Zabin), & Clint Bellanger.
+**Authors:** bluecarrot16, Guido Bos, Ivan Voirol (Silver IV), SpiderDave, William.Thompsonj, Yar, Stephen Challener and the [Open Surge team](http://opensnc.sourceforge.net), Gaurav Munjal, Johann Charlot, Casper Nilsson, Jetrel, Zabin, Hyptosis, Surt, Lanea Zimmerman, George Bailey, ansimuz, Buch, and the [Open Pixel Project contributors](OpenPixelProject.com).
+
+**Licenses:** CC-BY-SA 3.0
+
+### [LPC Medieval Village Decorations](https://opengameart.org/content/lpc-medieval-village-decorations)
+
+**Authors:** Lanea Zimmerman (Sharm), Reemax (Tuomo Untinen), Xenodora, Johann C, Johannes Sjölund, Hyptosis, HughSpectrum, Redshrike, William.Thompsonj, wulax, Casper Nilsson, Daniel Cook, Rayane Félix (RayaneFLX), Wolthera van Hövell tot Westerflier (TheraHedwig), mold, Zachariah Husiar (Zabin), Clint Bellanger, Jetrel, Guido Bos, Nemisys, Curt, Zabin, Daneeklu, Bertram, Daniel Eddeland (daneeklu).
 
 **Licenses:** CC-BY-SA 3.0
 
