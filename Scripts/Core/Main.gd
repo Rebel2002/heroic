@@ -53,10 +53,7 @@ func execute_command(command: String) -> void:
 				$Ui/Chat.show_information("Invalid time: %s" % parsed_command[1])
 				return
 				
-			var time: Dictionary
-			time.hour = int(parsed_time[0])
-			time.minute = int(parsed_time[1])
-			$Ui/CurrentTime.rpc("set_time", time)
+			$Ui/CurrentTime.rpc("set_time", int(parsed_time[0]), int(parsed_time[1]))
 			$Ui/Chat.show_information("Time was changed to %s" % parsed_command[1])
 		"/kill":
 			if parsed_command.size() != 2:

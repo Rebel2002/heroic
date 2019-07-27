@@ -2,19 +2,19 @@ extends WorldEnvironment
 
 export(bool) var enable_lights setget set_enable_lights
 
-func set_time(time: Dictionary) -> void:
+func set_time(hour: int, minute: int) -> void:
 	# Set visibility
-	var minutes: int = time.hour * 60 + time.minute
-	if time.hour >= 4 and time.hour < 6:
+	var minutes: int = hour * 60 + minute
+	if hour >= 4 and hour < 6:
 		environment.tonemap_exposure = 0.007 * minutes - 1.52
 		self.enable_lights = true
-	elif time.hour >= 6 and time.hour < 19:
+	elif hour >= 6 and hour < 19:
 		environment.tonemap_exposure = 1
 		self.enable_lights = false
-	elif time.hour >= 19 and time.hour < 21:
+	elif hour >= 19 and hour < 21:
 		environment.tonemap_exposure = 8.98 - 0.007 * minutes
 		self.enable_lights = false
-	elif time.hour >= 21 or time.hour < 4:
+	elif hour >= 21 or hour < 4:
 		environment.tonemap_exposure = 0.16
 		self.enable_lights = true
 

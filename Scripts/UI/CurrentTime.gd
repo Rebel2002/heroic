@@ -1,34 +1,30 @@
 extends Control
 
-signal time_changed(time)
+var minute: int
+var hour: int
+
+signal time_changed(hour, minute)
 
 func _ready() -> void:
 	if get_tree().is_network_server():
-		set_time(OS.get_time())
-		$MinuteTimer.wait_time = 60 - OS.get_time().second
+		var time: Dictionary = OS.get_time()
+		set_time(time.hour, time.minute)
+		$MinuteTimer.wait_time = 60 - time.second
 		$MinuteTimer.start()
 		$MinuteTimer.wait_time = 60 # For next minutes
 
-sync func set_time(time: Dictionary) -> void:
-	var timeString
-	
-	# Set hours
-	if time.hour < 10:
-		timeString = "0" + str(time.hour)
-	else:
-		timeString = str(time.hour)
-	
-	timeString += ":"
-	
-	# Set minutes
-	if time.minute < 10:
-		timeString += "0" + str(time.minute)
-	else:
-		timeString += str(time.minute)
-	
-	$Time.text = timeString
-	
-	emit_signal("time_changed", time)
+sync func set_time(hour: int, minute: int) -> void:
+	self.hour = hour
+	self.minute = minute
+	$Time.text = "%02d:%02d" % [hour, minute]
+	emit_signal("time_changed", hour, minute)
 
 func _on_MinuteTimer_timeout() -> void:
-	rpc("set_time", OS.get_time())
+	minute += 1
+	if minute >= 60:
+		minute = 0
+		hour += 1
+		if hour >= 24:
+			hour = 0
+	
+	rpc("set_time", hour, minute)
