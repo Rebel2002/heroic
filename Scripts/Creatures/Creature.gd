@@ -1,8 +1,6 @@
 extends KinematicBody2D
 class_name Creature
 
-var BattleText: Resource = preload("res://Scenes/Effects/BattleText.tscn")
-
 # Stats
 export(String) var game_name = "" setget set_game_name
 export(Vector2) var damage = Vector2(1, 1)
@@ -31,9 +29,7 @@ func set_game_name(name: String) -> void:
 
 func set_health(value: int) -> void:
 	# Show damage
-	var battle_text = BattleText.instance()
-	battle_text.damage(value - health)
-	add_child(battle_text)
+	$BattleText.damage(value - health)
 	
 	health = value
 	$HealthBar.visible = true

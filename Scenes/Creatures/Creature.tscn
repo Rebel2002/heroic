@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Creatures/Creature.gd" type="Script" id=1]
 [ext_resource path="res://Styles/GameNameFont.tres" type="DynamicFont" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Fonts/basis33.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Sprites/UI/SpeechAdditional.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Creatures/Animation.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Effects/BattleText.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 content_margin_left = 3.0
@@ -29,7 +30,6 @@ font_data = ExtResource( 6 )
 [node name="Creature" type="KinematicBody2D" groups=[
 "Creature",
 ]]
-position = Vector2( 503.016, 274.934 )
 script = ExtResource( 1 )
 
 [node name="VisibleArea" type="Area2D" parent="."]
@@ -56,6 +56,7 @@ align = 1
 valign = 1
 
 [node name="HealthBar" type="TextureProgress" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -82,6 +83,7 @@ position = Vector2( -1.1722, 26.9568 )
 rotation = 1.5708
 
 [node name="Speech" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 margin_left = -15.0
 margin_top = -72.0
@@ -114,6 +116,8 @@ one_shot = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 script = ExtResource( 8 )
+
+[node name="BattleText" parent="." instance=ExtResource( 9 )]
 [connection signal="timeout" from="HealthBar/DisplayTimer" to="HealthBar" method="set_visible" binds= [ false ]]
 [connection signal="timeout" from="Speech/DisplayTimer" to="Speech" method="set_visible" binds= [ false ]]
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

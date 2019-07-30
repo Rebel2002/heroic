@@ -7,24 +7,12 @@
 [node name="Player" groups=[
 "Players",
 ] instance=ExtResource( 1 )]
-position = Vector2( 0, 0 )
 script = ExtResource( 2 )
-
-[node name="VisibleArea" parent="." index="0"]
-position = Vector2( 0, -27 )
-
-[node name="InterractArea" parent="." index="1"]
-position = Vector2( 0, -27 )
 
 [node name="Collision" parent="InterractArea" index="0"]
 position = Vector2( -0.66156, 25.2174 )
 
-[node name="Name" parent="." index="2"]
-margin_top = -72.0
-margin_bottom = -58.0
-
 [node name="HealthBar" parent="." index="3"]
-editor/display_folded = true
 margin_top = -58.0
 margin_bottom = -47.0
 
@@ -32,33 +20,22 @@ margin_bottom = -47.0
 position = Vector2( -0.172241, -0.0431976 )
 
 [node name="Speech" parent="." index="5"]
-editor/display_folded = true
 margin_left = -13.0
 margin_top = -90.0
 margin_right = 87.0
 margin_bottom = -47.0
 
-[node name="Body" parent="." index="6"]
+[node name="Animation" parent="." index="6"]
+playback_process_mode = 0
+
+[node name="Body" parent="." index="8"]
 editor/display_folded = true
-position = Vector2( 0, -27 )
-frame = 131
 
-[node name="Eyes" parent="." index="7"]
-position = Vector2( 0, -27 )
-frame = 131
-
-[node name="Hair" parent="." index="8"]
-position = Vector2( 0, -27 )
-frame = 131
-
-[node name="Weapon" parent="." index="9"]
+[node name="Weapon" parent="." index="11"]
 editor/display_folded = true
 position = Vector2( -1, -26 )
 texture = ExtResource( 3 )
 frame = 12
 
-[node name="Animation" parent="." index="10"]
-playback_process_mode = 0
-
-[node name="Camera" type="Camera2D" parent="." index="11"]
+[node name="Camera" type="Camera2D" parent="." index="12"]
 visible = false

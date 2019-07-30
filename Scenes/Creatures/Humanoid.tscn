@@ -521,41 +521,28 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="Humanoid" index="0" instance=ExtResource( 1 )]
+[node name="Humanoid" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="VisibleArea" parent="." index="0"]
+position = Vector2( 0, -27 )
+
+[node name="InterractArea" parent="." index="1"]
+position = Vector2( 0, -27 )
 
 [node name="Collision" parent="InterractArea" index="0"]
 position = Vector2( -1.04901, 25.5244 )
 shape = SubResource( 1 )
 
+[node name="Name" parent="." index="2"]
+margin_top = -72.0
+margin_bottom = -58.0
+
 [node name="Collision" parent="." index="4"]
+position = Vector2( -1.1722, -0.0431976 )
 shape = SubResource( 2 )
 
-[node name="Body" type="Sprite" parent="." index="6"]
-texture = ExtResource( 3 )
-vframes = 21
-hframes = 13
-frame = 187
-
-[node name="Eyes" type="Sprite" parent="." index="7"]
-texture = ExtResource( 4 )
-vframes = 21
-hframes = 13
-frame = 187
-
-[node name="Hair" type="Sprite" parent="." index="8"]
-texture = ExtResource( 5 )
-vframes = 21
-hframes = 13
-frame = 187
-
-[node name="Weapon" type="Sprite" parent="." index="9"]
-visible = false
-vframes = 4
-hframes = 6
-frame = 17
-
-[node name="Animation" parent="." index="10"]
+[node name="Animation" parent="." index="6"]
 anims/Death = SubResource( 3 )
 anims/MeleeAttackDown = SubResource( 4 )
 anims/MeleeAttackLeft = SubResource( 5 )
@@ -565,3 +552,33 @@ anims/WalkDown = SubResource( 8 )
 anims/WalkLeft = SubResource( 9 )
 anims/WalkRight = SubResource( 10 )
 anims/WalkUp = SubResource( 11 )
+
+[node name="BattleText" parent="." index="7"]
+position = Vector2( 0, -27 )
+
+[node name="Body" type="Sprite" parent="." index="8"]
+position = Vector2( 0, -27 )
+texture = ExtResource( 3 )
+vframes = 21
+hframes = 13
+frame = 131
+
+[node name="Eyes" type="Sprite" parent="." index="9"]
+position = Vector2( 0, -27 )
+texture = ExtResource( 4 )
+vframes = 21
+hframes = 13
+frame = 131
+
+[node name="Hair" type="Sprite" parent="." index="10"]
+position = Vector2( 0, -27 )
+texture = ExtResource( 5 )
+vframes = 21
+hframes = 13
+frame = 131
+
+[node name="Weapon" type="Sprite" parent="." index="11"]
+visible = false
+vframes = 4
+hframes = 6
+frame = 17
