@@ -53,6 +53,8 @@ func execute_command(command: String) -> void:
 			_teleport_command(arguments)
 		"/pos":
 			_show_position_command()
+		"/spawn":
+			_spawn_command(arguments)
 
 sync func drop_item(item_name: String, count: int, coordinats: Vector2) -> void:
 	var item = load(item_name).instance()
@@ -107,3 +109,16 @@ func _teleport_command(arguments: PoolStringArray) -> void:
 func _show_position_command() -> void:
 	var position: Vector2 = Global.players[Global.id].position
 	$Ui/Chat.show_information("Current position: %.2f %.2f" % [position.x, position.y])
+
+func _spawn_command(arguments: PoolStringArray) -> void:
+	if not _is_arguments_count(arguments, 4):
+		return
+	
+	var scene: PackedScene = load("res://Scenes/Creatures/%s.tscn" % arguments[1])
+	if scene == null:
+		$Ui/Chat.show_information("Unable to find creature with name: %s" % arguments[1])
+		return
+	
+	var creature: Node2D = scene.instance()
+	creature.position = Vector2(float(arguments[2]), float(arguments[3]))
+	$World/Objects.add_child(creature)
