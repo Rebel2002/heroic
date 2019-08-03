@@ -135,22 +135,20 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 game_name = "Chicken"
 
+[node name="VisibleArea" parent="." index="0"]
+position = Vector2( 0, -31 )
+
 [node name="InterractArea" parent="." index="1"]
 editor/display_folded = false
+position = Vector2( 0, -31 )
 
 [node name="Collision" parent="InterractArea" index="0"]
 position = Vector2( -0.0603333, 22.7914 )
 shape = SubResource( 1 )
 
-[node name="HealthBar" parent="." index="3"]
-editor/display_folded = true
-
 [node name="Collision" parent="." index="4"]
-position = Vector2( 0.345062, 27.0501 )
+position = Vector2( 0.345062, -3.9499 )
 shape = SubResource( 2 )
-
-[node name="Speech" parent="." index="5"]
-editor/display_folded = true
 
 [node name="Animation" parent="." index="6"]
 anims/EatDown = SubResource( 3 )
@@ -162,13 +160,13 @@ anims/WalkLeft = SubResource( 8 )
 anims/WalkRight = SubResource( 9 )
 anims/WalkUp = SubResource( 10 )
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
-position = Vector2( 0, 17.8489 )
+[node name="Sprite" type="Sprite" parent="." index="8"]
+position = Vector2( 0, -13.1511 )
 texture = ExtResource( 3 )
 vframes = 8
 hframes = 4
 frame = 24
 
-[node name="RandomActionTimer" type="Timer" parent="." index="8"]
+[node name="RandomActionTimer" type="Timer" parent="." index="9"]
 one_shot = true
 [connection signal="timeout" from="RandomActionTimer" to="." method="make_random_action"]
