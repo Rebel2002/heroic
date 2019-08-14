@@ -10,14 +10,14 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("ui_cancel"):
 			get_tree().set_input_as_handled()
 			set_input_focused(false)
-		elif event.is_action_pressed("chat_next"):
+		elif Input.is_key_pressed(KEY_UP):
 			get_tree().set_input_as_handled()
 			if history_position < history.size() - 1:
 				history[history_position] = $InputField.text
 				history_position += 1
 				$InputField.text = history[history_position]
 				$InputField.set_cursor_position(history[history_position].length())
-		elif event.is_action_pressed("chat_previous"):
+		elif Input.is_key_pressed(KEY_DOWN):
 			get_tree().set_input_as_handled()
 			if history_position > 0:
 				history[history_position] = $InputField.text

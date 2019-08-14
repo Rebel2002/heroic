@@ -49,6 +49,7 @@ margin_left = 6.0
 margin_top = 477.0
 margin_right = 201.0
 margin_bottom = 567.0
+focus_mode = 2
 theme = ExtResource( 2 )
 custom_styles/normal = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
